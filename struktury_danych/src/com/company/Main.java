@@ -29,7 +29,8 @@ public class Main {
         // ArrayList - posiada więcej możliwości niż Array, rozwiązuje problem statycznych Arrayek, bo tutaj jest to struktura dynamiczna
 
 //        arrayListExamples();
-        hashMapExamples();
+//        hashMapExamples();
+        hashSetExamples();
 
 
     }
@@ -137,6 +138,50 @@ public class Main {
         countriesAndCapitals.keySet().forEach(System.out::println);
         System.out.println("------------- VALUES -------------");
         countriesAndCapitals.values().forEach(System.out::println);
+
+        printHeader(7);
+        countriesAndCapitals.replace("Poland", "Cracow");
+        countriesAndCapitals.replace("Denmark", "Copenhagen");
+        countriesAndCapitals.values().forEach(System.out::println);
+
+        printHeader(8);
+        Map<String, String> asianCountriesAndCapitals = new HashMap<>();
+        asianCountriesAndCapitals.put("Thailand", "Bangkok");
+        asianCountriesAndCapitals.put("Indonesia", "Jakarta");
+        countriesAndCapitals.putAll(asianCountriesAndCapitals);
+        countriesAndCapitals.keySet().forEach(System.out::println);
+
+
+        printHeader(9);
+        System.out.println(countriesAndCapitals.isEmpty());
+        System.out.println(countriesAndCapitals.size());
+
+        countriesAndCapitals.clear();
+        System.out.println(countriesAndCapitals.isEmpty());
+        System.out.println(countriesAndCapitals.size());
+
+    }
+
+    private static void hashSetExamples(){
+
+        // hash set is simmilar to array list, but there can't be any duplicates.
+        printHeader(1);
+        Set<String> ulverAlbums = new HashSet<>();
+        ulverAlbums.add("Perdition City");
+        ulverAlbums.add("Blood Inside");
+        ulverAlbums.add("Shadows of the Sunt");
+
+        ulverAlbums.forEach(System.out::println);
+
+        printHeader(2);
+        ulverAlbums.add("Blood Inside");
+        ulverAlbums.add("Blood Inside");
+        ulverAlbums.add("Blood Inside");
+
+        ulverAlbums.forEach(System.out::println);
+
+
+
     }
 
     static private void printHeader(int index){
