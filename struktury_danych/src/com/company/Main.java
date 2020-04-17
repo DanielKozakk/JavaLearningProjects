@@ -1,5 +1,6 @@
 package com.company;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 
@@ -30,8 +31,9 @@ public class Main {
 
 //        arrayListExamples();
 //        hashMapExamples();
-        hashSetExamples();
+//        hashSetExamples();
 
+        firstNonRepeatingIntegerInArray();
 
     }
     private static void arrayListExamples() {
@@ -180,7 +182,47 @@ public class Main {
 
         ulverAlbums.forEach(System.out::println);
 
+    }
 
+    private static void arrayExamples (){
+        int [] intArray_1 = {4,8,2,7,3,8,2,120,1212,654654,3,0,-1,-35,-999,-36,120};
+        int intArray_2 [] = new int[3];
+        intArray_2[0] = 2;
+
+
+    }
+
+    private static void findSecondMinNumberInArray(){
+
+        int [] intArray_1 = {4,8,2,7,3,8,2,120,1212,654654,3,0,-1,-35,-999,-36,120};
+        int intArray_2 [] = new int[3];
+        Integer theSecondMinimumValue = null;
+        Integer theFirstMinimumvalue = null;
+        for (int i = 0; i < intArray_1.length ; i ++){
+
+            if(theFirstMinimumvalue == null){
+                theFirstMinimumvalue = intArray_1[i];
+                theSecondMinimumValue = intArray_1[i];
+            }
+            else if(intArray_1[i] < theFirstMinimumvalue){
+                theFirstMinimumvalue = intArray_1[i];
+
+            } else if(intArray_1[i] < theSecondMinimumValue){
+                theSecondMinimumValue = intArray_1[i];
+            }
+        }
+        System.out.println(theFirstMinimumvalue);
+        System.out.println(theSecondMinimumValue);
+
+    }
+
+    private static void firstNonRepeatingIntegerInArray(){
+
+        int [] intArray_3 = {2,2,3,3,4,4};
+        Class c = intArray_3.getClass();
+        String name = c.getName();
+        System.out.println("");
+        System.out.println(name);
 
     }
 
@@ -189,5 +231,7 @@ public class Main {
         String outputString = "______________ " + index + " ______________ ";
         System.out.println(outputString);
     }
+
+
 
 }
