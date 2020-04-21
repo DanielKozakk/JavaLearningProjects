@@ -1,41 +1,17 @@
 package com.company;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 
 public class Main {
 
-
-    public static void main(String[] args) {
-
-        // PRZYKŁADOWE STRUKTURY DANYCH:
-        // array - czyli struktura danych, każda wartość ma przypisany liczboy klucz, Array ma stałą wartość:
-        // key - 0, value - żółty
-        // key - 1, value - czerwony
-        // key - 2, value - biały
-
-
-        // QUEUE - kolejka
-        // dodawanie, usuwanie, pobieranie w takiej kolejności, w jakiej je dodaliśmy
-        // jest to FIFO - first in, first out
-
-        // STACK - stos
-        //  jest to LIFO - Last In, First Out, operacje pobierania danych to zdejmowanie elementów ze stosu
-
-        // TREE - drzewo
-        // każdy element może posiadać rodziców oraz dzieci
-
-        //NAJPOPULARNIEJSZE STRUKTURY DANYCH:
-        // ArrayList - posiada więcej możliwości niż Array, rozwiązuje problem statycznych Arrayek, bo tutaj jest to struktura dynamiczna
-
-//        arrayListExamples();
-//        hashMapExamples();
-//        hashSetExamples();
-
-        firstNonRepeatingIntegerInArray();
-
+    static private void printHeader(int index){
+        System.out.println();
+        String outputString = "______________ " + index + " ______________ ";
+        System.out.println(outputString);
     }
+
+
     private static void arrayListExamples() {
         List<String> toolAlbums = new ArrayList<>();
 
@@ -189,9 +165,17 @@ public class Main {
         int intArray_2 [] = new int[3];
         intArray_2[0] = 2;
 
+        Integer [] integersObjectsArray = {2,4,221,12,21};
+
+        System.out.println (integersObjectsArray[0]);
+
+        System.out.println (integersObjectsArray[0]);
+
+
+
 
     }
-
+    // intervieq execricse
     private static void findSecondMinNumberInArray(){
 
         int [] intArray_1 = {4,8,2,7,3,8,2,120,1212,654654,3,0,-1,-35,-999,-36,120};
@@ -216,22 +200,64 @@ public class Main {
 
     }
 
-    private static void firstNonRepeatingIntegerInArray(){
+    private static void firstSmallestNonRepeatingIntegerInArray(){
 
-        int [] intArray_3 = {2,2,3,3,4,4};
-        Class c = intArray_3.getClass();
-        String name = c.getName();
-        System.out.println("");
-        System.out.println(name);
+        int [] intArray_3 = {2,4,6,23,67,56,34,34,8,56,20,1,2,3,20,9,24,64,38,25,67,0,1,2,99,2,53,36,57,23,76,23,75,33,65,12,33,1,57,87,70,94,48,85,34,65,12,62,-4,9,8,-65,-65};
 
+
+        Integer smallestNonDouplicate = null;
+        int smallestInteger =intArray_3[0];
+
+        for (Integer integer : intArray_3){
+
+            if(integer <= smallestInteger){
+                smallestInteger = integer;
+
+                if (smallestNonDouplicate != null && smallestInteger == smallestNonDouplicate){
+                    smallestNonDouplicate = null;
+                } else{
+                    smallestNonDouplicate = smallestInteger;
+                }
+            }
+
+            // ale jeśli jest zduplikowany if(smallesnondouplicate == integer) to wtedy ustaw na null`a
+        }
+
+        System.out.println("To jest własnie to ");
+        System.out.println(smallestNonDouplicate);
     }
 
-    static private void printHeader(int index){
-        System.out.println();
-        String outputString = "______________ " + index + " ______________ ";
-        System.out.println(outputString);
+
+
+
+    public static void main(String[] args) {
+
+        // PRZYKŁADOWE STRUKTURY DANYCH:
+        // array - czyli struktura danych, każda wartość ma przypisany liczboy klucz, Array ma stałą wartość:
+        // key - 0, value - żółty
+        // key - 1, value - czerwony
+        // key - 2, value - biały
+
+
+        // QUEUE - kolejka
+        // dodawanie, usuwanie, pobieranie w takiej kolejności, w jakiej je dodaliśmy
+        // jest to FIFO - first in, first out
+
+        // STACK - stos
+        //  jest to LIFO - Last In, First Out, operacje pobierania danych to zdejmowanie elementów ze stosu
+
+        // TREE - drzewo
+        // każdy element może posiadać rodziców oraz dzieci
+
+        //NAJPOPULARNIEJSZE STRUKTURY DANYCH:
+        // ArrayList - posiada więcej możliwości niż Array, rozwiązuje problem statycznych Arrayek, bo tutaj jest to struktura dynamiczna
+
+//        arrayListExamples();
+//        hashMapExamples();
+//        hashSetExamples();
+
+//        firstNonRepeatingIntegerInArray();
+
+        firstSmallestNonRepeatingIntegerInArray();
     }
-
-
-
 }
