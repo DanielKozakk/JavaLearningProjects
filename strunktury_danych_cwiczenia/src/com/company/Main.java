@@ -9,34 +9,48 @@ public class Main {
     public static void main(String[] args) {
 //        firstSmallestNonRepeatingIntegerInArray();
 //          getIntersectionAndUnion();
-//        getTwoHighestNumbers();
-        mergeArrays();
+        rearrange();
 
     }
 
+    static void rearrange() {
+        // The following few lines are similar to partition
+        // process of QuickSort.  The idea is to consider 0
+        // as pivot and divide the array around it.
 
-//    private int[] intersectionOfSortedArrays(){
-//
-//        int [] abc = {12,12};
-//        return abc;
-//    }
+//        int [] array = {-1, 2, -3, 4, 5, 6, -7, 8, 9};
+        int[] array = {-1, 2, 3, 4, 5, 6, -7};
+        int n = array.length;
+
+        int i = -1, temp = 0;
+
+        for (int j = 0; j < n; j++) {
+            System.out.println("Iteration : " + j);
+            if (array[j] < 0) {
+                i++;
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+
+            }
+            System.out.println(Arrays.toString(array));
+        }
 
 
+    }
 
-    public static void mergeArrays()
-    {
+    public static void mergeArrays() {
 
         int[] arr1 = {2, 7, 9, 10, 232, 635, 700, 906, 950, 985, 989, 990, 999, 1001, 1002, 1003};
         int[] arr2 = {4, 7, 20, 156, 200, 346, 347, 477, 544, 567, 675, 892, 1000, 1205, 1206};
         int n1 = arr1.length;
         int n2 = arr2.length;
-        int [] arr3 = new int[arr1.length + arr2.length];
+        int[] arr3 = new int[arr1.length + arr2.length];
 
         int i = 0, j = 0, k = 0;
 
         // Traverse both array
-        while (i<n1 && j <n2)
-        {
+        while (i < n1 && j < n2) {
             // Check if current element of first
             // array is smaller than current element
             // of second array. If yes, store first
@@ -134,4 +148,34 @@ public class Main {
         Integer secondMinimumElementOfArray = null;
 
     }
+    //////////////
+    // intervieq execricse
+    private static void findSecondMinNumberInArray(){
+
+        int [] intArray_1 = {4,8,2,7,3,8,2,120,1212,654654,3,0,-1,-35,-999,-36,120};
+        int intArray_2 [] = new int[3];
+        Integer theSecondMinimumValue = null;
+        Integer theFirstMinimumvalue = null;
+        for (int i = 0; i < intArray_1.length ; i ++){
+
+            if(theFirstMinimumvalue == null){
+                theFirstMinimumvalue = intArray_1[i];
+                theSecondMinimumValue = intArray_1[i];
+            }
+            else if(intArray_1[i] < theFirstMinimumvalue){
+                theFirstMinimumvalue = intArray_1[i];
+
+            } else if(intArray_1[i] < theSecondMinimumValue){
+                theSecondMinimumValue = intArray_1[i];
+            }
+        }
+        System.out.println(theFirstMinimumvalue);
+        System.out.println(theSecondMinimumValue);
+
+    }
+
+
+
+
+
 }
