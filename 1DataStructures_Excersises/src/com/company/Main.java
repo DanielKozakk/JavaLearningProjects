@@ -8,9 +8,9 @@ public class Main {
 
     public static int[] secondExampleIntSortedArray = {1, 5, 8, 20, 21, 26, 29, 31, 46, 79, 80, 101, 242, 333};
     public static int[] thirdExampleIntSortedArray = {-121, -120, -40, -31, -9, 0, 5, 10, 15, 37, 40, 80, 81, 82};
-    public static int[] forthExampleIntUnSortedArray = {-99, -80, -40, 1, 3, 2004, 1995, 512, 7000, -450, 100929, -1590 - 2, 204};
+    public static int[] forthExampleIntUnSortedArray = {-99, -80, -40, 1, 3, 2004, 1995, 512, 7000, -450, 200929, -1590 - 2, 204, -100000000};
     public static String[] fifthExampleStringArray = {"Your", "leg", "is", "very", "sexy!"};
-    public static String[] sixthExampleStringArray = {"beb","Your", "leg", "is", "very", "sexy!", "very","a","a","a"};
+    public static String[] sixthExampleStringArray = {"beb", "Your", "leg", "is", "very", "sexy!", "very", "a", "a", "a"};
 
     public static void main(String[] args) {
 //        Collections1_FindTheSecondMinimumElementInArray();
@@ -20,10 +20,88 @@ public class Main {
 
 //        collections4_RearrangePositiveAndNegativeNumbers_v2(forthExampleIntUnSortedArray);
 //        System.out.println(Arrays.toString(collections5_howToReverseArray(fifthExampleStringArray)));
-        System.out.println(Arrays.toString(collections6_findDuplicatesInArray(sixthExampleStringArray)));
+//        System.out.println(Arrays.toString(collections6_findDuplicatesInArray(sixthExampleStringArray)));
+//        getLargestAndSmallestNumber();
     }
 
-    public static String [] collections6_findDuplicatesInArray(String [] intputArray){
+    public static void collections8_intersectionAndUnionOfArrays() {
+
+        /*
+                NA PAPIERZE:
+
+
+                Intersection
+                Iteruje najpiew po jednej potem po drugiej tablicy, sprawdzam, elementy wspólne, robię wskaźnik, tworzę nową tablicę.
+                Iteruje najpiew po jednej potem po drugiej tablicy, sprawdzam, elementy wspólne, dodaję do nowej tablicy.
+
+                Union:
+                Zrób ArrayList, do której będę dodawał union items.
+                Tworzę dwa wskaźniki - array1Index i array2Index.
+                Robię pętlę while, której warunkeim jest to, że array1Index < array1.length i analogicznie z array2Index.
+
+                jeśli array1[array1index] jest mniejszy od array2[array2index]
+                    dodaj array1[array1index] do ArrayListy
+                    array1index ++
+                    else if array2[array2index] jest mniejszy od array2[array2index]
+                    dodaj array2[array2index] do ArrayListy
+                    array2index ++
+
+
+
+                jeśli array1index jest mniejszy niż array1.length -1
+                        to przeiteruj się przez itemy array1 i dodaj je do array listy
+                        else if to array2index jest mniejszy niż array2.length - 1
+                        to zrób analogiczną akcję
+
+                PSEUDOKOD:
+                    INTERSECTION
+                        inputArray1 i inputArray2
+                        for loop
+
+
+
+
+         */
+
+    }
+
+    public static void collections7_getLargestAndSmallestNumber() {
+
+        /*
+            NA PAPIERZE:
+            tworzę dwie zmienne larges,smallest
+            iteruje po wszystkich elementach tablicy, sprawdzając, czy dany element jest mniejszy od smallest, jeśli tak to przypisz, albo czy jest większy od largest, jeśli tak to przypisz.
+
+
+            PSEUDOKOD
+            LARGEST
+            SMALLEST
+            Forloop for each
+                if int < smallest
+                    smallest = int
+                    else if int > largest
+                    largest = int
+
+         */
+
+        int LARGEST_INT = forthExampleIntUnSortedArray[0];
+        int SMALLEST_INT = forthExampleIntUnSortedArray[0];
+
+        for (int integer : forthExampleIntUnSortedArray) {
+
+            if (integer > LARGEST_INT) {
+                LARGEST_INT = integer;
+            } else if (integer < SMALLEST_INT) {
+                SMALLEST_INT = integer;
+            }
+        }
+
+        System.out.println(LARGEST_INT);
+        System.out.println(SMALLEST_INT);
+
+    }
+
+    public static String[] collections6_findDuplicatesInArray(String[] intputArray) {
 
         /*
 
@@ -53,17 +131,17 @@ public class Main {
          */
 
         int duplicateIndex = -1;
-        for(int i = 0; i < intputArray.length; i++){
-            for(int j = 0; j < intputArray.length; j++){
-                    if(i != j && intputArray[j] == intputArray [i]){
-                        duplicateIndex ++;
-                    }
+        for (int i = 0; i < intputArray.length; i++) {
+            for (int j = 0; j < intputArray.length; j++) {
+                if (i != j && intputArray[j] == intputArray[i]) {
+                    duplicateIndex++;
+                }
             }
         }
-        String [] outputArray = new String[duplicateIndex + 1];
-        for(int i = 0; i < intputArray.length; i++){
-            for(int j = 0; j < intputArray.length; j++){
-                if(i != j && intputArray[j].equals(intputArray [i])){
+        String[] outputArray = new String[duplicateIndex + 1];
+        for (int i = 0; i < intputArray.length; i++) {
+            for (int j = 0; j < intputArray.length; j++) {
+                if (i != j && intputArray[j].equals(intputArray[i])) {
                     outputArray[duplicateIndex] = intputArray[i];
                     duplicateIndex--;
                 }
@@ -73,7 +151,7 @@ public class Main {
 
     }
 
-    public static String [] collections5_howToReverseArray(String [] inputArray) {
+    public static String[] collections5_howToReverseArray(String[] inputArray) {
 
         /*
                 NA PAPIERZE :
@@ -91,9 +169,9 @@ public class Main {
                     outputArray[j] = inputArray[i]
 
          */
-        String [] outputArray = new String [inputArray.length];
+        String[] outputArray = new String[inputArray.length];
         int j = 0;
-        for ( int i =  inputArray.length - 1; i >= 0; i--){
+        for (int i = inputArray.length - 1; i >= 0; i--) {
             outputArray[j] = inputArray[i];
             j++;
         }
