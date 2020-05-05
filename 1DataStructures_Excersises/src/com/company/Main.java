@@ -1,4 +1,5 @@
 package com.company;
+
 import java.util.Arrays;
 
 public class Main {
@@ -8,6 +9,8 @@ public class Main {
     public static int[] secondExampleIntSortedArray = {1, 5, 8, 20, 21, 26, 29, 31, 46, 79, 80, 101, 242, 333};
     public static int[] thirdExampleIntSortedArray = {-121, -120, -40, -31, -9, 0, 5, 10, 15, 37, 40, 80, 81, 82};
     public static int[] forthExampleIntUnSortedArray = {-99, -80, -40, 1, 3, 2004, 1995, 512, 7000, -450, 100929, -1590 - 2, 204};
+    public static String[] fifthExampleStringArray = {"Your", "leg", "is", "very", "sexy!"};
+    public static String[] sixthExampleStringArray = {"beb","Your", "leg", "is", "very", "sexy!", "very","a","a","a"};
 
     public static void main(String[] args) {
 //        Collections1_FindTheSecondMinimumElementInArray();
@@ -15,7 +18,87 @@ public class Main {
 //        Collections3_MergeTwoSortedArrays();
 //        collections3_MergeTwoSortedArrays(secondExampleIntSortedArray,thirdExampleIntSortedArray);
 
-        collections4_RearrangePositiveAndNegativeNumbers_v2(forthExampleIntUnSortedArray);
+//        collections4_RearrangePositiveAndNegativeNumbers_v2(forthExampleIntUnSortedArray);
+//        System.out.println(Arrays.toString(collections5_howToReverseArray(fifthExampleStringArray)));
+        System.out.println(Arrays.toString(collections6_findDuplicatesInArray(sixthExampleStringArray)));
+    }
+
+    public static String [] collections6_findDuplicatesInArray(String [] intputArray){
+
+        /*
+
+            NA PAPIERZE:
+            Mam arraykę, która posiada Stringi, które są zduplikowane
+            Iteruje po niej i sprawdzam, ile jest takich stringów zduplikowanych.
+
+            Tworzę arraykę o długości zduplikowanych stringów
+            Iteruję ponownie po inputArray, tym razem daję do kolejną pętlę, która porównuje każdy element z następnym.
+            Jeśli znajdzie duplikat, dodaje go do outputArray
+
+            PSEUDOKOD:
+
+            inputArray
+            duplicateIndex
+            for loop i input array
+                for loop j input Array
+                    jeśli i != j i inputArray[i] == inputArray [j]
+                        duplicate index ++;
+
+            duplicateArray[duplicateIndex]
+
+                for loop i input array
+                    for loop j input Array
+                    jeśli i != j i inputArray[i] == inputArray [j]
+                        duplicateArray[i] = inputArray[i];
+         */
+
+        int duplicateIndex = -1;
+        for(int i = 0; i < intputArray.length; i++){
+            for(int j = 0; j < intputArray.length; j++){
+                    if(i != j && intputArray[j] == intputArray [i]){
+                        duplicateIndex ++;
+                    }
+            }
+        }
+        String [] outputArray = new String[duplicateIndex + 1];
+        for(int i = 0; i < intputArray.length; i++){
+            for(int j = 0; j < intputArray.length; j++){
+                if(i != j && intputArray[j].equals(intputArray [i])){
+                    outputArray[duplicateIndex] = intputArray[i];
+                    duplicateIndex--;
+                }
+            }
+        }
+        return outputArray;
+
+    }
+
+    public static String [] collections5_howToReverseArray(String [] inputArray) {
+
+        /*
+                NA PAPIERZE :
+                Mam array, która zawiera String`i.
+                Tworzę outputArraykę
+                Iteruję po inputArray ale dekrementuję wkaźnik
+                Z każdą iteracją zapisuję elementy na początku pierwszej tablicy
+
+                PSEUDOKOD:
+                inputArray
+                outputArray
+
+                j = 0
+                for loop, i = inputArray.length -  1;  i >= 0, i --
+                    outputArray[j] = inputArray[i]
+
+         */
+        String [] outputArray = new String [inputArray.length];
+        int j = 0;
+        for ( int i =  inputArray.length - 1; i >= 0; i--){
+            outputArray[j] = inputArray[i];
+            j++;
+        }
+
+        return outputArray;
     }
 
     public static void collections4_RearrangePositiveAndNegativeNumbers_v2(int[] arrayToRearange) {
@@ -26,6 +109,7 @@ public class Main {
         for (int j = 0; j < lengthOfArray; j++) {
             if (arrayToRearange[j] < 0) {
                 negativeNumberIndex++;
+
 
 //                System.out.println("Array element to rearange - " + arrayToRearange[j]);
 //                System.out.println(negativeNumberIndex);
