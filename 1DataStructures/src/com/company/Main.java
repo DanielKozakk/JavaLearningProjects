@@ -5,6 +5,27 @@ import java.util.*;
 
 public class Main {
 
+    // PRZYKŁADOWE STRUKTURY DANYCH:
+    // array - czyli struktura danych, każda wartość ma przypisany liczboy klucz, Array ma stałą wartość:
+    // key - 0, value - żółty
+    // key - 1, value - czerwony
+    // key - 2, value - biały
+
+
+    // QUEUE - kolejka
+    // dodawanie, usuwanie, pobieranie w takiej kolejności, w jakiej je dodaliśmy
+    // jest to FIFO - first in, first out
+
+    // STACK - stos
+    //  jest to LIFO - Last In, First Out, operacje pobierania danych to zdejmowanie elementów ze stosu
+
+    // TREE - drzewo
+    // każdy element może posiadać rodziców oraz dzieci
+
+    //NAJPOPULARNIEJSZE STRUKTURY DANYCH:
+    // ArrayList - posiada więcej możliwości niż Array, rozwiązuje problem statycznych Arrayek, bo tutaj jest to struktura dynamiczna
+
+
     static private void printHeader(int index){
         System.out.println();
         String outputString = "______________ " + index + " ______________ ";
@@ -160,52 +181,14 @@ public class Main {
 
     }
 
-    private static void arrayExamples (){
-        int [] intArray_1 = {4,8,2,7,3,8,2,120,1212,654654,3,0,-1,-35,-999,-36,120};
-        int intArray_2 [] = new int[3];
-        intArray_2[0] = 2;
-
-        Integer [] integersObjectsArray = {2,4,221,12,21};
-
-        System.out.println (integersObjectsArray[0]);
-
-        System.out.println (integersObjectsArray[0]);
-
-
-
-
-    }
 
 
 
 
     public static void main(String[] args) {
 
-        // PRZYKŁADOWE STRUKTURY DANYCH:
-        // array - czyli struktura danych, każda wartość ma przypisany liczboy klucz, Array ma stałą wartość:
-        // key - 0, value - żółty
-        // key - 1, value - czerwony
-        // key - 2, value - biały
 
 
-        // QUEUE - kolejka
-        // dodawanie, usuwanie, pobieranie w takiej kolejności, w jakiej je dodaliśmy
-        // jest to FIFO - first in, first out
-
-        // STACK - stos
-        //  jest to LIFO - Last In, First Out, operacje pobierania danych to zdejmowanie elementów ze stosu
-
-        // TREE - drzewo
-        // każdy element może posiadać rodziców oraz dzieci
-
-        //NAJPOPULARNIEJSZE STRUKTURY DANYCH:
-        // ArrayList - posiada więcej możliwości niż Array, rozwiązuje problem statycznych Arrayek, bo tutaj jest to struktura dynamiczna
-
-//        arrayListExamples();
-//        hashMapExamples();
-//        hashSetExamples();
-
-//        firstNonRepeatingIntegerInArray();
 
     }
 }
