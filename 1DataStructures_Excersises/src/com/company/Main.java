@@ -1,6 +1,8 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -12,6 +14,10 @@ public class Main {
     public static String[] fifthExampleStringArray = {"Your", "leg", "is", "very", "sexy!"};
     public static String[] sixthExampleStringArray = {"beb", "Your", "leg", "is", "very", "sexy!", "very", "a", "a", "a"};
 
+    public static int[] seventhExampleIntSortedArray = {1, 3, 4, 5, 7};
+    public static int[] eighthExampleIntSortedArray = {2, 3, 5, 6} ;
+
+
     public static void main(String[] args) {
 //        Collections1_FindTheSecondMinimumElementInArray();
 //        System.out.println(Collections2_FindSecondUniqueElementInArray(firstExampleIntUnsortedArray));
@@ -22,46 +28,106 @@ public class Main {
 //        System.out.println(Arrays.toString(collections5_howToReverseArray(fifthExampleStringArray)));
 //        System.out.println(Arrays.toString(collections6_findDuplicatesInArray(sixthExampleStringArray)));
 //        getLargestAndSmallestNumber();
+        collections8_intersectionAndUnionOfArrays(seventhExampleIntSortedArray, eighthExampleIntSortedArray);
     }
 
-    public static void collections8_intersectionAndUnionOfArrays() {
+    public static void collections8_intersectionAndUnionOfArrays(int[] inputArray1, int[] inputArray2) {
 
         /*
                 NA PAPIERZE:
+                INUT : Mam dwie tablicę, posortowane, które w samych sobie nie zawierają duplikatów, natomiast mogą zawierać duplikaty między sobą.
+                OUTPUT: Logi w systemie, z których jeden zwraca tablicę, która będzie zawierała wyłącznie elementy wspólne, a druga tablica  będzie zawierała połączenie dwóch arrayek - values mają być posortowane i bez duplikatów.
+
+                Intersection:
+                Dla ułatwienia robię tutaj intersectionArrayList, żeby można było dynamicznie dodawać elementy do arrayki.
+
+                Iteruję przez jedną tablicę, następnie przez drugą. W środku drugiej robię warunek, który sprawdza, czy indexy nie są takie same i czy elementy są takie same. Jeśli tak, to dodaje to do intersectionArrayList.
+
+*/
+
+        List<Integer> intersectionArrayList = new ArrayList<>();
+
+        for (int a = 0; a < inputArray1.length; a++) {
+            for (int b = 0; b < inputArray2.length; b++) {
+                if (inputArray1[a] == inputArray2[b]) {
+                    intersectionArrayList.add(inputArray1[a]);
+                }
+            }
+        }
+        System.out.println("Intersection:");
+        intersectionArrayList.forEach(System.out::println);
 
 
-                Intersection
-                Iteruje najpiew po jednej potem po drugiej tablicy, sprawdzam, elementy wspólne, robię wskaźnik, tworzę nową tablicę.
-                Iteruje najpiew po jednej potem po drugiej tablicy, sprawdzam, elementy wspólne, dodaję do nowej tablicy.
+/*
+
+
 
                 Union:
-                Zrób ArrayList, do której będę dodawał union items.
-                Tworzę dwa wskaźniki - array1Index i array2Index.
-                Robię pętlę while, której warunkeim jest to, że array1Index < array1.length i analogicznie z array2Index.
+                Dla ułatwienia robię unionArrayList.
+                Tworzę dwa indexy - i oraz j, wynoszą one 0.
+                Robię pętlę while, która sprawdza czy i jest mniejsze od inputArr1.length i analogicznie z j.
+                W środku pętli:
 
-                jeśli array1[array1index] jest mniejszy od array2[array2index]
-                    dodaj array1[array1index] do ArrayListy
-                    array1index ++
-                    else if array2[array2index] jest mniejszy od array2[array2index]
-                    dodaj array2[array2index] do ArrayListy
-                    array2index ++
+                Wyrażenie warunkowe sprawdza, czy liczby są równe, jeśli są, to dodaję do intersectionArrayList element z pierwszej tablicy, i inkrementuję wskaźniki I oraz J.
+                Else if
+                Wyrażenie warunkowe, które sprawdza, czy pierwszy element jest mniejszy od drugiego. Jeśli tak to:
 
+                Dodaję arr1[i] do unionArrayList.
+                Ikrementuję wskaźnik i,
 
+                else if
+                jeśli drugi jest mniejszy od pierwszego to robię analogiczną rzecz.
 
-                jeśli array1index jest mniejszy niż array1.length -1
-                        to przeiteruj się przez itemy array1 i dodaj je do array listy
-                        else if to array2index jest mniejszy niż array2.length - 1
-                        to zrób analogiczną akcję
+                if Sprawdzam czy i jest mniejsze od arr1.length
+                zrób pętle, która doda pozostałę elementy z arr1 do unionArrayList1
 
-                PSEUDOKOD:
-                    INTERSECTION
-                        inputArray1 i inputArray2
-                        for loop
-
-
-
+                else if sprawdzma czy j jest mniejsze od arr2.length
+                zrób pętle, która doda pozostałę elementy z arr1 do unionArrayList2
 
          */
+
+
+        List<Integer> unionArrayList = new ArrayList<>();
+        int i = 0;
+        int j = 0;
+
+        while (i < inputArray1.length && j < inputArray2.length) {
+
+            if (inputArray1[i] == inputArray2[j]) {
+
+                unionArrayList.add(inputArray1[i]);
+                i++;
+                j++;
+            } else if (inputArray1[i] < inputArray2[j]) {
+
+                unionArrayList.add(inputArray1[i]);
+                i++;
+
+            } else if (inputArray2[j] < inputArray1[i]) {
+                unionArrayList.add(inputArray2[j]);
+                j++;
+            }
+        }
+
+        if (i < inputArray1.length) {
+
+            while (i < inputArray1.length) {
+                unionArrayList.add(inputArray1[i]);
+                i++;
+            }
+
+        } else if (j < inputArray2.length) {
+            while (j < inputArray2.length) {
+
+
+
+                unionArrayList.add(inputArray2[j]);
+                j++;
+            }
+        }
+        System.out.println("Union:");
+        unionArrayList.forEach(System.out::println);
+
 
     }
 
