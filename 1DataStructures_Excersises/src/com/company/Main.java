@@ -28,7 +28,7 @@ public class Main {
 //        System.out.println(Arrays.toString(collections5_howToReverseArray(fifthExampleStringArray)));
 //        System.out.println(Arrays.toString(collections6_findDuplicatesInArray(sixthExampleStringArray)));
 //        getLargestAndSmallestNumber();
-        collections8_intersectionAndUnionOfArrays(seventhExampleIntSortedArray, eighthExampleIntSortedArray);
+//        collections8_intersectionAndUnionOfArrays(seventhExampleIntSortedArray, eighthExampleIntSortedArray);
     }
 
     public static void collections8_intersectionAndUnionOfArrays(int[] inputArray1, int[] inputArray2) {
