@@ -17,6 +17,9 @@ public class Main {
     public static int[] seventhExampleIntSortedArray = {1, 3, 4, 5, 7};
     public static int[] eighthExampleIntSortedArray = {2, 3, 5, 6};
 
+    public static int[] ninthExampleIntSortedArray = {2, 5, 6};
+    public static int[] tenthExampleIntSortedArray = {4, 6, 8, 10};
+
 
     public static void main(String[] args) {
 
@@ -26,16 +29,131 @@ public class Main {
 
 //        collections3_mergeTwoSortedArrays(secondExampleIntSortedArray,thirdExampleIntSortedArray);
 //        collections4_rearrangePositiveAndNegativeValues(forthExampleIntUnSortedArray);
-        collections8_unionAndIntersection(seventhExampleIntSortedArray, eighthExampleIntSortedArray);
+        collections8_unionAndIntersection(ninthExampleIntSortedArray, tenthExampleIntSortedArray);
     }
 
     public static void collections8_unionAndIntersection(int[] inputArray1, int[] inputArray2) {
 
         /*
+            // dodaj 4 minuty do licznika
+            NA PAPIERZE:
+
+            INTERSECTION:
+
+                Robię pętlę, iteruję po elementach inputArray1, wewnątrz pętli robię następną pętlę, w której iteruję po elementach drugiej tablicy.
+                Mam przy tym dwa indexy - i oraz j.
+                Sprawdzam, czy element pierwszej tablicy jest obecny w elemencie drugiej tablicy.
+                Jeśli to prawda, to dodaję taki element do mojej intersectionOutputArrayList.
 
 
+            UNION:
 
+                Robię sobie dwa wskaźniki i oraz j.
+                Robię pętlę while, której warunkiem działania jest to, że i jest mniejsze od długości tablicy arr1, analogicznie j.
+
+                Jeśli element z i jest mniejszy od j to dodaję go do unionOutputArrayList.
+                i robię i ++
+
+                Jeśli j jest mniejsze  to dodaję go do union outputArrayList
+                robię j++
+
+                jeśli są równe, to dodaję element pierwszy.
+                i robię i ++
+                i j ++
+
+                potem sprawdzam, czy i jest mniejsze od arr1.length
+                jeśli tak, to dodaję pozostałe elementy z inputArray1
+                sprawdzam czy j jest mneijszer od arr2.length
+                jeśli tak, to dodaję pozostałe elementy z inputArray2
+
+                Iteruję po intersectionunionlist oraz po unionArraylist i wypisuje elementy.
+
+                PSEUDOKOD:
+                INTERSECTION:
+
+                for loop, i < inputArray1, i ++
+                    for loop, j < inputArray2, j++
+                        jeśli inputArray1[i] jest równe inputArray2[j]
+                            to dodaj to do intersectionoutputArrayList
+
+                UNION
+                int j, i =
+                while loop i < inputArr1 and j < inputArr2
+                    jeśli inputarr1 element jest mniejszy od tego z inputArr2
+                        dodaję inputArr1
+                        i ++
+                    jeśli jest większy to
+                        dodaję inputArr2
+                        j ++
+                   else
+                        dodaję inputArr1
+                        i++
+                        j++
+            Tutaj dokładnie przetestuj, czy to rozwiązanie się sprawdza, zwróć uwagę na te warunki, czy na pewno są odpowiednie.
+            sprawdzam czy i < inputArr1.length
+                jeśli tak, to dodaję pozostałe elementy do outputIntersectionArrayList.
+            else if sprawdzam czy j< inputArr2.length
+                jeśli tak, to dodaję pozostałe elementy do outputIntersectionArrayList.
+
+                Stan początkowy I : 0, J 0
+                I0 mniejsze od J0, więc dodaję liczbę 1 a I1;
+                J0 mniejsze od I1 więc dodaję 2 a J1
+                I1 i J1 są takie same, dodaję 3, a I2,J2
+                I2 mniejsze od J2, dodaję 4, a I3
+                J2 i I3 są takie same, więc dodaję 5 a J3, I4
+                J3 mniejsze od I4, dodaję 6 a J4
+
+                Kończy się ta pętla, bo nie jest spełniony warunek J < arr2.length
          */
+        List<Integer> intersectionOutputArrayList = new ArrayList<>();
+
+        for (int a = 0; a < inputArray1.length; a++) {
+            for (int b = 0; b < inputArray2.length; b++) {
+
+                if (inputArray1[a] == inputArray2[b]) {
+                    intersectionOutputArrayList.add(inputArray1[a]);
+                }
+            }
+        }
+        List<Integer> unionOutputArrayList = new ArrayList<>();
+
+        int i = 0, j = 0;
+        while (i < inputArray1.length && j < inputArray2.length) {
+
+            if (inputArray1[i] < inputArray2[j]) {
+                unionOutputArrayList.add(inputArray1[i]);
+                i++;
+            } else if (inputArray2[j] < inputArray1[i]) {
+                unionOutputArrayList.add(inputArray2[j]);
+                j++;
+            } else {
+                unionOutputArrayList.add(inputArray1[i]);
+                i++;
+                j++;
+            }
+        }
+
+        if (i < inputArray1.length) {
+            while (i < inputArray1.length) {
+                unionOutputArrayList.add(inputArray1[i]);
+                i++;
+            }
+        } else if (j < inputArray2.length) {
+            while (j < inputArray2.length) {
+                unionOutputArrayList.add(inputArray2[j]);
+                j++;
+            }
+        }
+
+        System.out.println("INTERSECTION:");
+        for (Integer integer : intersectionOutputArrayList) {
+            System.out.println(integer);
+        }
+
+        System.out.println("UNION:");
+        for (Integer integer : unionOutputArrayList) {
+            System.out.println(integer);
+        }
 
     }
 
