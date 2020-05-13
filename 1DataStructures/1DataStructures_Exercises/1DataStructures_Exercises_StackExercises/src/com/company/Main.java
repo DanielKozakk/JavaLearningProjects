@@ -1,6 +1,5 @@
 package com.company;
 
-import java.lang.invoke.WrongMethodTypeException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
@@ -8,17 +7,23 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(evaluatePostFixExpression("10 2 8 * + 3 -"));
+        System.out.println(collections9_evaluatePostFixExpression("10 2 8 * + 3 -"));
 //        System.out.println(evaluatePostFixExpression("10 2 -"));
     }
 
-    static public int evaluatePostFixExpression(String expressionToEvaluate) {
+    static public int collections10_sortStackUsingTemporaryStack(Stack<String> stackToSort) {
+
+
+
+        return 0;
+    }
+
+
+    static public int collections9_evaluatePostFixExpression(String expressionToEvaluate) {
 
         int lengthOfExpression = expressionToEvaluate.length();
         Stack<String> stackExpression = new Stack<String>();
         List<String> operatorsList = Arrays.asList(new String[]{"+", "-", "*", "/"});
-
-
 
 
         StringBuilder stringToAdd = new StringBuilder();
@@ -27,8 +32,8 @@ public class Main {
             char ch = expressionToEvaluate.charAt(i);
 //            System.out.println("to jest ch : " + String.valueOf(ch));
 
-            if (String.valueOf(ch).equals(" ")){
-                if(stringToAdd.length() != 0 ) stackExpression.push(stringToAdd.toString());
+            if (String.valueOf(ch).equals(" ")) {
+                if (stringToAdd.length() != 0) stackExpression.push(stringToAdd.toString());
 
 //                System.out.println("To jest stack expression : ");
 //                System.out.println(stackExpression.toString());
@@ -36,8 +41,7 @@ public class Main {
                 // reset stringToAdd StringBulider
                 stringToAdd = new StringBuilder("");
 
-            }
-            else if (operatorsList.contains(String.valueOf(ch))) {
+            } else if (operatorsList.contains(String.valueOf(ch))) {
 
 //                System.out.println("To jest ch: ");
 //                System.out.println(String.valueOf(ch));
@@ -50,21 +54,21 @@ public class Main {
                 int secondNumber = Integer.parseInt(stackExpression.pop());
 
 
-                switch (String.valueOf(ch)){
+                switch (String.valueOf(ch)) {
                     case ("+"):
                         stackExpression.push(String.valueOf(firstNumber + secondNumber));
                         break;
                     case ("-"):
-                        stackExpression.push(String.valueOf( secondNumber - firstNumber));
+                        stackExpression.push(String.valueOf(secondNumber - firstNumber));
                         break;
                     case ("*"):
                         stackExpression.push(String.valueOf(firstNumber * secondNumber));
                         break;
                     case ("/"):
-                        stackExpression.push(String.valueOf(secondNumber / firstNumber ));
+                        stackExpression.push(String.valueOf(secondNumber / firstNumber));
                         break;
                     default:
-                            throw new IllegalArgumentException("You need to use among numbers and math operators.");
+                        throw new IllegalArgumentException("You need to use among numbers and math operators.");
                 }
 
             } else {
