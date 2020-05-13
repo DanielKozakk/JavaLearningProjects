@@ -1,6 +1,8 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -23,7 +25,136 @@ public class Main {
 //        System.out.println(Arrays.toString(collections3_mergeTwoSortedArrays(secondExampleIntSortedArray,thirdExampleIntSortedArray)));
 
 //        collections3_mergeTwoSortedArrays(secondExampleIntSortedArray,thirdExampleIntSortedArray);
-        collections4_rearrangePositiveAndNegativeValues(forthExampleIntUnSortedArray);
+//        collections4_rearrangePositiveAndNegativeValues(forthExampleIntUnSortedArray);
+        collections8_unionAndIntersection(seventhExampleIntSortedArray, eighthExampleIntSortedArray);
+    }
+
+    public static void collections8_unionAndIntersection(int[] inputArray1, int[] inputArray2) {
+
+        /*
+                NA PAPIERZE:
+                INTERSECTION:
+
+                Celem jest znalezienie elementów wspólnych w dwóch tablicach
+
+                robię intersection output arraylist dla ułatiwenia robię z tego arrayList
+
+                Iteruje się po którejkolwiek
+                Potem wewnątrz iteruje się po drugiej
+                    robię ifa, który sprawdza, czy elementy się pokrywają
+                        jeśli tak, to dodaję go to intersection outputArrayList
+
+
+                UNION:
+
+                Robię union output ArrayList
+                robię wskaźnik i oraz j
+                jeśli i < array1 length oraz j < array2 length to działa pętla while
+
+                    jeśli array1[i] jest mniejszy od array2[j]
+                    inkrementuje i
+                    dodaję array1[i[ do array listy
+                    else if array2 jest mniejszy od array[i]
+                    robię analogicznie
+                    else if elementy są takie same, to inkrementuję oba wskaźniki, dodaję element z którejkolwiek listy
+
+               potem robię dwie pętlę while, które dodają resztę z tego co zostało
+               Przekazuję intersection i union do konsoli
+
+               PSEUDOKOD:
+
+               List<Integer> intersectionArrayList = new ArrayList<Integer>;
+
+               for loop i; i < arr1; i++
+                        for lop j ; k < arr2; j++
+                            jeśli element i i j są takie same, dodaj do intersectino array list
+
+                UNION:
+
+                unionArrayList = new Arraylist
+                int i, j = 0;
+                while i < ... j < ...
+                if i < j to dodaję i oraz robię i ++
+
+                else if j < i to dodaję j oraz robię j++
+
+                else if j == i {
+
+                        unionrArrayList.add (arr1[i])
+                        i++
+                        j++
+                }
+
+                while i < arr1.length
+
+                       unionArrayList.add(arr1[i]
+                       i++;
+                while j < arr2.length
+                       unionArrayList.add(arr2[j]);
+                       j++;
+
+                przesyłam output do konsoli
+         */
+
+        // INTERSECTION
+        List<Integer> intersectionOutputArrayList = new ArrayList<>();
+
+        for (int i = 0; i < inputArray1.length; i++) {
+
+            for (int j = 0; j < inputArray2.length; j++) {
+                if (inputArray1[i] == inputArray2[j]) {
+                    intersectionOutputArrayList.add(inputArray1[i]);
+                }
+            }
+        }
+
+
+        // UNION
+        List<Integer> unionOutputArrayList = new ArrayList<>();
+
+        int i = 0, j = 0;
+
+        while (i < inputArray1.length && j < inputArray2.length) {
+//            System.out.println(" To jest J " + j);
+
+            if (inputArray1[i] < inputArray2[j]) {
+                unionOutputArrayList.add(inputArray1[i]);
+                i++;
+            } else if (inputArray2[j] < inputArray1[i]) {
+                unionOutputArrayList.add(inputArray2[j]);
+                j++;
+            } else {
+                unionOutputArrayList.add(inputArray1[i]);
+                i++;
+                j++;
+            }
+
+        }
+
+        while (i < inputArray1.length) {
+            unionOutputArrayList.add(inputArray1[i]);
+
+            i++;
+        }
+
+
+        while (j < inputArray1.length) {
+            unionOutputArrayList.add(inputArray1[j]);
+            j++;
+        }
+
+        System.out.println("INTERSECTION:");
+
+        for (Integer intersectionElement : intersectionOutputArrayList) {
+            System.out.println(intersectionElement);
+        }
+
+        System.out.println("UNION:");
+
+        for (Integer unionElement : unionOutputArrayList) {
+            System.out.println(unionElement);
+        }
+
     }
 
 
@@ -114,11 +245,11 @@ public class Main {
             }
         }
 
-        int [] outputArray = new int [positiveNumbersArray.length + negativeNumbersArray.length];
+        int[] outputArray = new int[positiveNumbersArray.length + negativeNumbersArray.length];
 
         int i = 0, j = 0, outputArrayIndex = 0;
-        while(i < positiveNumbersArray.length && j < negativeNumbersArray.length){
-            if(outputArrayIndex % 2 == 0){
+        while (i < positiveNumbersArray.length && j < negativeNumbersArray.length) {
+            if (outputArrayIndex % 2 == 0) {
                 outputArray[outputArrayIndex] = positiveNumbersArray[i];
                 i++;
             } else {
@@ -127,13 +258,13 @@ public class Main {
             }
             outputArrayIndex++;
         }
-        while (i < positiveNumbersArray.length){
+        while (i < positiveNumbersArray.length) {
             outputArray[outputArrayIndex] = positiveNumbersArray[i];
             i++;
             outputArrayIndex++;
         }
 
-        while (j < negativeNumbersArray.length){
+        while (j < negativeNumbersArray.length) {
             outputArray[outputArrayIndex] = negativeNumbersArray[j];
             j++;
             outputArrayIndex++;
