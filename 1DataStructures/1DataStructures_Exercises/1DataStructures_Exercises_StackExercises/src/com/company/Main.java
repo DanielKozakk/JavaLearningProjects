@@ -18,15 +18,75 @@ public class Main {
         for (int integer : integersToPushToStack) {
             firstInputStack.push(integer);
         }
-//        for (int integer : secondIntegersToPushToStack) {
-//            secondInputStack.push(integer);
-//        }
-
-        collections10_sortStackUsingTemporaryStack(firstInputStack);
-
+        for (int integer : secondIntegersToPushToStack) {
+            secondInputStack.push(integer);
+        }
+//        collections10_sortStackUsingTemporaryStack(secondInputStack);
+        System.out.println(collections11_checkForBalanceOfParentheses("[(])"));
 
     }
 
+
+    static public boolean collections11_checkForBalanceOfParentheses(String inputString) {
+        /*
+                NA PAPIERZE:
+                Mam se jakąś tam sekwencję nawiasów typu []{}{{(())}}{[]}[{()}]
+                Robię sobie funkcję pomocniczną, która będzie konsumowała string i zwracała string
+                ] -> [
+                } -> {
+                ) -> (
+
+                Iteruję się znaki w stringu.
+                Jeśli znajdę tam znak otwierający, to dodaję go do stacka
+                Jeśli znajdę tam znak zamyakjący, to służy on jako input do pomocniczej funkcji, następnie robię sprawdzanie dwóch znaków, jeśli się nie zgadzają no to nawiasy nie są zbalansowane.
+                Jeśli stak nie jest pusty na koniec, to znaczy że sekwencja jest niezbalansowana.
+         */
+        Stack<String> outputStack = new Stack<>();
+        int inputLength = inputString.length();
+
+        for (int i = 0; i < inputLength; i++) {
+
+            String ch = String.valueOf(inputString.charAt(i));
+            switch (ch){
+                case "{":
+                case "[":
+                case "(":
+                    outputStack.push(ch);
+                    break;
+                case "}":
+                case "]":
+                case ")":
+                    if(outputStack.empty()){
+                        return false;
+                    }
+                    String lastSignFromStack = outputStack.pop();
+
+                    if (!collections11_utilityFunctionThatChecksparentheses(ch).equals(lastSignFromStack)){
+                         return false;
+                    }
+            }
+        }
+
+        if(!outputStack.empty()){
+            return false;
+        }
+        return true;
+    }
+
+    static public String collections11_utilityFunctionThatChecksparentheses(String paranthes) {
+
+        switch (paranthes) {
+            case "}":
+                return "{";
+            case "]":
+                return "[";
+            case ")":
+                return "(";
+            default:
+                throw new IllegalArgumentException();
+        }
+
+    }
 
     static public void collections10_sortStackUsingTemporaryStack(Stack<Integer> inputStack) {
         final int inputStackSize = inputStack.size();
@@ -54,10 +114,9 @@ public class Main {
                 // compare smallest to current element
                 if (smallestElement != null) {
 
-                    if(!temporaryStack.empty() && temporaryStack.peek() < element && element < smallestElement){
+                    if (!temporaryStack.empty() && temporaryStack.peek() < element && element < smallestElement) {
                         smallestElement = element;
-                    }
-                    else if (temporaryStack.empty() && element < smallestElement) {
+                    } else if (temporaryStack.empty() && element < smallestElement) {
                         smallestElement = element;
                     }
                 }
