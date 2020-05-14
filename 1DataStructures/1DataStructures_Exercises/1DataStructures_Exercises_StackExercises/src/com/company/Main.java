@@ -6,16 +6,74 @@ import java.util.Stack;
 
 public class Main {
 
+    public static int[] integersToPushToStack = {34, 3, 31, 98, 92, 23};
+    public static int[] secondIntegersToPushToStack = {3, 5, 1, 4, 2, 8};
+    public static Stack<Integer> firstInputStack = new Stack<>();
+    public static Stack<Integer> secondInputStack = new Stack<>();
+
+
     public static void main(String[] args) {
-        System.out.println(collections9_evaluatePostFixExpression("10 2 8 * + 3 -"));
-//        System.out.println(evaluatePostFixExpression("10 2 -"));
+//        System.out.println(collections9_evaluatePostFixExpression("10 2 8 * + 3 -"));
+
+        for (int integer : integersToPushToStack) {
+            firstInputStack.push(integer);
+        }
+//        for (int integer : secondIntegersToPushToStack) {
+//            secondInputStack.push(integer);
+//        }
+
+        collections10_sortStackUsingTemporaryStack(firstInputStack);
+
+
     }
 
-    static public int collections10_sortStackUsingTemporaryStack(Stack<String> stackToSort) {
+
+    static public void collections10_sortStackUsingTemporaryStack(Stack<Integer> inputStack) {
+        final int inputStackSize = inputStack.size();
+
+        Stack<Integer> temporaryStack = new Stack<>();
+        int elementsRemainIndex = inputStackSize;
 
 
+        Integer smallestElement = null;
 
-        return 0;
+        while (elementsRemainIndex > 0) {
+
+            for (int element : inputStack) {
+
+
+                // initialization of smallestElemenet
+                if (smallestElement == null) {
+                    if (!temporaryStack.empty() && element > temporaryStack.peek()) {
+                        smallestElement = element;
+                    } else if (temporaryStack.empty()) {
+                        smallestElement = element;
+                    }
+                }
+
+                // compare smallest to current element
+                if (smallestElement != null) {
+
+                    if(!temporaryStack.empty() && temporaryStack.peek() < element && element < smallestElement){
+                        smallestElement = element;
+                    }
+                    else if (temporaryStack.empty() && element < smallestElement) {
+                        smallestElement = element;
+                    }
+                }
+
+            }
+
+            temporaryStack.push(smallestElement);
+            smallestElement = null;
+            elementsRemainIndex--;
+
+        }
+
+        System.out.println("Staczek:");
+        System.out.println(temporaryStack.toString());
+
+
     }
 
 
@@ -47,8 +105,8 @@ public class Main {
 //                System.out.println(String.valueOf(ch));
 //                System.out.println("To jest PEEK: ");
 //                System.out.println(stackExpression.peek());
-                System.out.println("To jest stack expression : ");
-                System.out.println(stackExpression.toString());
+//                System.out.println("To jest stack expression : ");
+//                System.out.println(stackExpression.toString());
 
                 int firstNumber = Integer.parseInt(stackExpression.pop());
                 int secondNumber = Integer.parseInt(stackExpression.pop());
