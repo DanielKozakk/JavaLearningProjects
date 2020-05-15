@@ -1,5 +1,7 @@
 package com.company;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
@@ -22,9 +24,12 @@ public class Main {
             secondInputStack.push(integer);
         }
 //        collections10_sortStackUsingTemporaryStack(secondInputStack);
-        System.out.println(collections11_checkForBalanceOfParentheses("[(])"));
+//        System.out.println(collections11_checkForBalanceOfParentheses("[(])"));
+        obliczToGowno();
 
     }
+
+
 
 
     static public boolean collections11_checkForBalanceOfParentheses(String inputString) {
