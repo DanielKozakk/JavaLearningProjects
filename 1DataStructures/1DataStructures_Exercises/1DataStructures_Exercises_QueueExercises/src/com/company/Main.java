@@ -11,6 +11,9 @@ public class Main {
     public static void main(String[] args) {
 
 
+        Collections_13_ReverseFirstKElementsInQueue exmp = new Collections_13_ReverseFirstKElementsInQueue();
+
+
 
     }
 
