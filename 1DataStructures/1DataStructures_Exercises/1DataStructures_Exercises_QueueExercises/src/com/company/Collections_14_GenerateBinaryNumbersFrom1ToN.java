@@ -13,6 +13,7 @@ public class Collections_14_GenerateBinaryNumbersFrom1ToN {
         List<String> outputList = new ArrayList<>();
         Queue<String> queue = new LinkedList<>();
 
+
         queue.add("1");
 
 
