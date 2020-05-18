@@ -3,7 +3,7 @@ package com.company;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class StackFromQueue {
+public class Collections_12_ImplementStackFromQueue {
 
     static Queue<Integer> q1 = new LinkedList<Integer>();
     static Queue<Integer> q2 = new LinkedList<Integer>();
