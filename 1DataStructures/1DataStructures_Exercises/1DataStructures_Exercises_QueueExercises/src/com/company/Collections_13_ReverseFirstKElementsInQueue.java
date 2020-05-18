@@ -1,11 +1,12 @@
 package com.company;
 
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-public class Collections_13_ReverseFirstKElementsInQueue {
+public class Collections_13_ReverseFirstKElementsInQueue<T> {
 
-    Queue<? extends Integer> queue;
+    Queue<T> inputQueue;
     int numberOfElementsToReverse;
 
 /*
@@ -26,20 +27,33 @@ public class Collections_13_ReverseFirstKElementsInQueue {
 
  */
 
-    public Collections_13_ReverseFirstKElementsInQueue(Queue<? extends Integer> queue, int elementsToReverse) {
-        this.queue = queue;
+    public Collections_13_ReverseFirstKElementsInQueue(Queue<T> inputQueue, int elementsToReverse) {
+        this.inputQueue = inputQueue;
         this.numberOfElementsToReverse = elementsToReverse;
     }
 
     public Queue<?> reverseQueue() {
-        Stack<? extends Integer> tmpStack = new Stack<>();
+        Stack<T> tmpStack = new Stack<>();
+        Queue<T> outputQueue = new LinkedList<>();
         int i = 1;
-        for (Object o : queue) {
 
-            if (i <= numberOfElementsToReverse) {
-                tmpStack.push(queue.poll());
-            }
+        while (i <= numberOfElementsToReverse) {
+            tmpStack.push(inputQueue.poll());
+            i++;
         }
+
+
+        while(!tmpStack.isEmpty()){
+            outputQueue.add(tmpStack.pop());
+        }
+
+        while (!inputQueue.isEmpty()) {
+            outputQueue.add(inputQueue.poll());
+        }
+
+//        System.out.println(outputQueue.toString());
+        return outputQueue;
+
     }
 
 
