@@ -25,7 +25,6 @@ public class Main {
         }
 //        collections10_sortStackUsingTemporaryStack(secondInputStack);
 //        System.out.println(collections11_checkForBalanceOfParentheses("[(])"));
-        obliczToGowno();
 
     }
 

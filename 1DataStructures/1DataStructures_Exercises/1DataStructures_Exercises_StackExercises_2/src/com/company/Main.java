@@ -14,8 +14,27 @@ public class Main {
 //        Collections_10_SortStackUsingAnotherTempStack sortownik = new Collections_10_SortStackUsingAnotherTempStack();
 //        sortownik.sort(prepareCollections10Data());
 
-        Collections_11_CheckForBalancedParentheses balansowanie = new Collections_11_CheckForBalancedParentheses();
-        boolean wynik = balansowanie.checkForBalance("[()))))");
+//        Collections_11_CheckForBalancedParentheses balansowanie = new Collections_11_CheckForBalancedParentheses();
+//        boolean wynik = balansowanie.checkForBalance("[()))))");
+
+        Collections_12_ImplementStackUsingQueues_UNDONE.push("ABC");
+
+        Collections_12_ImplementStackUsingQueues_UNDONE.toStringi();
+
+        Collections_12_ImplementStackUsingQueues_UNDONE.push("DEF");
+
+        Collections_12_ImplementStackUsingQueues_UNDONE.toStringi();
+
+
+        Collections_12_ImplementStackUsingQueues_UNDONE.push("GHI");
+        Collections_12_ImplementStackUsingQueues_UNDONE.toStringi();
+
+
+
+
+
+//        Collections_12_ImplementStackUsingQueues_UNDONE.toString2();
+
 
     }
 
@@ -40,6 +59,7 @@ public class Main {
         inputStack2.add(4);
         inputStack2.add(2);
         inputStack2.add(8);
+
 
         return inputStack2;
     }
