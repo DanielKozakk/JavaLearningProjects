@@ -11,10 +11,15 @@ public class Main {
 //        Collections_9_EvaluatePostfixExpression evaluator = new Collections_9_EvaluatePostfixExpression("10");
 //        System.out.println(evaluator.evaluateExpression());
 
-        Collections_10_SortStackUsingAnotherTempStack sortownik = new Collections_10_SortStackUsingAnotherTempStack();
-        sortownik.sort(prepareCollections10Data());
+//        Collections_10_SortStackUsingAnotherTempStack sortownik = new Collections_10_SortStackUsingAnotherTempStack();
+//        sortownik.sort(prepareCollections10Data());
+
+        Collections_11_CheckForBalancedParentheses balansowanie = new Collections_11_CheckForBalancedParentheses();
+        boolean wynik = balansowanie.checkForBalance("[()))))");
 
     }
+
+
 
     public static Stack<Integer>  prepareCollections10Data(){
 
