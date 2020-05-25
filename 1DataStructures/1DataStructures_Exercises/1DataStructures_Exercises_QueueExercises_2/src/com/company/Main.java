@@ -7,8 +7,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Collections_13_ReverseFirstNElementsOfQueue a = new Collections_13_ReverseFirstNElementsOfQueue();
-        a.reverseFirstKElements(prepareDataForCollections13(), 10);
+//        Collections_13_ReverseFirstNElementsOfQueue a = new Collections_13_ReverseFirstNElementsOfQueue();
+//        a.reverseFirstKElements(prepareDataForCollections13(), 10);
+        Collections_14_GenerateBinaryNumbersFrom1ToN.generateBinaryNumber(100);
 
     }
 
