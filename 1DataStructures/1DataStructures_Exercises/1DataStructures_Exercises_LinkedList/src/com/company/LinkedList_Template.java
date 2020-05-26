@@ -4,7 +4,7 @@ import java.util.Queue;
 
 public class LinkedList_Template {
 
-    Node head = null;
+    private Node head = null;
 
     protected class Node{
 
@@ -22,7 +22,7 @@ public class LinkedList_Template {
         public Object getData (){
             return dataToStore;
         }
-        private void setNext (Node next){
+        protected void setNext (Node next){
             this.next = next;
         }
     }
