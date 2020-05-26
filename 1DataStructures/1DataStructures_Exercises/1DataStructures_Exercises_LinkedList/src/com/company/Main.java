@@ -18,5 +18,8 @@ public class Main {
 //        System.out.println(reversion.reverseLinkedList().getFirstElement().getData());
         reversion.showReverseLinkedList();
 
+        Collections_16_DetectLoopInLinkedList col16 = new Collections_16_DetectLoopInLinkedList();
+        System.out.println(col16.detectLoop());
+
     }
 }

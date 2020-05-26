@@ -1,6 +1,7 @@
 package com.company;
 
 public class Collections_15_ReverseLinkedList {
+
     private LinkedList_Template inputLinkedList;
 
     public LinkedList_Template.Node firstElement = null;
