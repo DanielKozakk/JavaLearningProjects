@@ -1,6 +1,8 @@
 package com.company;
 
-public class LinkedList_Template<T> {
+import java.util.Queue;
+
+public class LinkedList_Template {
 
     Node head = null;
 

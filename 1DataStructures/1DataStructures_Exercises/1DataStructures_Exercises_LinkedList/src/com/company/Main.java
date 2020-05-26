@@ -9,7 +9,5 @@ public class Main {
 
         LinkedList_Template myLinkedList = new LinkedList_Template();
 
-
-
     }
 }
