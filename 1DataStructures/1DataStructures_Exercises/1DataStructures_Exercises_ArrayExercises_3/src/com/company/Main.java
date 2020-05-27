@@ -5,12 +5,19 @@ import java.util.List;
 
 public class Main {
 
-    public static int[] firstSortedArray = {1, 3};
-    public static int[] secondSortedArray = {1};
+    public static int[] firstSortedArray = {1, 3,5,7,10,12,13,16,17,20,25,200,232,234};
+    public static int[] secondSortedArray = {1,7,8,9,10,11,12,13,14,15,16,17,18,19,20,31,233};
+
+    public static int[] thirdSortedArray = {2,3,4,5,6,7,8,9,10};
+    public static int[] forthSortedArray = {1,1,22,22,3,3,4,5,6,4,6,1,2,5,0};
+    public static int[] sixthSortedArray = {-1,-1,-1,2,-1,2,2,2,2,-1,-2,-1,2,3,-1,2,2,2,2,2,2,2,2,-200,-2000};
+
+
 
     public static void main(String[] args) {
 
-        collections8_UnionAndIntersection(firstSortedArray, secondSortedArray);
+    Collections_4_RearrangePositiveAndNegativeNumbers.rearrangePositiveAndNegativeNumbers(sixthSortedArray);
+
 
     }
 
