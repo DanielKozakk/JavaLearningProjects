@@ -16,10 +16,12 @@ public class Main {
 
         Collections_15_ReverseLinkedList reversion = new Collections_15_ReverseLinkedList(linkedListToReverse);
 //        System.out.println(reversion.reverseLinkedList().getFirstElement().getData());
-        reversion.showReverseLinkedList();
+//        reversion.showReverseLinkedList();
 
         Collections_16_DetectLoopInLinkedList col16 = new Collections_16_DetectLoopInLinkedList();
-        System.out.println(col16.detectLoop());
+//        System.out.println(col16.detectLoop());
+
+        Collections_17_ReturnNthNodeFromTheEndInALinkedList.returnNthElement(linkedListToReverse,5);
 
     }
 }
