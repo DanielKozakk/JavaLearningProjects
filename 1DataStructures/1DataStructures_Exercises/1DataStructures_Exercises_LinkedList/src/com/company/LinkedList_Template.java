@@ -107,4 +107,14 @@ public class LinkedList_Template {
         return searchedData != null;
     }
 
+    public void printLinkedList(){
+        Node searchedElement = head;
+
+        while(searchedElement != null){
+            System.out.println(searchedElement.getData());
+            searchedElement = searchedElement.getNext();
+        }
+
+    }
+
 }
