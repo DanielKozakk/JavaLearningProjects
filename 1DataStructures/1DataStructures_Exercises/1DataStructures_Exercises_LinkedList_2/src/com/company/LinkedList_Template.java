@@ -1,8 +1,10 @@
 package com.company;
 
-public class LinkedList_Template<T> {
+import java.util.Queue;
 
-    Node head = null;
+public class LinkedList_Template {
+
+    private Node head = null;
 
     protected class Node{
 
@@ -20,7 +22,7 @@ public class LinkedList_Template<T> {
         public Object getData (){
             return dataToStore;
         }
-        private void setNext (Node next){
+        protected void setNext (Node next){
             this.next = next;
         }
     }
@@ -105,5 +107,14 @@ public class LinkedList_Template<T> {
         return searchedData != null;
     }
 
-}
+    public void printLinkedList(){
+        Node searchedElement = head;
 
+        while(searchedElement != null){
+            System.out.println(searchedElement.getData().toString());
+            searchedElement = searchedElement.getNext();
+        }
+
+    }
+
+}
