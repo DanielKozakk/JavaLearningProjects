@@ -73,7 +73,8 @@ public class Collections_15_ReverseALinkedList {
 
         LinkedList_Template.Node prev = null;
         LinkedList_Template.Node curr = inputLinkedList.getFirstElement();
-        LinkedList_Template.Node next = curr.getNext();
+
+        LinkedList_Template.Node next = curr != null? curr.getNext() : null;
 
         Stack<Object> tmpStack = new Stack<>();
 

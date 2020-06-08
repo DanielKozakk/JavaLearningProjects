@@ -2,16 +2,16 @@ package com.company;
 
 import java.util.Queue;
 
-public class LinkedList_Template {
+public class LinkedList_Template <T> {
 
     private Node head = null;
 
     protected class Node{
 
-        private Object dataToStore;
+        private T dataToStore;
         private Node next;
 
-        Node(Object data, Node nextNode){
+        Node(T data, Node nextNode){
             this.dataToStore = data;
             this.next = nextNode;
         }
@@ -19,7 +19,7 @@ public class LinkedList_Template {
         public Node getNext (){
             return next;
         }
-        public Object getData (){
+        public T getData (){
             return dataToStore;
         }
         protected void setNext (Node next){
@@ -41,9 +41,11 @@ public class LinkedList_Template {
     public void deleteAtHead(){
         head = head.next;
     }
-    public void insertAtEnd(Object elementToInsert){
+    public void insertAtEnd(T elementToInsert){
 
         Node nodeToInsert = new Node(elementToInsert, null);
+
+//        System.out.println(nodeToInsert.getData());
 
         if(head == null){
             head = nodeToInsert;
@@ -52,7 +54,7 @@ public class LinkedList_Template {
         }
     }
 
-    public void insertAtHead(Object elementToInsert){
+    public void insertAtHead(T elementToInsert){
 
         if (head == null){
             head = new Node(elementToInsert, null);
@@ -67,9 +69,13 @@ public class LinkedList_Template {
         StringBuilder stringBuilder = new StringBuilder();
         Node searchedElement = head;
 
+
+
         while  (searchedElement != null){
+
             stringBuilder.append("[").append(searchedElement.getData()).append("] ");
             searchedElement = searchedElement.getNext();
+
         }
         return stringBuilder.toString();
     }
@@ -92,8 +98,8 @@ public class LinkedList_Template {
         return head == null;
     }
 
-    public boolean searchThrough(Object element){
-        Object searchedData = null;
+    public boolean searchThrough(T element){
+        T searchedData = null;
         Node searchedObject = head;
 
         while (searchedObject != null && searchedData == null ){
@@ -111,7 +117,6 @@ public class LinkedList_Template {
         Node searchedElement = head;
 
         while(searchedElement != null){
-            System.out.println(searchedElement.getData().toString());
             searchedElement = searchedElement.getNext();
         }
 

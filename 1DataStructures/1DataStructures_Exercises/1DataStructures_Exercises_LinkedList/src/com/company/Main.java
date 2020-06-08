@@ -14,10 +14,11 @@ public class Main {
         linkedListToReverse.insertAtEnd("B");
         linkedListToReverse.insertAtEnd("C");
 
-        Collections_18_RemoveDuplicatesFromLinkedList.removeDuplicates(linkedListToReverse);
+//        Collections_18_RemoveDuplicatesFromLinkedList.removeDuplicates(linkedListToReverse);
 
         Collections_15_ReverseLinkedList col15 = new Collections_15_ReverseLinkedList(linkedListToReverse);
 
+        
 
 
     }
