@@ -1,101 +1,77 @@
 package com.company;
 
 import java.util.Stack;
+import com.company.LinkedList_Template.Node;
 
 public class Collections_15_ReverseALinkedList {
 
 
-    public static LinkedList_Template reverseLinkedList (LinkedList_Template inputLinkedList){
-
-
-
-//        Input: Head of following linked list
-//        1->2->3->4->NULL
-//        Output: Linked list should be changed to,
-//        4->3->2->1->NULL
+    public void reverseLinkedList (LinkedList_Template inputLinkedList){
 
         /*
-                NA PAPIERZE:
+                PAPIER:
 
-                tmpStack = new Stack();
+                Input: Head of following linked list
+                1->2->3->4->NULL
+                Output: Linked list should be changed to,
+                4->3->2->1->NULL
 
-                Tworzę zmienną prev, której przypisuję wartość NULL.
+                Mam trzy wskaźniki :
 
-                Tworzę wartość current której przypisuje pierwszy element listy, czyli 1
-                Tworzę wartość next, której przypisuje current.nextElement(), czyli 2
+                prev = null;
+                curr = head; {1}
+                next = head.getNext {2}
 
+                Robię pętlę while (curr != null)
 
-                while(current != null)
-                1 iteracja:
+                curr.setNext(prev)
 
-                current.setNext = prev()
-                // czyli 1 ma nextElement null
+                //   1->NULL 2->3->4->NULL
 
-                outputlinkedList.add current
-                // czyli dodaję 1 -> do stacka
+                prev = curr;
+                curr = next
+                if (curr != null ) next = curr.getNext; else next = null;
 
-                prev = current {3}
-                current = next{4}
+                // 2 iteracja:
 
-                jeśli current nie równe null
-                    next = current.getNext(); {4}
-                else
-                    next = null
-
-
-                potem dodaję elementy ze stacka robiąc insertAtEnd na linkedLiście
+                    prev {1}
+                    curr {2}
+                    next {3}
+                }
          */
 
-        /*
-        PSEUDOKOD:
+        Node prev = null;
+        Node curr = inputLinkedList.getFirstElement();
+        Node next = curr.getNext();
 
 
-                Node prev = null;
-                Node curr = ll.getHead();
-                Node next = curr.getNext();
+        Stack<Node> tmpStakc = new Stack<>();
 
-                while(curr != null)
-                    current.setNext = prev
-                    outputStack.push  current
+        while(curr != null){
 
-                    prev = curr
-                    current = next
 
-                    if(curr != null)
-                        next = curr.getNext
-                    else
-                        next = null
-
-                    while(!outputStack.isEmpty)
-                        outputLinkedList.insertAtEnd(outputStack.pop)
-
-         */
-
-        LinkedList_Template.Node prev = null;
-        LinkedList_Template.Node curr = inputLinkedList.getFirstElement();
-
-        LinkedList_Template.Node next = curr != null? curr.getNext() : null;
-
-        Stack<Object> tmpStack = new Stack<>();
-
-        while (curr != null){
 
             curr.setNext(prev);
-            tmpStack.push(curr);
+
+            tmpStakc.push(curr);
 
             prev = curr;
             curr = next;
             next = curr != null ? curr.getNext() : null;
 
-        }
-
-        LinkedList_Template outputLinkedList = new LinkedList_Template();
-        while(!tmpStack.isEmpty()){
-            outputLinkedList.insertAtEnd(tmpStack.pop());
 
         }
-        return outputLinkedList;
+
+        LinkedList_Template outputTemplateLinketList = new LinkedList_Template();
+        while(!tmpStakc.isEmpty()){
+            outputTemplateLinketList.insertAtEnd(tmpStakc.pop().getData());
+        }
+
+        outputTemplateLinketList.printLinkedList();
+
+//        System.out.println("This is whole inputLinkedList after reversion : " + ;
 
     }
+
 
 }

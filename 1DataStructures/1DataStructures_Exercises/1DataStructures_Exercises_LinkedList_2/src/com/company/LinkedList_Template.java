@@ -117,6 +117,8 @@ public class LinkedList_Template <T> {
         Node searchedElement = head;
 
         while(searchedElement != null){
+
+            System.out.println(searchedElement.getData().toString());
             searchedElement = searchedElement.getNext();
         }
 
