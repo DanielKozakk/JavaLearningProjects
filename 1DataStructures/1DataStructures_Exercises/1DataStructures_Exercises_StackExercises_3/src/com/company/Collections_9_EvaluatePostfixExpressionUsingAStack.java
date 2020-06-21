@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -24,30 +25,62 @@ public class Collections_9_EvaluatePostfixExpressionUsingAStack {
 
 
      */
+//String toEvaluate = "10 2 8 * + 3 -";
 
 
     int evaluate(String inputExpression) {
 
         String specialSignsPattern = "[+\\-*/]";
         Pattern checkRegex = Pattern.compile(specialSignsPattern);
+        StringBuilder stringBuilder = new StringBuilder();
+        Stack<Integer> outputStack = new Stack<>();
+
 
         for (int i = 0; i < inputExpression.length(); i++) {
 
+
             String ch = String.valueOf(inputExpression.charAt(i));
-            StringBuilder stringBuilder = new StringBuilder();
 
             if (ch.equals(" ")) {
 
                 String previousSign = String.valueOf(inputExpression.charAt(i - 1));
                 Matcher matcher = checkRegex.matcher(previousSign);
 
-                while (matcher.find()) {
+                if (matcher.find()) {
                     if (matcher.group().length() != 0) {
-                        System.out.println(matcher.group().trim());
+                        System.out.println("Poprzedni znak to znak specjalny a obecny to spacja w indeksie  " + i);
+                        continue;
                     }
+                } else {
+                    outputStack.push(Integer.parseInt(stringBuilder.toString()));
+                    stringBuilder = new StringBuilder();
                 }
+            } else if(checkRegex.matcher(ch).find()){
+
+//                System.out.println("output stack : "+outputStack.toString());
+                Integer secondNumber = outputStack.pop();
+                Integer firstNumber = outputStack.pop();
+
+                Integer outputNumber = switch (ch) {
+                    case "+" -> firstNumber + secondNumber;
+                    case "-" -> firstNumber - secondNumber;
+                    case "*" -> firstNumber * secondNumber;
+                    case "/" -> firstNumber / secondNumber;
+                    default -> 0;
+                };
+
+                outputStack.push(outputNumber);
+            } else {
+                System.out.println("Zadziałałem i dodałem liczbę " + ch);
+                stringBuilder.append(ch);
+                System.out.println("teraz string buldier to : " + stringBuilder.toString());
+
             }
+
         }
+
+        System.out.println(outputStack.toString());
+
         return 0;
     }
 
