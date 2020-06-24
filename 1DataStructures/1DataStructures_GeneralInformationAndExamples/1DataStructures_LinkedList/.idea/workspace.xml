@@ -20,12 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c14ab251-774f-416d-94ad-dc21bc1abcde" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +38,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../1DataStructures_Exercises/1DataStructures_Exercises_LinkedList_2" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -84,12 +80,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="771" y="295" width="790" height="596" key="FileChooserDialogImpl" timestamp="1589972316596">
+    <state x="771" y="295" width="790" height="596" key="FileChooserDialogImpl" timestamp="1593000191440">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="771" y="295" width="790" height="596" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1589972316596" />
+    <state x="771" y="295" width="790" height="596" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1593000191440" />
     <state width="1807" height="278" key="GridCell.Tab.0.bottom" timestamp="1589972319269">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -106,10 +103,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1807" height="278" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1589972319269" />
-    <state x="302" y="154" width="1372" height="796" key="new project wizard" timestamp="1589972318229">
+    <state x="302" y="154" width="1372" height="796" key="new project wizard" timestamp="1593000170591">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="302" y="154" width="1372" height="796" key="new project wizard/67.27.1853.1053@67.27.1853.1053" timestamp="1589972318229" />
+    <state x="302" y="154" width="1372" height="796" key="new project wizard/67.27.1853.1053@67.27.1853.1053" timestamp="1593000170591" />
     <state x="657" y="253" key="run.anything.popup" timestamp="1589972176046">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

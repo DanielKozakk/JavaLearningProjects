@@ -13,23 +13,24 @@ public class Main {
         ll.insertAtEnd("forth");
         ll.insertAtEnd("fifth");
 
-        Collections_15_ReverseALinkedList reversionClass = new Collections_15_ReverseALinkedList();
-        reversionClass.reverseLinkedList(ll);
+        LinkedList_Template<Integer> ll2 = new LinkedList_Template<Integer>();
 
-//        LinkedList_Template<String> reversed = Collections_15_ReverseALinkedList.reverseLinkedList(ll);
-//        LinkedList_Template.Node element = reversed.getFirstElement();
+        ll2.insertAtEnd( 1);
+        ll2.insertAtEnd( 1);
+        ll2.insertAtEnd( 2);
+        ll2.insertAtEnd( 3);
+        ll2.insertAtEnd( 4);
+        ll2.insertAtEnd( 4);
 
 
-//        while(element != null){
+//        Collections_15_ReverseALinkedList reversionClass = new Collections_15_ReverseALinkedList();
+//        reversionClass.reverseLinkedList(ll);
 //
-//            System.out.println(element.getData().toString());
-//            element = element.getNext();
-//
-//        }
+//        Collections_17_ReturnNthNodeFromTheEnd col17 = new Collections_17_ReturnNthNodeFromTheEnd();
+//        col17.returnNth(4, ll);
 
-
-
-
+        Collections_18_RemoveDuplicatesFromLinkedList col18 = new Collections_18_RemoveDuplicatesFromLinkedList();
+        col18.removeDuplicates(ll2);
 
 
     }
