@@ -27,6 +27,19 @@ public class LinkedList_Template <T> {
         }
     }
 
+    public int getSize(){
+
+        Node searchedElement = getFirstElement();
+        int size = 0;
+        while(searchedElement != null){
+            size ++;
+            searchedElement = searchedElement.getNext();
+        }
+
+        return size;
+
+    }
+
     public void delete(){
         Node lastElement = findLastElement();
         Node searchedElement = head;

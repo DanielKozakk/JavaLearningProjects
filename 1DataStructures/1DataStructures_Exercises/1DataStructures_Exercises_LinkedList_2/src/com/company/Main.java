@@ -16,9 +16,9 @@ public class Main {
         LinkedList_Template<Integer> ll2 = new LinkedList_Template<Integer>();
 
         ll2.insertAtEnd( 1);
-        ll2.insertAtEnd( 1);
-        ll2.insertAtEnd( 2);
-        ll2.insertAtEnd( 3);
+//        ll2.insertAtEnd( 1);
+//        ll2.insertAtEnd( 2);
+//        ll2.insertAtEnd( 3);
         ll2.insertAtEnd( 4);
         ll2.insertAtEnd( 4);
 
