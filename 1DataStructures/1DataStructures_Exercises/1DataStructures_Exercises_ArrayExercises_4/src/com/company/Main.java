@@ -29,7 +29,12 @@ public class Main {
 
 
         Collections_2_FirstNonRepeatingIntegerInArray col2 = new Collections_2_FirstNonRepeatingIntegerInArray();
-        col2.findFirstNonRepeating(arr4);
+//        col2.findFirstNonRepeating(arr4);
+
+        int [] arr5 = {-1, 2, -3, 4, 5, 6, -7, 8, 9};
+
+        Collections_4_RearrangePositiveAndNegativeValuesInArray col4 = new Collections_4_RearrangePositiveAndNegativeValuesInArray();
+        col4.rearrange(arr5);
 
 
     }
