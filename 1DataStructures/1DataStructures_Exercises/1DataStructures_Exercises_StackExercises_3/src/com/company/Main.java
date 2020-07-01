@@ -33,7 +33,17 @@ public class Main {
         stackToSort_2.push(8);
 
         Collections_10_SortAStackUsingTemporaryStack col10 = new Collections_10_SortAStackUsingTemporaryStack();
-        col10.sort(stackToSort_2);
+//        col10.sort(stackToSort_2);
+
+//        String inputString1 = "[()]{}{[()()]()}";
+        String inputString1 = "[()]{}{[()()]()}";
+        String inputString2 = "[(])";
+
+        Collections_11_UseStackToCheckForBalancedParanthesesInAnExpression col11 = new Collections_11_UseStackToCheckForBalancedParanthesesInAnExpression();
+        System.out.println(col11.checkForBalance(inputString1));
+        System.out.println(col11.checkForBalance(inputString2));
+
+//        col11.checkForBalance(inputString1);
 
 
     }
