@@ -26,8 +26,10 @@ public class Main {
         input1.add(90);
         input1.add(100);
 
-        col13.reverseFirstKElement(10, input1);
+//        col13.reverseFirstKElement(10, input1);
 
+        Collections_14_GenerateBinaryNumbersFrom1ToNUsingQueue col14 = new Collections_14_GenerateBinaryNumbersFrom1ToNUsingQueue();
+        col14.generate(1);
     }
 
 }
