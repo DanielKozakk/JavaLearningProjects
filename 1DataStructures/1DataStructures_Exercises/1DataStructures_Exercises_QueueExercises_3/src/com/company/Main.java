@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -10,20 +13,20 @@ public class Main {
 //        Input : Q = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 //        Input : Q = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
-        LinkedList_Template input1 = new LinkedList_Template();
+        Queue<Integer> input1 = new LinkedList();
 
-        input1.insertAtHead(10);
-        input1.insertAtHead(20);
-        input1.insertAtHead(30);
-        input1.insertAtHead(40);
-        input1.insertAtHead(50);
-        input1.insertAtHead(60);
-        input1.insertAtHead(70);
-        input1.insertAtHead(80);
-        input1.insertAtHead(90);
-        input1.insertAtHead(100);
+        input1.add(10);
+        input1.add(20);
+        input1.add(30);
+        input1.add(40);
+        input1.add(50);
+        input1.add(60);
+        input1.add(70);
+        input1.add(80);
+        input1.add(90);
+        input1.add(100);
 
-        col13.reverseFirstKElement(2, input1);
+        col13.reverseFirstKElement(10, input1);
 
     }
 

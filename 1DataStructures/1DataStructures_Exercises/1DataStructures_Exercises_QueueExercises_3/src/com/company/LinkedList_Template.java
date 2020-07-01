@@ -67,7 +67,7 @@ public class LinkedList_Template <T> {
         }
     }
 
-    public void insertAtHead(T elementToInsert){
+    public void add(T elementToInsert){
 
         if (head == null){
             head = new Node(elementToInsert, null);
