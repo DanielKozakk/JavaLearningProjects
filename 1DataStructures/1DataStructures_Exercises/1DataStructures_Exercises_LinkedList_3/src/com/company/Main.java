@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Collection;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -15,7 +13,8 @@ public class Main {
 
         Collections_15_ReverseALiknedList col15 = new Collections_15_ReverseALiknedList();
 
-        ll.printLinkedList();
-//        col15.reverseALinkedList(ll);
+        Collections_17_ReturnNthElementFromTheEndLinkedList col17 = new Collections_17_ReturnNthElementFromTheEndLinkedList();
+
+        col17.returnNthElement(4, ll);
     }
 }
