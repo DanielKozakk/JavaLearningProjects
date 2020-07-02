@@ -29,7 +29,24 @@ public class Main {
 //        col13.reverseFirstKElement(10, input1);
 
         Collections_14_GenerateBinaryNumbersFrom1ToNUsingQueue col14 = new Collections_14_GenerateBinaryNumbersFrom1ToNUsingQueue();
-        col14.generate(1);
+//        col14.generate(1);
+
+        Collections_12_ImplementStackUsingQueues<Integer> col12 = new Collections_12_ImplementStackUsingQueues<>();
+        col12.push(1);
+        col12.push(2);
+        col12.push(3);
+        System.out.println(col12.peek());
+        col12.pop();
+        col12.push(123);
+        col12.push(123);
+        col12.push(123);
+        col12.push(123);
+        col12.push(123);
+        System.out.println(col12.peek());
+
+        System.out.println(col12.getSize());
+
+
     }
 
 }
