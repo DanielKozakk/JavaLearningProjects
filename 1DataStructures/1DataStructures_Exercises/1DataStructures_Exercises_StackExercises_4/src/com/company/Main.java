@@ -17,8 +17,11 @@ public class Main {
         inputStack.push(1);
         inputStack.push(23);
 
-        col10.sortingStack(inputStack);
+//        col10.sortingStack(inputStack);
 
+        String postfixExpression = "10 2 8 * + 3 -";
+        Collections_9_EvaluatePostfixExpressionUsingAStack col9 = new Collections_9_EvaluatePostfixExpressionUsingAStack();
+        col9.evaluate(postfixExpression);
 
 
 
