@@ -15,7 +15,7 @@ public class Main {
 
         Collections_17_ReturnNthElementFromTheEndLinkedList col17 = new Collections_17_ReturnNthElementFromTheEndLinkedList();
 
-        col17.returnNthElement(4, ll);
+//        col17.returnNthElement(4, ll);
 
 
 //        12->11->12->21->41->43->21
@@ -23,6 +23,9 @@ public class Main {
 
 
         LinkedList_Template<Integer> ll2 = new LinkedList_Template();
+
+        ll2.insertAtEnd(1);
+        ll2.insertAtEnd(2);
 
         ll2.insertAtEnd(12);
         ll2.insertAtEnd(11);
