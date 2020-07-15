@@ -16,7 +16,18 @@ public class Main {
         adjeacencyListGraph.addEdge(0, 2);
         adjeacencyListGraph.addEdge(2, 3);
 
-        adjeacencyListGraph.showContentWithDepthFirstTraversalAlgorithm();
+//        adjeacencyListGraph.showContentWithDepthFirstTraversalAlgorithm();
+
+        AdjacencyMatrixGraph adjMatrixGraph = new AdjacencyMatrixGraph(3);
+
+        adjMatrixGraph.addVertex("A");
+        adjMatrixGraph.addVertex("B");
+        adjMatrixGraph.addVertex("C");
+
+        adjMatrixGraph.addEdge(0,1);
+        adjMatrixGraph.addEdge(0,2);
+
+        System.out.println(adjMatrixGraph.getEdges());
 
     }
 }

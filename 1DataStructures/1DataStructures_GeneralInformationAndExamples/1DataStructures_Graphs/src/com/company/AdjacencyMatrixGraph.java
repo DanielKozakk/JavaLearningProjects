@@ -71,6 +71,35 @@ public class AdjacencyMatrixGraph {
         }
     }
 
+    public void showContentWithDepthFirstTraversalAlgorithm (){
+
+        Stack<Vertex> stack = new Stack<>();
+        Vertex searchedVertex = listOfVertex[0];
+        System.out.println(searchedVertex.dataToStore);
+
+        searchedVertex.isVisited = true;
+        stack.push(searchedVertex);
+
+        while(!stack.isEmpty()){
+
+            for(int i = 0; i < adjMatrix.length; i ++){
+
+                for(int j = 0; j < adjMatrix[i].length ; j ++){
+
+                    if(i != j){
+                        if(!listOfVertex[j].isVisited){
+                            stack.push(listOfVertex[j]);
+
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
 
 
 
