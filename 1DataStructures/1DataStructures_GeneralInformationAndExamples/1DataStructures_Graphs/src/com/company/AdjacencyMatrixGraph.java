@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Stack;
+
 public class AdjacencyMatrixGraph {
     private final int numberOfVertecies;
     private final boolean[][] adjMatrix;
@@ -60,6 +62,7 @@ public class AdjacencyMatrixGraph {
     }
 
     private class Vertex {
+        boolean isVisited = false;
         int id;
         Object dataToStore;
         private Vertex(int id, Object data) {
@@ -67,6 +70,8 @@ public class AdjacencyMatrixGraph {
             this.dataToStore = data;
         }
     }
+
+
 
 
 }
