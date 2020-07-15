@@ -62,7 +62,7 @@ public class AdjacencyMatrixGraph {
         return s.toString();
     }
 
-    class Vertex {
+    private class Vertex {
         int id;
         Object dataToStore;
         private Vertex(int id, Object data) {
