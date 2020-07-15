@@ -26,7 +26,7 @@ public class AdjacencyMatrixGraph {
     }
 
     // Add edges
-    public void addEdge(int i, int j) {
+    public void addEdge(Integer i, Integer j) {
 
         if (listOfVertex[i] != null && listOfVertex[j] != null) {
 
@@ -38,7 +38,7 @@ public class AdjacencyMatrixGraph {
     }
 
     // Remove edges
-    public void removeEdge(int i, int j) {
+    public void removeEdge(Integer i, Integer j) {
         if (listOfVertex[i] != null && listOfVertex[j] != null) {
 
             adjMatrix[i][j] = false;
@@ -47,7 +47,7 @@ public class AdjacencyMatrixGraph {
     }
 
     // Print the matrix
-    public String toString() {
+    public String getEdges() {
         StringBuilder s = new StringBuilder();
         for (int i = 0; i < numberOfVertecies; i++) {
             s.append(i + ": ");

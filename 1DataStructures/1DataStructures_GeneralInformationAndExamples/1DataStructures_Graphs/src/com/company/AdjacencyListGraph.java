@@ -59,7 +59,7 @@ public class AdjacencyListGraph {
     }
 
     // Print the matrix
-    public String toString() {
+    public String getEdges() {
         StringBuilder s = new StringBuilder();
         for (int i = 0; i < numberOfVertecies; i++) {
 
