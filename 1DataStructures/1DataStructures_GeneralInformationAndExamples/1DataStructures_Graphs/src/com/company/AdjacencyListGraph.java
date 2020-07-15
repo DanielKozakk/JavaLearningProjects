@@ -100,7 +100,7 @@ public class AdjacencyListGraph {
              boolean isVertexExploied = true;
                 for(int id : searchedVertex)
 
-                    if !listOfVertecies[id].isVisible
+                    if !listOfVertecies[id].isVisited
 
                         println its content
 
@@ -119,24 +119,28 @@ public class AdjacencyListGraph {
         Stack<Vertex> stack = new Stack<>();
         Vertex searchedVertex = listOfVertex[0];
         System.out.println(searchedVertex.dataToStore);
+        searchedVertex.isVisited = true;
         stack.push(searchedVertex);
 
-        while(!stack.isEmpty()){
 
-            boolean isVertexExploited = true;
-            for(int id : searchedVertex.adjacencyList){
+        while (!stack.isEmpty()) {
 
-                if(!listOfVertex[id].isVisited){
+            boolean shouldVertexBeRemovedFromStack = true;
+            for (int id : searchedVertex.adjacencyList) {
+
+                Vertex connectedVertex = listOfVertex[id];
+                if (!connectedVertex.isVisited) {
                     System.out.println(listOfVertex[id].dataToStore);
                     stack.push(listOfVertex[id]);
+                    connectedVertex.isVisited = true;
                     searchedVertex = listOfVertex[id];
-                    isVertexExploited = false;
+                    shouldVertexBeRemovedFromStack = false;
                     break;
                 }
             }
-            if(isVertexExploited){
+            if (shouldVertexBeRemovedFromStack) {
                 stack.pop();
-                if(!stack.isEmpty()) searchedVertex = stack.peek();
+                if (!stack.isEmpty()) searchedVertex = stack.peek();
             }
 
         }
