@@ -24,6 +24,9 @@ public class AdjacencyMatrixGraph {
             listOfVertex[ID] = newVertex;
             ID++;
             verteciesRemains--;
+        } else {
+
+            System.out.println("Vertex limit was reached!");
         }
     }
 
@@ -65,42 +68,44 @@ public class AdjacencyMatrixGraph {
         boolean isVisited = false;
         int id;
         Object dataToStore;
+
         private Vertex(int id, Object data) {
             this.id = id;
             this.dataToStore = data;
         }
     }
 
-    public void showContentWithDepthFirstTraversalAlgorithm (){
+    public void showContentWithDepthFirstTraversalAlgorithm() {
+
 
         Stack<Vertex> stack = new Stack<>();
-        Vertex searchedVertex = listOfVertex[0];
-        System.out.println(searchedVertex.dataToStore);
+        System.out.println(listOfVertex[0].dataToStore);
+        listOfVertex[0].isVisited = true;
+        stack.push(listOfVertex[0]);
 
-        searchedVertex.isVisited = true;
-        stack.push(searchedVertex);
+        while (!stack.isEmpty()) {
 
-        while(!stack.isEmpty()){
+            for (int searchedVertexIndex = 0; searchedVertexIndex < adjMatrix.length; searchedVertexIndex++) {
 
-            for(int i = 0; i < adjMatrix.length; i ++){
+                boolean isSearchedVertexExploited = true;
+                for (int connectedVertexIndex = 0; connectedVertexIndex < adjMatrix[searchedVertexIndex].length; connectedVertexIndex++) {
 
-                for(int j = 0; j < adjMatrix[i].length ; j ++){
+                    if (searchedVertexIndex != connectedVertexIndex && !listOfVertex[connectedVertexIndex].isVisited) {
+                        listOfVertex[connectedVertexIndex].isVisited = true;
+                        stack.push(listOfVertex[connectedVertexIndex]);
+                        searchedVertexIndex = connectedVertexIndex;
+                        isSearchedVertexExploited = false;
+                        System.out.println(listOfVertex[searchedVertexIndex].dataToStore);
+                        break;
 
-                    if(i != j){
-                        if(!listOfVertex[j].isVisited){
-                            stack.push(listOfVertex[j]);
-
-                        }
                     }
 
                 }
 
+                if(isSearchedVertexExploited){
+                    if (!stack.isEmpty()) stack.pop();
+                }
             }
-
         }
-
     }
-
-
-
 }

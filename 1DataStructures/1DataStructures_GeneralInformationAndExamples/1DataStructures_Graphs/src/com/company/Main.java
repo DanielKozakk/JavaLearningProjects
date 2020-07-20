@@ -18,16 +18,20 @@ public class Main {
 
 //        adjeacencyListGraph.showContentWithDepthFirstTraversalAlgorithm();
 
-        AdjacencyMatrixGraph adjMatrixGraph = new AdjacencyMatrixGraph(3);
+        AdjacencyMatrixGraph adjMatrixGraph = new AdjacencyMatrixGraph(4);
 
         adjMatrixGraph.addVertex("A");
         adjMatrixGraph.addVertex("B");
         adjMatrixGraph.addVertex("C");
+        adjMatrixGraph.addVertex("D");
 
         adjMatrixGraph.addEdge(0,1);
         adjMatrixGraph.addEdge(0,2);
+        adjMatrixGraph.addEdge(1,3);
 
-        System.out.println(adjMatrixGraph.getEdges());
+//        System.out.println(adjMatrixGraph.getEdges());
+
+        adjMatrixGraph.showContentWithDepthFirstTraversalAlgorithm();
 
     }
 }
