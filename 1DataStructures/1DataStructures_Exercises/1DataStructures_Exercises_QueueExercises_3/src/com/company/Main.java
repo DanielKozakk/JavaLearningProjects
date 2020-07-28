@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         Collections_14_GenerateBinaryNumbersFrom1ToN col14 = new Collections_14_GenerateBinaryNumbersFrom1ToN();
-        col14.generate(5);
+        col14.generate(2);
 
     }
 }
