@@ -13,39 +13,68 @@ public class Collections_18_RemoveDuplicatesFromLinkedList {
         /*
             papier:
 
+            firstSearchedElement to pierwszy element inputLinkedList
 
+            previousElement = firstSearchedElement;
+            secondSearchedElement = firstSearchedElement.getNext
+            nextElement = secondSearchedElement.getNext();
 
-            baseElemenet = getFirstElement;
+            robię pętlę while, w której warunkiem jest to, że firstSearchedElement nie jest null
 
-            prev = getFirstElement()
-            curr = prev.getNext.
-            next = curr.getNext();
+                robię wewnętrzną pętlę while, w której warunkiem jest to, że secondSearchedElement nie jest null
 
-            Iteruję się brute force po elementach
+                jeśli firstSearchedElement.getData.equals(secondSearchedElement.getDAta())
 
-             first loop, while baseElement != null
+                      previousElement.setNext(nextElement);
+                      seconSearchedElement = nextElement
+                      nextElement = secondSearchedElement != null? secondSearchedElement.getNext() : null;
 
-                second loop while curr != null
+                      continue
 
-                    if baseElement.getData is equal to curr.getData
-                            prev.setNext(next)
+                previousElement = secondSearchedElement
+                secondSearchedElemenet = nextElement
+                nextElement = secondSearchedElement.getNExt();
 
-
-              12->11->12->12->21->41->43->21
+             fistSearchedElement = firstSearchedElement.getNext
+             secondSearchedElement = firstSearchedElement.getNext
          */
 
+        LinkedList_Template.Node firstSearchedElement = inputLinkedList.getFirstElement();
 
-        LinkedList_Template.Node baseElement = inputLinkedList.getFirstElement();
-
-        LinkedList_Template.Node prev = baseElement;
-        LinkedList_Template.Node elementToCompare = baseElement.getNext();
-        LinkedList_Template.Node next = elementToCompare.getNext();
-
+        LinkedList_Template.Node previousElement = firstSearchedElement;
+        LinkedList_Template.Node secondSearchedElement = firstSearchedElement.getNext();
+        LinkedList_Template.Node nextElement = secondSearchedElement != null ? secondSearchedElement.getNext() : null;
 
 
-        System.out.println(inputLinkedList.getSize());
 
+        while(firstSearchedElement != null){
+
+//            System.out.println("To jest firstSearchedElement : " + firstSearchedElement.getData());
+
+            while(secondSearchedElement != null){
+
+                if(firstSearchedElement.getData().equals(secondSearchedElement.getData())){
+                    previousElement.setNext(nextElement);
+
+                } else {
+                    previousElement = secondSearchedElement;
+                }
+                secondSearchedElement = nextElement;
+                nextElement = secondSearchedElement != null ? secondSearchedElement.getNext() : null;
+            }
+            firstSearchedElement = firstSearchedElement.getNext();
+
+            previousElement = firstSearchedElement;
+            secondSearchedElement = firstSearchedElement != null ? firstSearchedElement.getNext() : null;
+            nextElement = secondSearchedElement != null ? secondSearchedElement.getNext() : null;
+
+            System.out.println("");
+        }
+        inputLinkedList.printLinkedList();
     }
+
+
+
 
 }
 

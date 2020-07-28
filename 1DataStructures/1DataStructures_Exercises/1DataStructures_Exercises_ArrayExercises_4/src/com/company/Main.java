@@ -3,23 +3,38 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-
-        //    Input : arr1[] = {1, 3, 4, 5, 7}
-//    arr2[] = {2, 3, 5, 6}
-//    Output :
+//        Input : -1 2 -1 3 2
+//        Output : 3
+//        Explanation : The first number that does not
+//        repeat is : 3
 //
-//    Union : {1, 2, 3, 4, 5, 6, 7}
-//    Intersection : {3, 5}
-//
+//        Input : 9 4 9 6 7 4
+//        Output : 6
 
-        //    Input : arr1[] = {2, 5, 6}
-//    arr2[] = {4, 6, 8, 10}
-//    Output : Union : {2, 4, 5, 6, 8, 10}
-//    Intersection : {6}
 
         int [] arr1 = {2,5,6};
         int [] arr2 = {4,6,8,10};
-        Collections_8_UnionAndIntersection.intersectionAndUnion(arr1,arr2);
+//        Collections_8_UnionAndIntersection.intersectionAndUnion(arr1,arr2);
+
+        int [] arr3 = {-1,2,-1,3,2};
+        int [] arr4 = {9,4,9,6,7,4};
+
+        //    Input : -1 2 -1 3 2
+//    Output : 3
+//    Explanation : The first number that does not
+//    repeat is : 3
+//
+//    Input : 9 4 9 6 7 4
+//    Output : 6
+
+
+        Collections_2_FirstNonRepeatingIntegerInArray col2 = new Collections_2_FirstNonRepeatingIntegerInArray();
+//        col2.findFirstNonRepeating(arr4);
+
+        int [] arr5 = {-1, 2, -3, 4, 5, 6, -7, 8, 9};
+
+        Collections_4_RearrangePositiveAndNegativeValuesInArray col4 = new Collections_4_RearrangePositiveAndNegativeValuesInArray();
+        col4.rearrange(arr5);
 
 
     }
