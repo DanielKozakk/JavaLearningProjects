@@ -15,7 +15,8 @@ public class Main {
 
     Collections_15_ReverseALinkedList<Integer> collections_15_reverseALinkedList = new Collections_15_ReverseALinkedList<>();
 
-    collections_15_reverseALinkedList.reverse(inputLinkedList);
-
+//    collections_15_reverseALinkedList.reverse(inputLinkedList);
+    Collections_17_ReturnNthElementFromEndOfLinkedList col17 = new Collections_17_ReturnNthElementFromEndOfLinkedList();
+    col17.returnNthElemenbt(5, inputLinkedList);
     }
 }
