@@ -25,7 +25,7 @@ public class Main {
         stack_2.push(2);
         stack_2.push(8);
 
-        Collections_10_SortStackUsingAnotherStack col10 = new Collections_10_SortStackUsingAnotherStack();
+        Collections_10_v2_SortStackUsingTemporaryStack col10 = new Collections_10_v2_SortStackUsingTemporaryStack();
         col10.sort(stack_2);
     }
 }
