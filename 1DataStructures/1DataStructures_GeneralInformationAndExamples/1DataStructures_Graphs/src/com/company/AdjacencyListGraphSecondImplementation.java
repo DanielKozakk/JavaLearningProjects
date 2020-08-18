@@ -8,7 +8,7 @@ public class AdjacencyListGraphSecondImplementation {
     public int graphSize;
     public int vertexRemains;
 
-    static private int VertexID = 0;
+    private int VertexID = 0;
     public Vertex[] vertecies;
 
     public AdjacencyListGraphSecondImplementation(int graphSize) {
