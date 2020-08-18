@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class AdjacencyListGraph {
+public class DontEnterHereStupid {
 
     private final int numberOfVertecies;
 
@@ -13,7 +13,7 @@ public class AdjacencyListGraph {
 
     private Vertex[] listOfVertex;
 
-    public AdjacencyListGraph(int numberOfVertex) {
+    public DontEnterHereStupid(int numberOfVertex) {
         this.numberOfVertecies = numberOfVertex;
         this.verteciesRemains = numberOfVertex;
 

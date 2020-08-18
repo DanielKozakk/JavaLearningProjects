@@ -5,33 +5,26 @@ public class Main {
     public static void main(String[] args) {
 
 
-        AdjacencyListGraph adjeacencyListGraph = new AdjacencyListGraph(4);
 
-        adjeacencyListGraph.addVertex("A");
-        adjeacencyListGraph.addVertex("B");
-        adjeacencyListGraph.addVertex("C");
-        adjeacencyListGraph.addVertex("D");
+        AdjacencyListGraphSecondImplementation graph = new AdjacencyListGraphSecondImplementation(3);
+        graph.addVertex("Pierwszy");
+        graph.addVertex("Drugi");
+        graph.addVertex("Pierwszy");
 
-        adjeacencyListGraph.addEdge(0, 1);
-        adjeacencyListGraph.addEdge(0, 2);
-        adjeacencyListGraph.addEdge(2, 3);
+        graph.addEdge(0, 1);
+        graph.addEdge(0, 2);
+        graph.addEdge(1, 0);
+        graph.addEdge(2, 0);
 
-//        adjeacencyListGraph.showContentWithDepthFirstTraversalAlgorithm();
+        System.out.println(graph.getEdges());
 
-        AdjacencyMatrixGraph adjMatrixGraph = new AdjacencyMatrixGraph(4);
+        graph.removeEdge(0,1);
 
-        adjMatrixGraph.addVertex("A");
-        adjMatrixGraph.addVertex("B");
-        adjMatrixGraph.addVertex("C");
-        adjMatrixGraph.addVertex("D");
+        System.out.println(graph.getEdges());
 
-        adjMatrixGraph.addEdge(0,1);
-        adjMatrixGraph.addEdge(0,2);
-        adjMatrixGraph.addEdge(1,3);
 
-//        System.out.println(adjMatrixGraph.getEdges());
 
-        adjMatrixGraph.showContentWithDepthFirstTraversalAlgorithm();
+
 
     }
 }

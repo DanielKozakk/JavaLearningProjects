@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Stack;
 
-public class AdjacencyMatrixGraph {
+public class DontEnterHereStupid2 {
     private final int numberOfVertecies;
     private final boolean[][] adjMatrix;
     public int verteciesRemains;
@@ -10,7 +10,7 @@ public class AdjacencyMatrixGraph {
 
     private Vertex[] listOfVertex;
 
-    public AdjacencyMatrixGraph(int numberOfVertex) {
+    public DontEnterHereStupid2(int numberOfVertex) {
         this.numberOfVertecies = numberOfVertex;
         this.verteciesRemains = numberOfVertex;
         adjMatrix = new boolean[numberOfVertecies][numberOfVertecies];
