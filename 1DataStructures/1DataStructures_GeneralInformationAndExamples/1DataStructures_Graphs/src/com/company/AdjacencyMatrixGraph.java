@@ -86,7 +86,6 @@ public class AdjacencyMatrixGraph {
         while (!stack.isEmpty()) {
 
             for (int searchedVertexIndex = 0; searchedVertexIndex < adjMatrix.length; searchedVertexIndex++) {
-
                 boolean isSearchedVertexExploited = true;
                 for (int connectedVertexIndex = 0; connectedVertexIndex < adjMatrix[searchedVertexIndex].length; connectedVertexIndex++) {
 
@@ -97,12 +96,9 @@ public class AdjacencyMatrixGraph {
                         isSearchedVertexExploited = false;
                         System.out.println(listOfVertex[searchedVertexIndex].dataToStore);
                         break;
-
                     }
-
                 }
-
-                if(isSearchedVertexExploited){
+                if (isSearchedVertexExploited) {
                     if (!stack.isEmpty()) stack.pop();
                 }
             }
