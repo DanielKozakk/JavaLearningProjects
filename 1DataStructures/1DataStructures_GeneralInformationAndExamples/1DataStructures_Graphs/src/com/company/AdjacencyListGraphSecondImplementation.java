@@ -126,12 +126,7 @@ public class AdjacencyListGraphSecondImplementation {
                     visitedVerteciesStack.pop();
                     searchedVertex = !visitedVerteciesStack.isEmpty() ? visitedVerteciesStack.peek() : null;
                 }
-
-
             }
-
         }
-
     }
-
 }

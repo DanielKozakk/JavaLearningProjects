@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Stack;
+
 public class AdjacencyMatrixGraphSecondImplementation {
 
     int graphSize;
@@ -20,10 +22,15 @@ public class AdjacencyMatrixGraphSecondImplementation {
 
     private class Vertex {
         int id;
+        boolean isVertexVisited = false;
 
         Vertex() {
             this.id = currentVertexID;
             currentVertexID++;
+        }
+
+        public void setVertexAsVisited() {
+            this.isVertexVisited = true;
         }
     }
 
@@ -38,7 +45,6 @@ public class AdjacencyMatrixGraphSecondImplementation {
         } else {
             System.out.println("Too much vertex nigga!");
         }
-
     }
 
     public void addEdge(int from, int to) {
@@ -71,24 +77,56 @@ public class AdjacencyMatrixGraphSecondImplementation {
 
             sb.append("ID: " + i + ", Edges: ");
 
-            for(int j = 0 ; j < adjacencyMatrix[i].length ; j++){
+            for (int j = 0; j < adjacencyMatrix[i].length; j++) {
 
-                if(adjacencyMatrix[i][j] != 0){
+                if (adjacencyMatrix[i][j] != 0) {
                     sb.append(j + ", ");
                 }
-
-
-
             }
             sb.append("\n");
         }
-
         return sb.toString();
-//        return "heh";
-
     }
 
+    public void depthFirstTraversalImplementation() {
+        if (verticies.length > 0) {
 
+            Stack<Vertex> visitedVertexStack = new Stack<>();
+            verticies[0].setVertexAsVisited();
+
+            System.out.println(verticies[0].id);
+
+            visitedVertexStack.push(verticies[0]);
+
+            Integer baseVertexId = 0;
+
+            while (!visitedVertexStack.empty()) {
+
+                boolean isBaseVertexExhausted = true;
+
+                for (int searchedVertexId = 0; searchedVertexId < adjacencyMatrix[baseVertexId].length; searchedVertexId++) {
+                    if (baseVertexId != searchedVertexId) {
+
+                        if (!verticies[searchedVertexId].isVertexVisited && adjacencyMatrix[baseVertexId][searchedVertexId] > 0) {
+
+                            System.out.println(verticies[searchedVertexId].id);
+                            verticies[searchedVertexId].setVertexAsVisited();
+                            visitedVertexStack.push(verticies[searchedVertexId]);
+                            baseVertexId = searchedVertexId;
+                            isBaseVertexExhausted = false;
+                            break;
+                        }
+                    }
+
+                }
+
+                if(isBaseVertexExhausted){
+                    visitedVertexStack.pop();
+                    baseVertexId = !visitedVertexStack.empty() ? visitedVertexStack.peek().id : null;
+                }
+            }
+        }
+    }
 }
 
 
