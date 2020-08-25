@@ -1,8 +1,6 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class AdjacencyListGraphSecondImplementation {
 
@@ -35,8 +33,7 @@ public class AdjacencyListGraphSecondImplementation {
     public void addEdge(int fromID, int toID) {
 
         if (vertecies[fromID] != null && vertecies[toID] != null) {
-            Vertex vertex = vertecies[fromID];
-            vertex.listOfEdges.add(toID);
+            vertecies[fromID].listOfEdges.add(toID);
         }
 
 
@@ -109,10 +106,10 @@ public class AdjacencyListGraphSecondImplementation {
             Vertex searchedVertex = vertecies[0];
             while (!visitedVerteciesStack.isEmpty()) {
 
-               boolean isVertexExhausted = true;
-                for(int i = 0; i < searchedVertex.listOfEdges.size() ; i ++){
+                boolean isVertexExhausted = true;
+                for (int i = 0; i < searchedVertex.listOfEdges.size(); i++) {
 
-                    if(!vertecies[searchedVertex.listOfEdges.get(i)].isVertexVisited){
+                    if (!vertecies[searchedVertex.listOfEdges.get(i)].isVertexVisited) {
                         searchedVertex = vertecies[searchedVertex.listOfEdges.get(i)];
                         System.out.println(searchedVertex.name);
                         isVertexExhausted = false;
@@ -122,10 +119,40 @@ public class AdjacencyListGraphSecondImplementation {
                     }
                 }
 
-                if(isVertexExhausted){
+                if (isVertexExhausted) {
                     visitedVerteciesStack.pop();
                     searchedVertex = !visitedVerteciesStack.isEmpty() ? visitedVerteciesStack.peek() : null;
                 }
+            }
+        }
+    }
+
+    public void breadthFirstTraversalImplementation() {
+
+        if (vertecies.length > 0) {
+            Queue<Vertex> visitedVerteciesQueue = new LinkedList<>();
+
+            Vertex searchedVertex = vertecies[0];
+            visitedVerteciesQueue.add(searchedVertex);
+            System.out.println(searchedVertex.name);
+            searchedVertex.setVertexAsVisited();
+
+            while (!visitedVerteciesQueue.isEmpty()) {
+
+
+                for (int i = 0; i < searchedVertex.listOfEdges.size(); i++) {
+
+                    Vertex neighbourVertex = vertecies[searchedVertex.listOfEdges.get(i)];
+                    if (!neighbourVertex.isVertexVisited) {
+
+                        System.out.println(neighbourVertex.name);
+                        neighbourVertex.setVertexAsVisited();
+                        visitedVerteciesQueue.add(neighbourVertex);
+                    }
+                }
+
+                visitedVerteciesQueue.poll();
+                searchedVertex = visitedVerteciesQueue.peek();
             }
         }
     }
