@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class AdjacencyMatrixGraphSecondImplementation {
@@ -23,10 +26,20 @@ public class AdjacencyMatrixGraphSecondImplementation {
     private class Vertex {
         int id;
         boolean isVertexVisited = false;
+        String name;
 
         Vertex() {
             this.id = currentVertexID;
             currentVertexID++;
+            this.name = String.valueOf(currentVertexID);
+        }
+
+        Vertex(String name) {
+            this.id = currentVertexID;
+            currentVertexID++;
+
+            this.name = name;
+
         }
 
         public void setVertexAsVisited() {
@@ -34,12 +47,18 @@ public class AdjacencyMatrixGraphSecondImplementation {
         }
     }
 
-    public void addVertex() {
+    public void addVertex(String name) {
 
         if (vertexRemains > 0) {
 
             vertexRemains--;
-            Vertex vertex = new Vertex();
+            Vertex vertex;
+            if(name.equals("")){
+                vertex = new Vertex();
+            } else {
+                vertex = new Vertex(name);
+            }
+
             verticies[vertex.id] = vertex;
 
         } else {
@@ -120,11 +139,52 @@ public class AdjacencyMatrixGraphSecondImplementation {
 
                 }
 
-                if(isBaseVertexExhausted){
+                if (isBaseVertexExhausted) {
                     visitedVertexStack.pop();
                     baseVertexId = !visitedVertexStack.empty() ? visitedVertexStack.peek().id : null;
                 }
             }
+        }
+    }
+
+    public void breadthFirstTraversalImplementation() {
+
+        if (verticies.length > 0) {
+            Queue<Vertex> visitedVerteciesQueue = new LinkedList<>();
+            Vertex searchedVertex = verticies[0];
+            System.out.println(searchedVertex.name);
+            searchedVertex.setVertexAsVisited();
+            visitedVerteciesQueue.add(searchedVertex);
+
+//            for(int a = 0; a < adjacencyMatrix.length; a ++){
+//                System.out.println(Arrays.toString(adjacencyMatrix[a]));
+//            }
+
+            while (!visitedVerteciesQueue.isEmpty()) {
+
+
+                for (int i = 0; i < adjacencyMatrix.length; i++) {
+
+
+                    for (int j = 0; j < adjacencyMatrix[searchedVertex.id].length; j++) {
+
+                        if(adjacencyMatrix[i][j] > 0 && i != j && !verticies[j].isVertexVisited){
+                            Vertex neighbourVertex = verticies[j];
+                            System.out.println(neighbourVertex.name);
+                            neighbourVertex.setVertexAsVisited();
+                            visitedVerteciesQueue.add(neighbourVertex);
+                        }
+                    }
+
+                    visitedVerteciesQueue.poll();
+                    searchedVertex = visitedVerteciesQueue.peek();
+
+
+                }
+
+
+            }
+
         }
     }
 }
