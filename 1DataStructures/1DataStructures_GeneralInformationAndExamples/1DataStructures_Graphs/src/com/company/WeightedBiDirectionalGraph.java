@@ -1,9 +1,6 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class WeightedBiDirectionalGraph {
 
@@ -37,9 +34,10 @@ public class WeightedBiDirectionalGraph {
 
         if (vertecies[pointAid] != null && vertecies[pointBid] != null) {
 
-            Edge edge = new Edge(pointAid, pointBid, weight);
-            vertecies[pointAid].addEdge(edge);
-            vertecies[pointBid].addEdge(edge);
+            Edge edge1 = new Edge(pointAid, pointBid, weight);
+            Edge edge2 = new Edge(pointBid, pointAid, weight);
+            vertecies[pointAid].addEdge(edge1);
+            vertecies[pointBid].addEdge(edge2);
 
         }
 
@@ -50,7 +48,7 @@ public class WeightedBiDirectionalGraph {
         StringBuilder sb = new StringBuilder();
         for (Vertex vertex : vertecies) {
 
-            sb.append("ID: " + vertex.ID + ", " + "Name: " + vertex.name + "\n");
+            sb.append("ID: " + vertex.id + ", " + "Name: " + vertex.name + "\n");
 
 
         }
@@ -59,13 +57,13 @@ public class WeightedBiDirectionalGraph {
 
 
     private class Vertex {
-        int ID = VertexID;
+        int id = VertexID;
         String name;
         ArrayList<Edge> listOfEdges = new ArrayList<>();
         boolean isVertexVisited = false;
 
         Vertex() {
-            this.name = String.valueOf(this.ID);
+            this.name = String.valueOf(this.id);
         }
 
         Vertex(String name) {
@@ -75,22 +73,73 @@ public class WeightedBiDirectionalGraph {
         public void setVertexAsVisited() {
             this.isVertexVisited = true;
         }
-        private  void addEdge(Edge edge){
-            listOfEdges.add(edge);
+
+        private void addEdge(Edge edge) {
+            if (!listOfEdges.contains(edge)) {
+                listOfEdges.add(edge);
+            }
         }
     }
 
     private class Edge {
 
-        Integer pointA;
-        Integer pointB;
+        Integer source;
+        Integer destination;
         Integer weight;
 
-        Edge(Integer pointA, Integer pointB, Integer weight){
-            this.pointA = pointA;
-            this.pointB = pointB;
+        Edge(Integer source, Integer destination, Integer weight) {
+            this.source = source;
+            this.destination = destination;
             this.weight = weight;
         }
+    }
+
+    public void shortestPath(Integer fromVertexID, Integer toVertexID) {
+
+        Map<Integer, Integer[]> pathInfoList = new HashMap<>();
+
+        List<Vertex> unvisitedVertex = new ArrayList<>();
+
+        for (Vertex vertex : vertecies) {
+                pathInfoList.put(vertex.id, new Integer[2]);
+                unvisitedVertex.add(vertex);
+        }
+
+        Vertex searchedVertex = vertecies[fromVertexID];
+        pathInfoList.get(fromVertexID)[0] = 0;
+        pathInfoList.get(fromVertexID)[1] = null;
+
+        while(!unvisitedVertex.isEmpty()) {
+
+            for (Edge edge : searchedVertex.listOfEdges) {
+                if(!vertecies[edge.destination].isVertexVisited) {
+
+                    Integer previousDistance = pathInfoList.get(edge.destination)[0];
+                    if(previousDistance == null){
+
+                        pathInfoList.get(edge.destination)[0] = edge.weight + pathInfoList.get(searchedVertex.id)[0];
+                        pathInfoList.get(edge.destination)[1] = edge.source;
+                    } else {
+
+                        Integer currentDistance = edge.weight + pathInfoList.get(searchedVertex.id)[0];
+
+                        if (previousDistance > currentDistance) {
+                            pathInfoList.get(edge.destination)[0] = edge.weight + pathInfoList.get(searchedVertex.id)[0];
+                            pathInfoList.get(edge.destination)[1] = edge.source;
+                        }
+                    }
+
+                }
+            }
+
+//            https://youtu.be/pVfj6mxhdMw / 4:09
+
+
+
+        }
+
+
+
 
 
     }
