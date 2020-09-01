@@ -101,21 +101,33 @@ public class WeightedBiDirectionalGraph {
         List<Vertex> unvisitedVertex = new ArrayList<>();
 
         for (Vertex vertex : vertecies) {
-                pathInfoList.put(vertex.id, new Integer[2]);
-                unvisitedVertex.add(vertex);
+            pathInfoList.put(vertex.id, new Integer[2]);
+            unvisitedVertex.add(vertex);
         }
 
         Vertex searchedVertex = vertecies[fromVertexID];
         pathInfoList.get(fromVertexID)[0] = 0;
         pathInfoList.get(fromVertexID)[1] = null;
 
-        while(!unvisitedVertex.isEmpty()) {
+        while (!unvisitedVertex.isEmpty()) {
+
+//
+            Integer nearestUnvisitedNeighbourId = null;
+            Integer nearestUnvisitedNeighbourWeight = null;
 
             for (Edge edge : searchedVertex.listOfEdges) {
-                if(!vertecies[edge.destination].isVertexVisited) {
+
+                if (!vertecies[edge.destination].isVertexVisited) {
+
+//                    w tym miejscu wybiera się następnego sąsiada, jest to wybór następnej najkrótszej drogi.
+                    if(nearestUnvisitedNeighbourId == null || edge.weight < nearestUnvisitedNeighbourWeight){
+                        nearestUnvisitedNeighbourId = edge.destination;
+
+                        nearestUnvisitedNeighbourWeight = edge.weight;
+                    }
 
                     Integer previousDistance = pathInfoList.get(edge.destination)[0];
-                    if(previousDistance == null){
+                    if (previousDistance == null) {
 
                         pathInfoList.get(edge.destination)[0] = edge.weight + pathInfoList.get(searchedVertex.id)[0];
                         pathInfoList.get(edge.destination)[1] = edge.source;
@@ -132,16 +144,17 @@ public class WeightedBiDirectionalGraph {
                 }
             }
 
-//            https://youtu.be/pVfj6mxhdMw / 4:09
+            searchedVertex.setVertexAsVisited();
+            unvisitedVertex.remove(searchedVertex);
 
 
+
+            if(nearestUnvisitedNeighbourId != null){
+                searchedVertex = vertecies[nearestUnvisitedNeighbourId];
+            }
 
         }
-
-
-
-
-
+        System.out.println(Arrays.toString(pathInfoList.get(toVertexID)));
     }
 
 }
