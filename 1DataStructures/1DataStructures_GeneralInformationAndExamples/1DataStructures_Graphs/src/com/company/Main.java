@@ -80,7 +80,7 @@ public class Main {
         weightedBiDirectionalGraph.addEdge(1,4,2);
 
 
-        weightedBiDirectionalGraph.shortestPath(0,2);
+        weightedBiDirectionalGraph.dijkstraShortestPathAlgorithm(0,2);
 
 
     }

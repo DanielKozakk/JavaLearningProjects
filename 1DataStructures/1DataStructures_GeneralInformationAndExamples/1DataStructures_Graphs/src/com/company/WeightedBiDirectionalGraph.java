@@ -94,7 +94,7 @@ public class WeightedBiDirectionalGraph {
         }
     }
 
-    public void shortestPath(Integer fromVertexID, Integer toVertexID) {
+    public void dijkstraShortestPathAlgorithm(Integer fromVertexID, Integer toVertexID) {
 
         Map<Integer, Integer[]> pathInfoList = new HashMap<>();
 
@@ -156,5 +156,7 @@ public class WeightedBiDirectionalGraph {
         }
         System.out.println(Arrays.toString(pathInfoList.get(toVertexID)));
     }
+
+    public void A_StarAlgorithm(){}
 
 }
