@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.*;
 
-public class AdjacencyListGraphSecondImplementation {
+public class AdjacencyListGraph {
 
     public int graphSize;
     public int vertexRemains;
@@ -10,7 +10,7 @@ public class AdjacencyListGraphSecondImplementation {
     private int VertexID = 0;
     public Vertex[] vertecies;
 
-    public AdjacencyListGraphSecondImplementation(int graphSize) {
+    public AdjacencyListGraph(int graphSize) {
         this.graphSize = graphSize;
         this.vertexRemains = graphSize;
         vertecies = new Vertex[graphSize];

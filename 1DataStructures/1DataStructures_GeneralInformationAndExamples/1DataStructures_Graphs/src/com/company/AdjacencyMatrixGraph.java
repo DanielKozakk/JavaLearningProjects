@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-public class AdjacencyMatrixGraphSecondImplementation {
+public class AdjacencyMatrixGraph {
 
     int graphSize;
     int vertexRemains;
@@ -15,7 +15,7 @@ public class AdjacencyMatrixGraphSecondImplementation {
     public int[][] adjacencyMatrix;
     public Vertex[] verticies;
 
-    AdjacencyMatrixGraphSecondImplementation(Integer graphSize) {
+    AdjacencyMatrixGraph(Integer graphSize) {
         this.vertexRemains = graphSize;
         this.graphSize = graphSize;
         this.adjacencyMatrix = new int[graphSize][graphSize];

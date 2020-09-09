@@ -111,7 +111,6 @@ public class WeightedBiDirectionalGraph {
 
         while (!unvisitedVertex.isEmpty()) {
 
-//
             Integer nearestUnvisitedNeighbourId = null;
             Integer nearestUnvisitedNeighbourWeight = null;
 
@@ -157,6 +156,5 @@ public class WeightedBiDirectionalGraph {
         System.out.println(Arrays.toString(pathInfoList.get(toVertexID)));
     }
 
-    public void A_StarAlgorithm(){}
 
 }
