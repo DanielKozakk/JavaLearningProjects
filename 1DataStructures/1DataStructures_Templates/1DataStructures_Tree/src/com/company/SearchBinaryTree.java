@@ -66,6 +66,27 @@ public class SearchBinaryTree {
         }
     }
 
+    public void printInOrder(){
+        print(root);
+    }
+
+    private void print(Node printedNode){
+        if(printedNode.left != null){
+            print(printedNode.left);
+        }
+
+        System.out.println("Data z current node: " + printedNode.data);
+
+        int rightData = printedNode.right == null ? 0 : printedNode.data;
+        int leftData = printedNode.left == null ? 0 : printedNode.data;
+
+        System.out.println("Data z current node - left : " + leftData + ", right: " + rightData);
+
+
+        if(printedNode.right != null){
+            print(printedNode.right);
+        }
+    }
 
 
 }

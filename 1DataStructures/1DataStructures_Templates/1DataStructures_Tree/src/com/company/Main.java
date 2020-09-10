@@ -9,7 +9,9 @@ public class Main {
         sbt.insert(10);
         sbt.insert(5);
         sbt.insert(15);
+        sbt.insert(8);
 
+        sbt.printInOrder();
 
     }
 }
