@@ -38,19 +38,14 @@ public class WeightedBiDirectionalGraph {
             Edge edge2 = new Edge(pointBid, pointAid, weight);
             vertecies[pointAid].addEdge(edge1);
             vertecies[pointBid].addEdge(edge2);
-
         }
-
     }
 
     public String getVertecies() {
 
         StringBuilder sb = new StringBuilder();
         for (Vertex vertex : vertecies) {
-
             sb.append("ID: " + vertex.id + ", " + "Name: " + vertex.name + "\n");
-
-
         }
         return sb.toString();
     }
@@ -119,7 +114,7 @@ public class WeightedBiDirectionalGraph {
                 if (!vertecies[edge.destination].isVertexVisited) {
 
 //                    w tym miejscu wybiera się następnego sąsiada, jest to wybór następnej najkrótszej drogi.
-                    if(nearestUnvisitedNeighbourId == null || edge.weight < nearestUnvisitedNeighbourWeight){
+                    if (nearestUnvisitedNeighbourId == null || edge.weight < nearestUnvisitedNeighbourWeight) {
                         nearestUnvisitedNeighbourId = edge.destination;
 
                         nearestUnvisitedNeighbourWeight = edge.weight;
@@ -139,22 +134,15 @@ public class WeightedBiDirectionalGraph {
                             pathInfoList.get(edge.destination)[1] = edge.source;
                         }
                     }
-
                 }
             }
 
             searchedVertex.setVertexAsVisited();
             unvisitedVertex.remove(searchedVertex);
-
-
-
-            if(nearestUnvisitedNeighbourId != null){
+            if (nearestUnvisitedNeighbourId != null) {
                 searchedVertex = vertecies[nearestUnvisitedNeighbourId];
             }
-
         }
         System.out.println(Arrays.toString(pathInfoList.get(toVertexID)));
     }
-
-
 }
