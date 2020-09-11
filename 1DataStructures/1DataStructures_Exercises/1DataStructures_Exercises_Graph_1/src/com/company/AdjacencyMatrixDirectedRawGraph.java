@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-public class AdjacencyMatrixDirectedGraph {
+public class AdjacencyMatrixDirectedRawGraph {
 
     int graphSize;
     int vertexRemains;
@@ -15,7 +15,7 @@ public class AdjacencyMatrixDirectedGraph {
     public int[][] adjacencyMatrix;
     public Vertex[] verticies;
 
-    AdjacencyMatrixDirectedGraph(Integer graphSize) {
+    AdjacencyMatrixDirectedRawGraph(Integer graphSize) {
         this.vertexRemains = graphSize;
         this.graphSize = graphSize;
         this.adjacencyMatrix = new int[graphSize][graphSize];
