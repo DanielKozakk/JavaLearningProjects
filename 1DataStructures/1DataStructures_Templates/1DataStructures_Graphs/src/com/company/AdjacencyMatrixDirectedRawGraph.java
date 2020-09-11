@@ -23,7 +23,7 @@ public class AdjacencyMatrixDirectedRawGraph {
 
     }
 
-    private class Vertex {
+    protected class Vertex {
         int id;
         boolean isVertexVisited = false;
         String name;

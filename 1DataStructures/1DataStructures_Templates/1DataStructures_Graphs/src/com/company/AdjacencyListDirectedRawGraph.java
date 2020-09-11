@@ -52,7 +52,7 @@ public class AdjacencyListDirectedRawGraph {
     }
 
 
-    private class Vertex {
+    protected class Vertex {
         int ID = VertexID;
         String name;
         ArrayList<Integer> listOfEdges = new ArrayList<>();
