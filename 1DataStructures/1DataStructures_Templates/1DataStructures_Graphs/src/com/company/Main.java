@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 //
-        AdjacencyMatrixGraphSecondImplementation adjacencyMatrixGraphImplementation = new AdjacencyMatrixGraphSecondImplementation(7);
+        AdjacencyMatrixDirectedGraph adjacencyMatrixGraphImplementation = new AdjacencyMatrixDirectedGraph(7);
         adjacencyMatrixGraphImplementation.addVertex("Pierwszy");
         adjacencyMatrixGraphImplementation.addVertex("Drugi");
         adjacencyMatrixGraphImplementation.addVertex("Trzeci");
@@ -37,7 +37,7 @@ public class Main {
 
 //        AdjacencyListGraphSecondImplementation adjacencyListGraphSecondImplementation = new AdjacencyListGraphSecondImplementation(9);
 
-        AdjacencyListGraphSecondImplementation adjacencyListGraphSecondImplementation = new AdjacencyListGraphSecondImplementation(7);
+        AdjacencyListDirectedRawGraph adjacencyListGraphSecondImplementation = new AdjacencyListDirectedRawGraph(7);
         adjacencyListGraphSecondImplementation.addVertex("Pierwszy");
         adjacencyListGraphSecondImplementation.addVertex("Drugi");
         adjacencyListGraphSecondImplementation.addVertex("Trzeci");
@@ -59,7 +59,6 @@ public class Main {
         adjacencyListGraphSecondImplementation.addEdge(1, 6);
         adjacencyListGraphSecondImplementation.addEdge(6, 1);
 
-        adjacencyListGraphSecondImplementation.breadthFirstTraversalImplementation();
 
 
 
