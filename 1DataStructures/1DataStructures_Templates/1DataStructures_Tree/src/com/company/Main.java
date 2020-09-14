@@ -5,13 +5,12 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Node node = new Node(100);
+        Node node = new Node(10);
 
-        node.insert(101);
-        node.insert(10);
+        node.insert(15);
+        node.insert(5);
+        node.insert(8);
 
-        System.out.println(node.contains(10));
-
-
+        node.printInOrder();
     }
 }

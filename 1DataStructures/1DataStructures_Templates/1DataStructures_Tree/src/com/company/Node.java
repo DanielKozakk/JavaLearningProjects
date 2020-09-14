@@ -54,9 +54,15 @@ public class Node {
         }
     }
 
+    public void printInOrder(){
 
-    // contains
-    // printInOrder
-
+        if(left != null){
+            left.printInOrder();
+        }
+        System.out.println(data);
+        if(right != null){
+            right.printInOrder();
+        }
+    }
 
 }
