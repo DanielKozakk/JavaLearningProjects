@@ -14,26 +14,6 @@ public class Collections_19_BreadthFirstSearchInAdjacencyMatrix extends Adjacenc
 
     }
 
-         /*
-                tworzę queue
-                ustawiam searchedVertex na vertecies[0]
-
-
-                robię while dopóki queue nie jest puste
-                    wypisuje dane z searchedVertex
-                    zapisuję vertex jako visited
-
-                    robię for loop przez adjacencyMatrix[searchedVertex.id] przez sąsiadów
-
-                        jeśli index != null && vertex jest unvisited
-                            dodaję go do kolejki
-
-                    end for loop
-                     queue.poll()
-                     jeśli queue nie jest puste
-                        searchedVertex = queue.peek();
-
-         */
 
     public void breadthFirstSearch(){
 
@@ -45,10 +25,8 @@ public class Collections_19_BreadthFirstSearchInAdjacencyMatrix extends Adjacenc
             System.out.println(searchedVertex.id);
             searchedVertex.setVertexAsVisited();
             for (int i = 0; i < adjacencyMatrix[searchedVertex.id].length; i++) {
-
                 int neighbourDistance = adjacencyMatrix[searchedVertex.id][i];
                 Vertex neighbourVertex = verticies[i];
-
 
                 if (neighbourDistance != 0 && !neighbourVertex.isVertexVisited) {
                     verteciesQueue.add(neighbourVertex);
