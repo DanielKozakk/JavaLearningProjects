@@ -8,12 +8,12 @@ public class AdjacencyListDirectedRawGraph {
     public int vertexRemains;
 
     private int VertexID = 0;
-    public Vertex[] vertecies;
+    public Vertex[] vertices;
 
     public AdjacencyListDirectedRawGraph(int graphSize) {
         this.graphSize = graphSize;
         this.vertexRemains = graphSize;
-        vertecies = new Vertex[graphSize];
+        vertices = new Vertex[graphSize];
     }
 
 
@@ -22,7 +22,7 @@ public class AdjacencyListDirectedRawGraph {
         if (vertexRemains > 0) {
             vertexRemains--;
             Vertex newVertex = new Vertex(name);
-            vertecies[VertexID] = newVertex;
+            vertices[VertexID] = newVertex;
             VertexID++;
         } else {
             System.out.println("There is no place for next vertex!");
@@ -32,17 +32,17 @@ public class AdjacencyListDirectedRawGraph {
 
     public void addEdge(int fromID, int toID) {
 
-        if (vertecies[fromID] != null && vertecies[toID] != null) {
-            vertecies[fromID].listOfEdges.add(toID);
+        if (vertices[fromID] != null && vertices[toID] != null) {
+            vertices[fromID].listOfEdges.add(toID);
         }
 
 
     }
 
-    public String getVertecies() {
+    public String getVertices() {
 
         StringBuilder sb = new StringBuilder();
-        for (Vertex vertex : vertecies) {
+        for (Vertex vertex : vertices) {
 
             sb.append("ID: " + vertex.ID + ", " + "Name: " + vertex.name + "\n");
 
@@ -52,7 +52,7 @@ public class AdjacencyListDirectedRawGraph {
     }
 
 
-    private class Vertex {
+    public class Vertex {
         int ID = VertexID;
         String name;
         ArrayList<Integer> listOfEdges = new ArrayList<>();
@@ -75,11 +75,11 @@ public class AdjacencyListDirectedRawGraph {
     public String getEdges() {
         StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < vertecies.length; i++) {
+        for (int i = 0; i < vertices.length; i++) {
 
-            sb.append(vertecies[i].name + ": ");
+            sb.append(vertices[i].name + ": ");
 
-            for (int edge : vertecies[i].listOfEdges) {
+            for (int edge : vertices[i].listOfEdges) {
                 sb.append(edge + ", ");
             }
         }
@@ -88,7 +88,7 @@ public class AdjacencyListDirectedRawGraph {
 
     public void removeEdge(int from, int to) {
 
-        Vertex vertex = vertecies[from];
+        Vertex vertex = vertices[from];
         vertex.listOfEdges.remove(to);
 
     }
