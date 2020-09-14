@@ -1,41 +1,68 @@
 package com.company;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class Collections_19_BreadthFirstSearchInAdjacencyMatrix extends AdjacencyMatrixDirectedRawGraph {
 
     Collections_19_BreadthFirstSearchInAdjacencyMatrix(Integer graphSize) {
         super(graphSize);
+
+
+
     }
 
-    public void breadthFirst() {
+         /*
+                tworzę queue
+                ustawiam searchedVertex na vertecies[0]
 
-        // 1. zmień na protected
 
+                robię while dopóki queue nie jest puste
+                    wypisuje dane z searchedVertex
+                    zapisuję vertex jako visited
 
+                    robię for loop przez adjacencyMatrix[searchedVertex.id] przez sąsiadów
 
-        Vertex searchedVertex = null;
+                        jeśli index != null && vertex jest unvisited
+                            dodaję go do kolejki
 
-        if (verticies.length > 0) {
-            searchedVertex = verticies[0];
-        }
+                    end for loop
+                     queue.poll()
+                     jeśli queue nie jest puste
+                        searchedVertex = queue.peek();
 
-        List<Vertex> unvisitedVertex = Arrays.asList(verticies);
+         */
 
-        while( searchedVertex != null) {
+    public void breadthFirstSearch(){
 
-            System.out.println(searchedVertex.name);
+        Queue<Vertex> verteciesQueue = new LinkedList<>();
+        Vertex searchedVertex = verticies[0];
+        verteciesQueue.add(searchedVertex);
 
+        while(!verteciesQueue.isEmpty()) {
+            System.out.println(searchedVertex.id);
+            searchedVertex.setVertexAsVisited();
             for (int i = 0; i < adjacencyMatrix[searchedVertex.id].length; i++) {
-                Vertex neighbour = verticies[adjacencyMatrix[searchedVertex.id][i]];
 
+                int neighbourDistance = adjacencyMatrix[searchedVertex.id][i];
+                Vertex neighbourVertex = verticies[i];
+
+
+                if (neighbourDistance != 0 && !neighbourVertex.isVertexVisited) {
+                    verteciesQueue.add(neighbourVertex);
+                }
             }
-
-
+            verteciesQueue.poll();
+            if(!verteciesQueue.isEmpty()){
+                searchedVertex = verteciesQueue.peek();
+            }
         }
 
     }
+
+
 
 
 }

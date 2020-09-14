@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -31,7 +33,9 @@ public class Main {
         col19.addEdge(1, 6);
         col19.addEdge(6, 1);
 
-        col19.breadthFirst();
+
+
+        col19.breadthFirstSearch();
     }
 
 
