@@ -1,10 +1,5 @@
 package com.company;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
-
 public class AdjacencyMatrixDirectedRawGraph {
 
     int graphSize;
@@ -13,13 +8,13 @@ public class AdjacencyMatrixDirectedRawGraph {
 
 
     public int[][] adjacencyMatrix;
-    public Vertex[] verticies;
+    public Vertex[] vertices;
 
     AdjacencyMatrixDirectedRawGraph(Integer graphSize) {
         this.vertexRemains = graphSize;
         this.graphSize = graphSize;
         this.adjacencyMatrix = new int[graphSize][graphSize];
-        this.verticies = new Vertex[graphSize];
+        this.vertices = new Vertex[graphSize];
 
     }
 
@@ -59,7 +54,7 @@ public class AdjacencyMatrixDirectedRawGraph {
                 vertex = new Vertex(name);
             }
 
-            verticies[vertex.id] = vertex;
+            vertices[vertex.id] = vertex;
 
         } else {
             System.out.println("Too much vertex!");
@@ -74,13 +69,13 @@ public class AdjacencyMatrixDirectedRawGraph {
         adjacencyMatrix[from][to] = 0;
     }
 
-    public String getVerticies() {
+    public String getVertices() {
 
         StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < verticies.length; i++) {
+        for (int i = 0; i < vertices.length; i++) {
 
-            sb.append("ID : " + verticies[i].id + ", ");
+            sb.append("ID : " + vertices[i].id + ", ");
 
         }
 

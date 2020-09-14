@@ -1,8 +1,6 @@
 package com.company;
 
-import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 public class Collections_19_BreadthFirstSearchInAdjacencyMatrix extends AdjacencyMatrixDirectedRawGraph {
@@ -18,7 +16,7 @@ public class Collections_19_BreadthFirstSearchInAdjacencyMatrix extends Adjacenc
     public void breadthFirstSearch(){
 
         Queue<Vertex> verteciesQueue = new LinkedList<>();
-        Vertex searchedVertex = verticies[0];
+        Vertex searchedVertex = vertices[0];
         verteciesQueue.add(searchedVertex);
 
         while(!verteciesQueue.isEmpty()) {
@@ -26,7 +24,7 @@ public class Collections_19_BreadthFirstSearchInAdjacencyMatrix extends Adjacenc
             searchedVertex.setVertexAsVisited();
             for (int i = 0; i < adjacencyMatrix[searchedVertex.id].length; i++) {
                 int neighbourDistance = adjacencyMatrix[searchedVertex.id][i];
-                Vertex neighbourVertex = verticies[i];
+                Vertex neighbourVertex = vertices[i];
 
                 if (neighbourDistance != 0 && !neighbourVertex.isVertexVisited) {
                     verteciesQueue.add(neighbourVertex);
