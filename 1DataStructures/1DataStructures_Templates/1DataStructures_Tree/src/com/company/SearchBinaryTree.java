@@ -87,6 +87,4 @@ public class SearchBinaryTree {
             print(printedNode.right);
         }
     }
-
-
 }

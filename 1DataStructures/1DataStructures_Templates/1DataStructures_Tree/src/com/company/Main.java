@@ -4,14 +4,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        SearchBinaryTree sbt = new SearchBinaryTree();
 
-        sbt.insert(10);
-        sbt.insert(5);
-        sbt.insert(15);
-        sbt.insert(8);
+        Node node = new Node(100);
 
-        sbt.printInOrder();
+        node.insert(101);
+        node.insert(10);
+
+        System.out.println(node.contains(10));
+
 
     }
 }
