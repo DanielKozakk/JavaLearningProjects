@@ -6,36 +6,44 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Collections_22_DepthfirstSearchInAdjacencyList col22 = new Collections_22_DepthfirstSearchInAdjacencyList(7);
-        col22.addVertex("Pierwszy");
-        col22.addVertex("Drugi");
-        col22.addVertex("Trzeci");
-        col22.addVertex("Czwarty");
-        col22.addVertex("Piąty");
-        col22.addVertex("Szósty");
-        col22.addVertex("Siódmyyyy");
+        Collections_23_CheckIfGraphIsATreeOrNot col23 = new Collections_23_CheckIfGraphIsATreeOrNot(7);
+        col23.addVertex("Zerowy");
+        col23.addVertex("Pierwszy");
+        col23.addVertex("Drugi");
+        col23.addVertex("Trzeci");
+        col23.addVertex("Czwarty");
+        col23.addVertex("Piąty");
+        col23.addVertex("Szósty");
+
+        col23.addEdge(0, 1);
+        col23.addEdge(1, 0);
+
+        col23.addEdge(0, 2);
+        col23.addEdge(2, 0);
+
+        col23.addEdge(1, 2);
+        col23.addEdge(2, 1);
+
+        col23.addEdge(1,6);
+        col23.addEdge(6,1);
+
+        col23.addEdge(1,3);
+        col23.addEdge(3,1);
+
+        col23.addEdge(3,6);
+        col23.addEdge(6,3);
+
+        col23.addEdge(2,3);
+        col23.addEdge(3,2);
+
+        col23.addEdge(2,4);
+        col23.addEdge(4,2);
+
+        col23.addEdge(5,3);
+        col23.addEdge(3,5);
 
 
 
-        col22.addEdge(0, 1);
-        col22.addEdge(1, 0);
-
-        col22.addEdge(0, 2);
-        col22.addEdge(2, 0);
-
-        col22.addEdge(2, 3);
-        col22.addEdge(3, 2);
-
-        col22.addEdge(2, 4);
-        col22.addEdge(4, 2);
-
-        col22.addEdge(3, 5);
-        col22.addEdge(5, 3);
-
-        col22.addEdge(1, 6);
-        col22.addEdge(6, 1);
-
-        col22.depthFirstSearch();
     }
 
 
