@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Main {
 
@@ -21,17 +22,9 @@ public class Main {
         col23.addEdge(0, 2);
         col23.addEdge(2, 0);
 
-        col23.addEdge(1, 2);
-        col23.addEdge(2, 1);
 
         col23.addEdge(1,6);
         col23.addEdge(6,1);
-
-        col23.addEdge(1,3);
-        col23.addEdge(3,1);
-
-        col23.addEdge(3,6);
-        col23.addEdge(6,3);
 
         col23.addEdge(2,3);
         col23.addEdge(3,2);
@@ -41,6 +34,53 @@ public class Main {
 
         col23.addEdge(5,3);
         col23.addEdge(3,5);
+
+//        col23.addEdge(0,5);
+//        col23.addEdge(5,0);
+
+
+
+        col23.isGraphTree();
+
+        Collections_23_CheckIfGraphIsATreeOrNot col23_2 = new Collections_23_CheckIfGraphIsATreeOrNot(8);
+        col23_2.addVertex("Zerowy");
+        col23_2.addVertex("Pierwszy");
+        col23_2.addVertex("Drugi");
+        col23_2.addVertex("Trzeci");
+        col23_2.addVertex("Czwarty");
+        col23_2.addVertex("Piąty");
+        col23_2.addVertex("Szósty");
+
+
+        col23_2.addEdge(0, 1);
+        col23_2.addEdge(1, 0);
+
+        col23_2.addEdge(0, 2);
+        col23_2.addEdge(2, 0);
+
+        col23_2.addEdge(1, 2);
+        col23_2.addEdge(2, 1);
+
+        col23_2.addEdge(3, 2);
+        col23_2.addEdge(2, 3);
+
+        col23_2.addEdge(4, 2);
+        col23_2.addEdge(2, 4);
+
+        col23_2.addEdge(3, 5);
+        col23_2.addEdge(5, 3);
+
+        col23_2.addEdge(1, 7);
+        col23_2.addEdge(7, 1);
+
+        col23_2.addEdge(1, 6);
+        col23_2.addEdge(6, 1);
+
+        col23_2.addEdge(7, 6);
+        col23_2.addEdge(6, 7);
+
+        col23_2.isGraphTree();
+
 
 
 
