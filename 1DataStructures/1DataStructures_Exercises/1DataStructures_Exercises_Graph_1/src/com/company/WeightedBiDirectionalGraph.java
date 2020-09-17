@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.*;
+
 public class WeightedBiDirectionalGraph {
 
     public int graphSize;
