@@ -7,79 +7,79 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Collections_23_CheckIfGraphIsATreeOrNot col23 = new Collections_23_CheckIfGraphIsATreeOrNot(7);
-        col23.addVertex("Zerowy");
-        col23.addVertex("Pierwszy");
-        col23.addVertex("Drugi");
-        col23.addVertex("Trzeci");
-        col23.addVertex("Czwarty");
-        col23.addVertex("Piąty");
-        col23.addVertex("Szósty");
+        Collections_24_CountTheNumberOfEdgesInGraph col24 = new Collections_24_CountTheNumberOfEdgesInGraph(7);
+        col24.addVertex("Zerowy");
+        col24.addVertex("Pierwszy");
+        col24.addVertex("Drugi");
+        col24.addVertex("Trzeci");
+        col24.addVertex("Czwarty");
+        col24.addVertex("Piąty");
+        col24.addVertex("Szósty");
 
-        col23.addEdge(0, 1);
-        col23.addEdge(1, 0);
+        col24.addEdge(0, 1);
+        col24.addEdge(1, 0);
 
-        col23.addEdge(0, 2);
-        col23.addEdge(2, 0);
-
-
-        col23.addEdge(1,6);
-        col23.addEdge(6,1);
-
-        col23.addEdge(2,3);
-        col23.addEdge(3,2);
-
-        col23.addEdge(2,4);
-        col23.addEdge(4,2);
-
-        col23.addEdge(5,3);
-        col23.addEdge(3,5);
-
-//        col23.addEdge(0,5);
-//        col23.addEdge(5,0);
+        col24.addEdge(0, 2);
+        col24.addEdge(2, 0);
 
 
+        col24.addEdge(1,6);
+        col24.addEdge(6,1);
 
-        col23.isGraphTree();
+        col24.addEdge(2,3);
+        col24.addEdge(3,2);
 
-        Collections_23_CheckIfGraphIsATreeOrNot col23_2 = new Collections_23_CheckIfGraphIsATreeOrNot(8);
-        col23_2.addVertex("Zerowy");
-        col23_2.addVertex("Pierwszy");
-        col23_2.addVertex("Drugi");
-        col23_2.addVertex("Trzeci");
-        col23_2.addVertex("Czwarty");
-        col23_2.addVertex("Piąty");
-        col23_2.addVertex("Szósty");
+        col24.addEdge(2,4);
+        col24.addEdge(4,2);
+
+        col24.addEdge(5,3);
+        col24.addEdge(3,5);
 
 
-        col23_2.addEdge(0, 1);
-        col23_2.addEdge(1, 0);
+//        col24.countEdges();
 
-        col23_2.addEdge(0, 2);
-        col23_2.addEdge(2, 0);
 
-        col23_2.addEdge(1, 2);
-        col23_2.addEdge(2, 1);
+//
+//        System.out.println(col24.getEdges());
+//
+        Collections_24_CountTheNumberOfEdgesInGraph col24_2 = new Collections_24_CountTheNumberOfEdgesInGraph(8);
+        col24_2.addVertex("Zerowy");
+        col24_2.addVertex("Pierwszy");
+        col24_2.addVertex("Drugi");
+        col24_2.addVertex("Trzeci");
+        col24_2.addVertex("Czwarty");
+        col24_2.addVertex("Piąty");
+        col24_2.addVertex("Szósty");
 
-        col23_2.addEdge(3, 2);
-        col23_2.addEdge(2, 3);
 
-        col23_2.addEdge(4, 2);
-        col23_2.addEdge(2, 4);
+        col24_2.addEdge(0, 1);
+        col24_2.addEdge(1, 0);
 
-        col23_2.addEdge(3, 5);
-        col23_2.addEdge(5, 3);
+        col24_2.addEdge(0, 2);
+        col24_2.addEdge(2, 0);
 
-        col23_2.addEdge(1, 7);
-        col23_2.addEdge(7, 1);
+        col24_2.addEdge(1, 2);
+        col24_2.addEdge(2, 1);
 
-        col23_2.addEdge(1, 6);
-        col23_2.addEdge(6, 1);
+        col24_2.addEdge(3, 2);
+        col24_2.addEdge(2, 3);
 
-        col23_2.addEdge(7, 6);
-        col23_2.addEdge(6, 7);
+        col24_2.addEdge(4, 2);
+        col24_2.addEdge(2, 4);
 
-        col23_2.isGraphTree();
+        col24_2.addEdge(3, 5);
+        col24_2.addEdge(5, 3);
+
+        col24_2.addEdge(1, 7);
+        col24_2.addEdge(7, 1);
+
+        col24_2.addEdge(1, 6);
+        col24_2.addEdge(6, 1);
+
+        col24_2.addEdge(7, 6);
+        col24_2.addEdge(6, 7);
+
+        col24_2.countEdges();
 
 
 
