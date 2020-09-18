@@ -36,12 +36,6 @@ public class Main {
         col24.addEdge(3,5);
 
 
-//        col24.countEdges();
-
-
-//
-//        System.out.println(col24.getEdges());
-//
         Collections_24_CountTheNumberOfEdgesInGraph col24_2 = new Collections_24_CountTheNumberOfEdgesInGraph(8);
         col24_2.addVertex("Zerowy");
         col24_2.addVertex("Pierwszy");
@@ -79,10 +73,23 @@ public class Main {
         col24_2.addEdge(7, 6);
         col24_2.addEdge(6, 7);
 
-        col24_2.countEdges();
+
+        Collections_25_FrindShortestPath col25 = new Collections_25_FrindShortestPath(5);
 
 
+        col25.addVertex("A");//0
+        col25.addVertex("B");//1
+        col25.addVertex("C");//2
+        col25.addVertex("D");//3
+        col25.addVertex("E");//4
 
+        col25.addEdge(0, 1, 6);
+        col25.addEdge(0, 3, 1);
+        col25.addEdge(1, 3, 2);
+        col25.addEdge(1, 4, 2);
+        col25.addEdge(1, 2, 5);
+        col25.addEdge(2, 4, 5);
+        col25.addEdge(3, 4, 1);
 
     }
 
