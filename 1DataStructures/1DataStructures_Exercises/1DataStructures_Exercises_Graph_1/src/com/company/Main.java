@@ -91,6 +91,8 @@ public class Main {
         col25.addEdge(2, 4, 5);
         col25.addEdge(3, 4, 1);
 
+        col25.findShortestPath(0,2);
+
     }
 
 
