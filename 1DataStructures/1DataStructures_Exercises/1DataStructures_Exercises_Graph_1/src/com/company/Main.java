@@ -16,18 +16,26 @@ public class Main {
         col19_2.addVertex("Piąty");
         col19_2.addVertex("Szósty");
         col19_2.addVertex("Siódmyyyy");
+
         col19_2.addEdge(0, 1);
         col19_2.addEdge(1, 0);
+
         col19_2.addEdge(0, 2);
         col19_2.addEdge(2, 0);
+
         col19_2.addEdge(2, 3);
         col19_2.addEdge(3, 2);
+
         col19_2.addEdge(2, 4);
         col19_2.addEdge(4, 2);
+
         col19_2.addEdge(3, 5);
         col19_2.addEdge(5, 3);
+
         col19_2.addEdge(1, 6);
         col19_2.addEdge(6, 1);
+
+        col19_2.breadthFirstSearch();
 
 
     }
