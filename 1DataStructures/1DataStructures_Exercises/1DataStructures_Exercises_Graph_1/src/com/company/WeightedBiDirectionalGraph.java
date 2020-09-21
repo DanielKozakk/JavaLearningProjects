@@ -51,7 +51,7 @@ public class WeightedBiDirectionalGraph {
     }
 
 
-    protected class Vertex {
+    public class Vertex {
         int id = VertexID;
         String name;
         ArrayList<Edge> listOfEdges = new ArrayList<>();
@@ -76,7 +76,7 @@ public class WeightedBiDirectionalGraph {
         }
     }
 
-    protected class Edge {
+    public class Edge {
 
         Integer source;
         Integer destination;
