@@ -19,8 +19,8 @@ public class AdjacencyMatrixDirectedRawGraph {
     }
 
     public class Vertex {
-        int id;
-        boolean isVertexVisited = false;
+        public int id;
+        public boolean vertexVisited = false;
         String name;
 
         Vertex() {
@@ -38,7 +38,18 @@ public class AdjacencyMatrixDirectedRawGraph {
         }
 
         public void setVertexAsVisited() {
-            this.isVertexVisited = true;
+            this.vertexVisited = true;
+        }
+
+        public int getId (){
+            return this.id;
+        }
+        public boolean isVertexVisited (){
+            return this.vertexVisited;
+        }
+
+        public String getName (){
+            return this.name;
         }
     }
 

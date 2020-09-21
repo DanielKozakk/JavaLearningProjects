@@ -47,7 +47,7 @@ public class Collections_20_DepthFirstSearchInAdjacencyMatrix extends AdjacencyM
         vertexStack.add(searchedVertex);
         while(!vertexStack.isEmpty()){
 
-            if(!searchedVertex.isVertexVisited) {
+            if(!searchedVertex.vertexVisited) {
                 System.out.println(searchedVertex.id);
             }
             searchedVertex.setVertexAsVisited();
@@ -56,7 +56,7 @@ public class Collections_20_DepthFirstSearchInAdjacencyMatrix extends AdjacencyM
 
             for(int i = 0 ; i < adjacencyMatrix[searchedVertex.id].length ; i ++){
 
-                if(adjacencyMatrix[searchedVertex.id][i] != 0 && !vertices[i].isVertexVisited){
+                if(adjacencyMatrix[searchedVertex.id][i] != 0 && !vertices[i].vertexVisited){
                     isVertexExhausted = false;
                     searchedVertex = vertices[i];
                     vertexStack.add(searchedVertex);
