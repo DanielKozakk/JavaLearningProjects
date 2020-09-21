@@ -55,7 +55,7 @@ public class AdjacencyListDirectedRawGraph {
     public class Vertex {
         int ID = VertexID;
         String name;
-        ArrayList<Integer> listOfEdges = new ArrayList<>();
+        public ArrayList<Integer> listOfEdges = new ArrayList<>();
         boolean isVertexVisited = false;
 
         Vertex() {
@@ -68,6 +68,17 @@ public class AdjacencyListDirectedRawGraph {
 
         public void setVertexAsVisited() {
             this.isVertexVisited = true;
+        }
+
+        public boolean isVertexVisited() {
+            return this.isVertexVisited;
+        }
+        public int getId(){
+            return this.ID;
+        }
+
+        public String getName() {
+            return this.name;
         }
     }
 
