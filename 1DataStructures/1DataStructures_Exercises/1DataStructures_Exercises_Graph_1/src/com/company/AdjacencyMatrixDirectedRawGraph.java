@@ -10,7 +10,7 @@ public class AdjacencyMatrixDirectedRawGraph {
     public int[][] adjacencyMatrix;
     public Vertex[] vertices;
 
-    AdjacencyMatrixDirectedRawGraph(Integer graphSize) {
+    public AdjacencyMatrixDirectedRawGraph(Integer graphSize) {
         this.vertexRemains = graphSize;
         this.graphSize = graphSize;
         this.adjacencyMatrix = new int[graphSize][graphSize];
