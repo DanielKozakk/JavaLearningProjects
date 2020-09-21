@@ -1,4 +1,6 @@
-package com.company;
+package com.company.serie1;
+
+import com.company.AdjacencyMatrixDirectedRawGraph;
 
 import java.util.ArrayList;
 import java.util.HashSet;

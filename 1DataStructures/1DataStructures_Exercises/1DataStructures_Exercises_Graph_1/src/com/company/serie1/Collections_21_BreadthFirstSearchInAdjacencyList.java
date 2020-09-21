@@ -1,4 +1,6 @@
-package com.company;
+package com.company.serie1;
+
+import com.company.serie1.AdjacencyListDirectedRawGraph;
 
 import java.util.LinkedList;
 import java.util.Queue;
