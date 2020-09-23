@@ -22,6 +22,5 @@ public class Main {
 
         col27.findHeight();
 
-
     }
 }
