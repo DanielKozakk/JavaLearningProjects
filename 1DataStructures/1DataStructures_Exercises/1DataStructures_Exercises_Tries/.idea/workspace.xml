@@ -19,8 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a9442-da0b-4eff-af24-3e2bcc5a80b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../1DataStructures_Exercises_Graph_1/src/com/company/serie2/Collections_22_ImplementDepthFirstSearchInAdjacencyList.java" afterDir="false" />
+    <list default="true" id="0894a037-51cd-4eda-9c3a-dcb89ba22734" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../1DataStructures_Exercises_Trees/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectId" id="1hpGEkmbnv6NmyufQE6rKVCxRTE" />
+  <component name="ProjectId" id="1htosD6Qb6En2zU4mQMjpUCwD2g" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -38,19 +38,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../1DataStructures_Exercises_Trees_1" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="162a9442-da0b-4eff-af24-3e2bcc5a80b7" name="Default Changelist" comment="" />
-      <created>1600700510221</created>
+      <changelist id="0894a037-51cd-4eda-9c3a-dcb89ba22734" name="Default Changelist" comment="" />
+      <created>1600839953701</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1600700510221</updated>
+      <updated>1600839953701</updated>
     </task>
     <servers />
   </component>
@@ -66,17 +63,9 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="479" y="131" width="1024" height="852" key="#Project_Structure" timestamp="1600700514027">
-      <screen x="72" y="27" width="1848" height="1053" />
+    <state x="779" y="310" width="765" height="742" key="FileChooserDialogImpl" timestamp="1600840041176">
+      <screen x="72" y="25" width="1848" height="1055" />
     </state>
-    <state x="479" y="131" width="1024" height="852" key="#Project_Structure/72.27.1848.1053/1920.0.1680.1050@72.27.1848.1053" timestamp="1600700514027" />
-    <state x="774" y="300" width="937" height="762" key="FileChooserDialogImpl" timestamp="1600700604345">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="774" y="300" width="937" height="762" key="FileChooserDialogImpl/72.27.1848.1053/1920.0.1680.1050@72.27.1848.1053" timestamp="1600700604345" />
-    <state x="305" y="155" width="1372" height="803" key="new project wizard" timestamp="1600700605326">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="305" y="155" width="1372" height="803" key="new project wizard/72.27.1848.1053/1920.0.1680.1050@72.27.1848.1053" timestamp="1600700605326" />
+    <state x="779" y="310" width="765" height="742" key="FileChooserDialogImpl/72.25.1848.1055/1920.0.1680.1050@72.25.1848.1055" timestamp="1600840041176" />
   </component>
 </project>
