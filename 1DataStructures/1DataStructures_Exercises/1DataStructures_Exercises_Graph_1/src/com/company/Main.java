@@ -37,7 +37,7 @@ public class Main {
         col23.addEdge(3,5);
 
 
-        Collections_23_CheckIfGraphIsATreeOrNot col23_2 = new Collections_23_CheckIfGraphIsATreeOrNot(7);
+        Collections_23_CheckIfGraphIsATreeOrNot col23_2 = new Collections_23_CheckIfGraphIsATreeOrNot(8);
         col23_2.addVertex("Zerowy");
         col23_2.addVertex("Pierwszy");
         col23_2.addVertex("Drugi");
@@ -45,7 +45,7 @@ public class Main {
         col23_2.addVertex("Czwarty");
         col23_2.addVertex("Piąty");
         col23_2.addVertex("Szósty");
-
+        col23_2.addVertex("Siódmy");
 
         col23_2.addEdge(0, 1);
         col23_2.addEdge(1, 0);
@@ -73,6 +73,8 @@ public class Main {
 
         col23_2.addEdge(7, 6);
         col23_2.addEdge(6, 7);
+
+        System.out.println(col23_2.checkIfGraphIsATree());
 
     }
 
