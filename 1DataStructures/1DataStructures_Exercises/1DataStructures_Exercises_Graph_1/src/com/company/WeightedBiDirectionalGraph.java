@@ -54,8 +54,9 @@ public class WeightedBiDirectionalGraph {
     public class Vertex {
         int id = VertexID;
         String name;
-        ArrayList<Edge> listOfEdges = new ArrayList<>();
+        public ArrayList<Edge> listOfEdges = new ArrayList<>();
         boolean isVertexVisited = false;
+
 
         Vertex() {
             this.name = String.valueOf(this.id);
@@ -69,6 +70,14 @@ public class WeightedBiDirectionalGraph {
             this.isVertexVisited = true;
         }
 
+        public boolean isVertexVisited() {
+            return this.isVertexVisited;
+        }
+
+        public int getId(){
+            return this.id;
+        }
+
         private void addEdge(Edge edge) {
             if (!listOfEdges.contains(edge)) {
                 listOfEdges.add(edge);
@@ -78,9 +87,9 @@ public class WeightedBiDirectionalGraph {
 
     public class Edge {
 
-        Integer source;
-        Integer destination;
-        Integer weight;
+        public Integer source;
+        public Integer destination;
+        public Integer weight;
 
         Edge(Integer source, Integer destination, Integer weight) {
             this.source = source;
