@@ -1,19 +1,23 @@
 package com.company;
 
-import com.company.serie1.*;
+import com.company.serie1.Collections_26_ImplementBinarySearchTree;
+import com.company.serie2.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Collections_30_FindAncestorsOfNode col30 = new Collections_30_FindAncestorsOfNode(100);
-        col30.insert(111);
-        col30.insert(78);
-        col30.insert(90);
-        col30.insert(60);
-        col30.insert(50);
+        Collections_26_ImplementBinarySearchTree col26 = new Collections_26_ImplementBinarySearchTree(10);
+        col26.insert(15);
+        col26.insert(5);
+        col26.insert(8);
+        col26.insert(7);
+        col26.insert(4);
+        col26.insert(12);
+        col26.insert(16);
 
-        col30.printAncestors(50);
+        System.out.println(col26.contains(163));
+
 
 
     }
