@@ -5,6 +5,11 @@ public class Node {
 
     private static int NUMBER_OF_CHARACTERS = 26;
     Node[] children = new Node[NUMBER_OF_CHARACTERS];
+    boolean isNodeEndOfWord = false;
+
+    public Node(boolean isNodeEndOfWord) {
+        this.isNodeEndOfWord = isNodeEndOfWord;
+    }
 
     int size = 0;
 
@@ -35,14 +40,17 @@ public class Node {
 
         char current = stringToAdd.charAt(index);
 
-        Node child = getNode(current);
+        Node child;
 
-        if (child == null) {
-            child = new Node();
-            setNode(current, child);
+        if (index + 1 == stringToAdd.length()) {
+            child = new Node(true);
+        } else {
+            child = new Node(false);
         }
 
-        child.add(stringToAdd, index + 1 );
+        setNode(current, child);
+
+        child.add(stringToAdd, index + 1);
 
     }
 
