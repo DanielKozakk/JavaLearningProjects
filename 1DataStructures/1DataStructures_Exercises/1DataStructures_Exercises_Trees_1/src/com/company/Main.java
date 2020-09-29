@@ -1,25 +1,19 @@
 package com.company;
 
-import com.company.serie1.Collections_26_ImplementBinarySearchTree;
-import com.company.serie1.Collections_27_FindHeightOfABinaryTree;
-import com.company.serie1.Collections_28_FindKthMaximumValueInTrie;
-import com.company.serie1.Collections_29_FindNodesAtKDistance;
+import com.company.serie1.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Collections_29_FindNodesAtKDistance col29 = new Collections_29_FindNodesAtKDistance(10);
+        Collections_30_FindAncestorsOfNode col30 = new Collections_30_FindAncestorsOfNode(100);
+        col30.insert(111);
+        col30.insert(78);
+        col30.insert(90);
+        col30.insert(60);
+        col30.insert(50);
 
-        col29.insert(15);
-        col29.insert(5);
-        col29.insert(8);
-        col29.insert(7);
-        col29.insert(4);
-        col29.insert(12);
-        col29.insert(16);
-
-        col29.findNodesAtKDistance(3);
+        col30.printAncestors(50);
 
 
     }
