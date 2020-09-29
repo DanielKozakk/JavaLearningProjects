@@ -8,73 +8,37 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Collections_23_CheckIfGraphIsATreeOrNot col23 = new Collections_23_CheckIfGraphIsATreeOrNot(7);
-        col23.addVertex("Zerowy");
-        col23.addVertex("Pierwszy");
-        col23.addVertex("Drugi");
-        col23.addVertex("Trzeci");
-        col23.addVertex("Czwarty");
-        col23.addVertex("Piąty");
-        col23.addVertex("Szósty");
+        Collections_24_CountTheNumberOfEdgesInGraph col24 = new Collections_24_CountTheNumberOfEdgesInGraph(5);
+        col24.addVertex("A");
+        col24.addVertex("B");
+        col24.addVertex("C");
+        col24.addVertex("D");
+        col24.addVertex("E");
 
-        col23.addEdge(0, 1);
-        col23.addEdge(1, 0);
-
-        col23.addEdge(0, 2);
-        col23.addEdge(2, 0);
+        col24.addEdge(0, 1);
+        col24.addEdge(1, 0);
 
 
-        col23.addEdge(1,6);
-        col23.addEdge(6,1);
+        col24.addEdge(0, 3);
+        col24.addEdge(3, 0);
 
-        col23.addEdge(2,3);
-        col23.addEdge(3,2);
-
-        col23.addEdge(2,4);
-        col23.addEdge(4,2);
-
-        col23.addEdge(5,3);
-        col23.addEdge(3,5);
+        col24.addEdge(1, 3);
+        col24.addEdge(3, 1);
 
 
-        Collections_23_CheckIfGraphIsATreeOrNot col23_2 = new Collections_23_CheckIfGraphIsATreeOrNot(8);
-        col23_2.addVertex("Zerowy");
-        col23_2.addVertex("Pierwszy");
-        col23_2.addVertex("Drugi");
-        col23_2.addVertex("Trzeci");
-        col23_2.addVertex("Czwarty");
-        col23_2.addVertex("Piąty");
-        col23_2.addVertex("Szósty");
-        col23_2.addVertex("Siódmy");
+        col24.addEdge(1,4);
+        col24.addEdge(4,1);
 
-        col23_2.addEdge(0, 1);
-        col23_2.addEdge(1, 0);
+        col24.addEdge(1,2);
+        col24.addEdge(2,1);
 
-        col23_2.addEdge(0, 2);
-        col23_2.addEdge(2, 0);
+        col24.addEdge(2,4);
+        col24.addEdge(4,2);
 
-        col23_2.addEdge(1, 2);
-        col23_2.addEdge(2, 1);
+        col24.addEdge(3,4);
+        col24.addEdge(4,3);
 
-        col23_2.addEdge(3, 2);
-        col23_2.addEdge(2, 3);
-
-        col23_2.addEdge(4, 2);
-        col23_2.addEdge(2, 4);
-
-        col23_2.addEdge(3, 5);
-        col23_2.addEdge(5, 3);
-
-        col23_2.addEdge(1, 7);
-        col23_2.addEdge(7, 1);
-
-        col23_2.addEdge(1, 6);
-        col23_2.addEdge(6, 1);
-
-        col23_2.addEdge(7, 6);
-        col23_2.addEdge(6, 7);
-
-        System.out.println(col23_2.checkIfGraphIsATree());
+        col24.countEdges();
 
     }
 
