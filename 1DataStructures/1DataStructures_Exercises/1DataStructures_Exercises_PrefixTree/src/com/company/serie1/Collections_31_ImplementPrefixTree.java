@@ -5,12 +5,12 @@ import java.util.Arrays;
 public class Collections_31_ImplementPrefixTree {
 
     public static int NUMBER_OF_LETTERS = 26;
-    public Collections_31_ImplementPrefixTree[] children = new Collections_31_ImplementPrefixTree[NUMBER_OF_LETTERS];
 
     public static int getCharIndex(char ch) {
         return ch - 'a';
     }
 
+    public Collections_31_ImplementPrefixTree[] children = new Collections_31_ImplementPrefixTree[NUMBER_OF_LETTERS];
 
     public Collections_31_ImplementPrefixTree() {
     }
@@ -20,7 +20,12 @@ public class Collections_31_ImplementPrefixTree {
     }
 
     public boolean isNodeEndOfWord = false;
-    public int size;
+    public boolean isNodeVisited = false;
+
+    public void setNodeAsVisited (){
+        this.isNodeVisited = true;
+    }
+
 
     public Collections_31_ImplementPrefixTree getNode(char ch) {
         return children[getCharIndex(ch)];
