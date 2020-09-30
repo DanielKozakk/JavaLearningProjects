@@ -1,5 +1,7 @@
 package com.company.serie2;
 
+import com.company.serie1.Collections_26_ImplementBinarySearchTree;
+
 public class Collections_26_SearchBinaryTree {
 
     private Node root = null;
@@ -8,6 +10,7 @@ public class Collections_26_SearchBinaryTree {
 
         int data;
         Node left, right;
+
 
         private Node(int data) {
             this.data = data;
@@ -27,6 +30,8 @@ public class Collections_26_SearchBinaryTree {
         }
     }
 
+
+
     public void insert(int dataToInsert) {
         if (root == null) {
             root = new Node(dataToInsert);
@@ -36,10 +41,19 @@ public class Collections_26_SearchBinaryTree {
     }
 
     private void insert(Node node, int dataToInsert) {
-        if (dataToInsert > node.getData()) {
-            insert(node.right, dataToInsert);
-        } else if (dataToInsert <= node.getData()) {
-            insert(node.left, dataToInsert);
+
+        if(dataToInsert > node.getData()) {
+            if(node.right == null){
+                node.right = new Node(dataToInsert);
+            } else {
+                insert(node.right, dataToInsert);
+            }
+        } else {
+            if(node.left == null){
+                node.left = new Node(dataToInsert);
+            } else {
+                insert(node.left, dataToInsert);
+            }
         }
     }
 

@@ -7,18 +7,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Collections_26_ImplementBinarySearchTree col26 = new Collections_26_ImplementBinarySearchTree(10);
-        col26.insert(15);
-        col26.insert(5);
-        col26.insert(8);
-        col26.insert(7);
-        col26.insert(4);
-        col26.insert(12);
-        col26.insert(16);
+        Collections_27_FindTheHeightOfABinaryTree col27 = new Collections_27_FindTheHeightOfABinaryTree(10);
 
-        System.out.println(col26.contains(163));
+        col27.insert(15);
+        col27.insert(5);
+        col27.insert(8);
+        col27.insert(7);
+        col27.insert(4);
+        col27.insert(12);
+        col27.insert(16);
+        col27.insert(160);
 
 
+
+        col27.findHeight();
 
     }
 }
