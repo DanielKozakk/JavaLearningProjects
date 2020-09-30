@@ -7,6 +7,9 @@ public class Node {
     Node[] children = new Node[NUMBER_OF_CHARACTERS];
     boolean isNodeEndOfWord = false;
 
+    public Node( ) {
+    }
+
     public Node(boolean isNodeEndOfWord) {
         this.isNodeEndOfWord = isNodeEndOfWord;
     }
@@ -54,5 +57,19 @@ public class Node {
 
     }
 
+    public int findCount(String s){
+        return findCount(s, 0);
+    }
+
+    private int findCount(String s, int index) {
+        if (index == s.length()) {
+            return size;
+        }
+        Node child = getNode(s.charAt(index));
+        if (child == null) {
+            return 0;
+        }
+        return child.findCount(s, index + 1);
+    }
 
 }

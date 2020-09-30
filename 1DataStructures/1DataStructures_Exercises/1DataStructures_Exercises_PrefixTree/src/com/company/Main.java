@@ -6,8 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Collections_31_ImplementPrefixTree dupa = new Collections_31_ImplementPrefixTree();
-        dupa.add("dupa");
+
 
     }
 }

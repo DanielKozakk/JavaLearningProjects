@@ -4,10 +4,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        NodeFromCoderRank nfcr = new NodeFromCoderRank();
-        nfcr.add("dupa");
+        Node nfcr = new Node();
+        nfcr.add("dupaaaaaahhjjhjhjh");
 
-        System.out.println(nfcr.findCount("ul",0));
+        System.out.println(nfcr.findCount("dupa"));
     }
 
 
