@@ -19,10 +19,18 @@ public class Collections_31_ImplementPrefixTree {
         this.isNodeEndOfWord = isItEndOfWord;
     }
 
-    public boolean isNodeEndOfWord = false;
+    private boolean isNodeEndOfWord = false;
     public boolean isNodeVisited = false;
 
-    public void setNodeAsVisited (){
+    public void setNodeAsEndOfWord (){
+        isNodeEndOfWord = true;
+    }
+
+    public boolean isNodeEndOfWord(){
+        return this.isNodeEndOfWord;
+    }
+
+    public void setNodeAsVisited() {
         this.isNodeVisited = true;
     }
 
@@ -55,6 +63,8 @@ public class Collections_31_ImplementPrefixTree {
         if (children[chIndex] == null) {
             child = new Collections_31_ImplementPrefixTree(isItEndOfWord);
             setNode(ch, child);
+        } else if (isItEndOfWord && children[chIndex] != null) {
+            children[chIndex].setNodeAsEndOfWord();
         }
 
 
@@ -73,7 +83,7 @@ public class Collections_31_ImplementPrefixTree {
             return false;
         }
 
-        if(s.length() - 1 == index){
+        if (s.length() - 1 == index) {
             return true;
         }
 
@@ -84,7 +94,6 @@ public class Collections_31_ImplementPrefixTree {
         if (child == null) {
             return false;
         }
-
 
 
         return contains(s, index + 1);

@@ -10,6 +10,8 @@ public class Main {
         Collections_32_PrintAllWordsStoredInPrefixTree col32 = new Collections_32_PrintAllWordsStoredInPrefixTree();
 
         col32.add("majeranek");
+        col32.add("maj");
+        col32.add("chujel");
 
         col32.printAllWords();
 
