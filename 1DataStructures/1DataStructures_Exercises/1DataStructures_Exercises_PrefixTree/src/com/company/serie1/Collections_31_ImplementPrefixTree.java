@@ -5,23 +5,24 @@ import java.util.Arrays;
 public class Collections_31_ImplementPrefixTree {
 
     public static int NUMBER_OF_LETTERS = 26;
-
     public static int getCharIndex(char ch) {
         return ch - 'a';
-    }
-
-    public Collections_31_ImplementPrefixTree[] children = new Collections_31_ImplementPrefixTree[NUMBER_OF_LETTERS];
-
-    public Collections_31_ImplementPrefixTree() {
-    }
-
-    public Collections_31_ImplementPrefixTree(boolean isItEndOfWord) {
-        this.isNodeEndOfWord = isItEndOfWord;
     }
 
     private boolean isNodeEndOfWord = false;
     public boolean isNodeVisited = false;
 
+
+    public Collections_31_ImplementPrefixTree[] children = new Collections_31_ImplementPrefixTree[NUMBER_OF_LETTERS];
+
+    
+    public Collections_31_ImplementPrefixTree (){}
+    public Collections_31_ImplementPrefixTree(boolean isItEndOfWord) {
+        this.isNodeEndOfWord = isItEndOfWord;
+    }
+
+
+    
     public void setNodeAsEndOfWord (){
         isNodeEndOfWord = true;
     }
@@ -67,7 +68,6 @@ public class Collections_31_ImplementPrefixTree {
             children[chIndex].setNodeAsEndOfWord();
         }
 
-
         child.add(string, index + 1);
 
     }
@@ -96,7 +96,7 @@ public class Collections_31_ImplementPrefixTree {
         }
 
 
-        return contains(s, index + 1);
+        return child.contains(s, index + 1);
 
     }
 
