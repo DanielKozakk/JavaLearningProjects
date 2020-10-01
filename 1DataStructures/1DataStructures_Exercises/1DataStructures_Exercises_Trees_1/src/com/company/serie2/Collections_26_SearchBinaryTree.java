@@ -4,12 +4,13 @@ import com.company.serie1.Collections_26_ImplementBinarySearchTree;
 
 public class Collections_26_SearchBinaryTree {
 
-    private Node root = null;
+    protected Node root = null;
 
     class Node {
 
         int data;
         Node left, right;
+        boolean isNodeVisited = false;
 
 
         private Node(int data) {
@@ -21,13 +22,16 @@ public class Collections_26_SearchBinaryTree {
             return this.data;
         }
 
-        private Node getLeft() {
+        protected Node getLeft() {
             return this.left;
         }
 
-        private Node getRight() {
+        protected Node getRight() {
             return this.right;
         }
+
+        protected void setNodeAsVisited(){this.isNodeVisited = true;}
+
     }
 
 
