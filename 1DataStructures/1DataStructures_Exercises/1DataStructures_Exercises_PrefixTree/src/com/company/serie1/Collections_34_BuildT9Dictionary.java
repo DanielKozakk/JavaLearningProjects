@@ -2,6 +2,7 @@ package com.company.serie1;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Collections_34_BuildT9Dictionary {
 
@@ -91,6 +92,10 @@ public class Collections_34_BuildT9Dictionary {
         public Key(Integer key, ArrayList<Letter> lettersList) {
             this.keyNumber = key;
             this.lettersList = lettersList;
+        }
+
+        public void addChild ( Key child){
+            children.add(child);
         }
 
         public Integer getKeyNumber() {
