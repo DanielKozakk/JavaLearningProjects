@@ -86,12 +86,11 @@ public class Collections_33_ImplementDictionaryUsingTrie extends Collections_31_
 
     }
 
-    public boolean isDictionaryContainsWord (String s){
+    public boolean isDictionaryContainsWord(String s) {
         return isDictionaryContainsWord(s, 0);
     }
 
     private boolean isDictionaryContainsWord(String s, int index) {
-
 
 
         char currentChar;
@@ -108,15 +107,15 @@ public class Collections_33_ImplementDictionaryUsingTrie extends Collections_31_
             return false;
         }
 
-        if(s.length() == index + 1){
+        if (s.length() == index + 1) {
 
-            if(child.isNodeEndOfWord()){
+            if (child.isNodeEndOfWord()) {
                 return true;
             } else {
                 return false;
             }
         } else {
-            return child.isDictionaryContainsWord(s,index +1);
+            return child.isDictionaryContainsWord(s, index + 1);
         }
     }
 
