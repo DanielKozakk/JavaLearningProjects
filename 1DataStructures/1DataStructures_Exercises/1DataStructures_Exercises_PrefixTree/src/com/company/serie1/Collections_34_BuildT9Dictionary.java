@@ -1,10 +1,10 @@
 package com.company.serie1;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
-public class Collections_34_BuildT9Dictionary {
+class Collections_34_BuildT9Dictionary {
 
     /*
         1. Używam numerów do reprezentowania naciśnięć klawiszy w słowniku od 2 do 9.
@@ -36,8 +36,8 @@ public class Collections_34_BuildT9Dictionary {
 
         Wish list :
 
-            - Wyższa warstwa abstrakcji odpowiadająca klawiszom - done
-            - Niższa warstwa abstrakcji odpowiadająca literom przypisanym do klawiszy - done
+            - Wyższa warstwa abstrakcji odpowiadająca klawiszom
+            - Niższa warstwa abstrakcji odpowiadająca literom przypisanym do klawiszy
 
             - funkcje do dodawania wyrazów do słownika
                 - zmiana liter na cyfry
@@ -50,63 +50,158 @@ public class Collections_34_BuildT9Dictionary {
 
      */
 
-    public static final int NUMBER_OF_KEYS = 8;
+    private static final HashMap<Character, Integer> characterToKeyNumberMap = new HashMap<>();
+    private static final HashMap<Integer, ArrayList<Character>> keyNumberToCharactersListMap = new HashMap<>();
+    private static final HashMap<Integer, Integer> keyNumberToChildrenIndexMap = new HashMap<>();
 
-    public static Key[] keyList = new Key[8];
+    static {
+        characterToKeyNumberMap.put('a', 2);
+        characterToKeyNumberMap.put('b', 2);
+        characterToKeyNumberMap.put('c', 2);
+        characterToKeyNumberMap.put('d', 3);
+        characterToKeyNumberMap.put('e', 3);
+        characterToKeyNumberMap.put('f', 3);
+        characterToKeyNumberMap.put('g', 4);
+        characterToKeyNumberMap.put('h', 4);
+        characterToKeyNumberMap.put('i', 4);
+        characterToKeyNumberMap.put('j', 5);
+        characterToKeyNumberMap.put('k', 5);
+        characterToKeyNumberMap.put('l', 5);
+        characterToKeyNumberMap.put('m', 6);
+        characterToKeyNumberMap.put('n', 6);
+        characterToKeyNumberMap.put('o', 6);
+        characterToKeyNumberMap.put('p', 7);
+        characterToKeyNumberMap.put('q', 7);
+        characterToKeyNumberMap.put('r', 7);
+        characterToKeyNumberMap.put('s', 7);
+        characterToKeyNumberMap.put('t', 8);
+        characterToKeyNumberMap.put('u', 8);
+        characterToKeyNumberMap.put('v', 8);
+        characterToKeyNumberMap.put('w', 9);
+        characterToKeyNumberMap.put('x', 9);
+        characterToKeyNumberMap.put('y', 9);
+        characterToKeyNumberMap.put('z', 9);
 
-    public Collections_34_BuildT9Dictionary() {
+        keyNumberToCharactersListMap.put(2, new ArrayList<>() {
 
-        initializeKeys();
+            {
+                add('a');
+                add('b');
+                add('c');
+            }
+        });
+        keyNumberToCharactersListMap.put(3, new ArrayList<>() {
+
+            {
+                add('d');
+                add('e');
+                add('f');
+            }
+        });
+        keyNumberToCharactersListMap.put(4, new ArrayList<>() {
+
+            {
+                add('g');
+                add('h');
+                add('i');
+            }
+        });
+        keyNumberToCharactersListMap.put(5, new ArrayList<>() {
+
+            {
+                add('j');
+                add('k');
+                add('l');
+            }
+        });
+        keyNumberToCharactersListMap.put(6, new ArrayList<>() {
+
+            {
+                add('m');
+                add('n');
+                add('o');
+            }
+        });
+        keyNumberToCharactersListMap.put(7, new ArrayList<>() {
+
+            {
+                add('p');
+                add('q');
+                add('r');
+                add('s');
+            }
+        });
+        keyNumberToCharactersListMap.put(8, new ArrayList<>() {
+
+            {
+                add('t');
+                add('u');
+                add('v');
+            }
+        });
+        keyNumberToCharactersListMap.put(9, new ArrayList<>() {
+
+            {
+                add('w');
+                add('x');
+                add('y');
+                add('z');
+            }
+        });
+
+        // first is the key, second is the index
+        keyNumberToChildrenIndexMap.put(2, 0);
+        keyNumberToChildrenIndexMap.put(3, 1);
+        keyNumberToChildrenIndexMap.put(4, 2);
+        keyNumberToChildrenIndexMap.put(5, 3);
+        keyNumberToChildrenIndexMap.put(6, 4);
+        keyNumberToChildrenIndexMap.put(7, 5);
+        keyNumberToChildrenIndexMap.put(8, 6);
+        keyNumberToChildrenIndexMap.put(9, 7);
+    }
+
+    public static Integer turnCharacterToKeyNumber(char ch) {
+        return characterToKeyNumberMap.get(ch);
+    }
+
+    public static List<Character> turnKeyNumberToCharactersList(Integer keyNumber) {
+        return keyNumberToCharactersListMap.get(keyNumber);
+    }
+
+    public static int getKeyIndex(Integer keyNumber) {
+        return keyNumberToChildrenIndexMap.get(keyNumber);
     }
 
     public static int getCharIndex(char ch) {
         return ch;
     }
 
+    private final static int NUMBER_OF_KEYS = 8;
 
-    public void addWord(String s) {
+    private Collections_34_BuildT9Dictionary[] children = new Collections_34_BuildT9Dictionary[NUMBER_OF_KEYS];
 
-//        for(int i = 0 ; i < s.length(); i++){
-//
-//        }
+    private Integer keyNumber;
+    private ArrayList<Letter> lettersList = null;
 
+    public Collections_34_BuildT9Dictionary(Integer keyNumber, char ch) {
+        this.keyNumber = keyNumber;
+        if (lettersList == null) {
+            this.lettersList = new ArrayList<>();
+            this.lettersList.add(new Letter(ch));
+        } else if (!this.lettersList.contains(new Letter(ch))) {
+            this.lettersList.add(new Letter(ch));
+        }
 
     }
 
-    public Integer turnCharacterToKey(char ch) {
-        for (Key key : keyList) {
-            if (key.lettersList.contains(new Letter(ch))) {
-                System.out.println("contains!" + key.getKeyNumber());
-            }
-        }
-        return 2;
+    public Integer getKeyNumber() {
+        return this.keyNumber;
     }
 
-
-    class Key {
-        private Integer keyNumber;
-        private ArrayList<Letter> lettersList;
-
-        private ArrayList<Key> children = new ArrayList<>();
-
-        public Key(Integer key, ArrayList<Letter> lettersList) {
-            this.keyNumber = key;
-            this.lettersList = lettersList;
-        }
-
-        public void addChild ( Key child){
-            children.add(child);
-        }
-
-        public Integer getKeyNumber() {
-            return this.keyNumber;
-        }
-        public ArrayList<Letter> getArrayList (){
-            return this.lettersList;
-        }
-        public ArrayList<Key> getChildren (){
-            return this.children;
-        }
+    public Collections_34_BuildT9Dictionary getChildByLetter(char ch) {
+        Integer keyNumber = turnCharacterToKeyNumber(ch);
+        int indexInArray = getKeyIndex(keyNumber);
+        return children[indexInArray];
     }
 
     class Letter {
@@ -115,85 +210,6 @@ public class Collections_34_BuildT9Dictionary {
         public Letter(char letter) {
             this.letter = String.valueOf(letter);
         }
-    }
-
-    private void initializeKeys() {
-        ArrayList<Letter> two = new ArrayList<Letter>() {
-            {
-                add(new Letter('a'));
-                add(new Letter('b'));
-                add(new Letter('c'));
-
-            }
-        };
-        ArrayList<Letter> three = new ArrayList<Letter>() {
-            {
-                add(new Letter('d'));
-                add(new Letter('e'));
-                add(new Letter('f'));
-
-            }
-        };
-        ArrayList<Letter> four = new ArrayList<Letter>() {
-            {
-                add(new Letter('g'));
-                add(new Letter('h'));
-                add(new Letter('i'));
-
-            }
-        };
-        ArrayList<Letter> five = new ArrayList<Letter>() {
-            {
-                add(new Letter('j'));
-                add(new Letter('k'));
-                add(new Letter('l'));
-
-            }
-        };
-        ArrayList<Letter> six = new ArrayList<Letter>() {
-            {
-                add(new Letter('m'));
-                add(new Letter('n'));
-                add(new Letter('o'));
-
-            }
-        };
-        ArrayList<Letter> seven = new ArrayList<Letter>() {
-            {
-                add(new Letter('p'));
-                add(new Letter('q'));
-                add(new Letter('r'));
-                add(new Letter('s'));
-
-            }
-        };
-        ArrayList<Letter> eight = new ArrayList<Letter>() {
-            {
-                add(new Letter('t'));
-                add(new Letter('u'));
-                add(new Letter('v'));
-
-            }
-        };
-        ArrayList<Letter> nine = new ArrayList<Letter>() {
-            {
-                add(new Letter('w'));
-                add(new Letter('x'));
-                add(new Letter('y'));
-                add(new Letter('z'));
-
-            }
-        };
-
-        keyList[0] = new Key(2, two);
-        keyList[1] = new Key(3, three);
-        keyList[2] = new Key(4, four);
-        keyList[3] = new Key(5, five);
-        keyList[4] = new Key(6, six);
-        keyList[5] = new Key(7, seven);
-        keyList[6] = new Key(8, eight);
-        keyList[7] = new Key(9, nine);
-
     }
 
 
