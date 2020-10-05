@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-class Collections_34_BuildT9Dictionary {
+public class Collections_34_BuildT9Dictionary {
 
     /*
         1. Używam numerów do reprezentowania naciśnięć klawiszy w słowniku od 2 do 9.
@@ -168,49 +168,118 @@ class Collections_34_BuildT9Dictionary {
         return keyNumberToCharactersListMap.get(keyNumber);
     }
 
-    public static int getKeyIndex(Integer keyNumber) {
+    public static int turnKeyNumberToChildrenIndexMap(Integer keyNumber) {
         return keyNumberToChildrenIndexMap.get(keyNumber);
-    }
-
-    public static int getCharIndex(char ch) {
-        return ch;
     }
 
     private final static int NUMBER_OF_KEYS = 8;
 
     private Collections_34_BuildT9Dictionary[] children = new Collections_34_BuildT9Dictionary[NUMBER_OF_KEYS];
 
-    private Integer keyNumber;
-    private ArrayList<Letter> lettersList = null;
+    private Integer keyNumber = null;
+    private ArrayList<Letter> lettersList = new ArrayList<>();
 
-    public Collections_34_BuildT9Dictionary(Integer keyNumber, char ch) {
-        this.keyNumber = keyNumber;
-        if (lettersList == null) {
-            this.lettersList = new ArrayList<>();
-            this.lettersList.add(new Letter(ch));
-        } else if (!this.lettersList.contains(new Letter(ch))) {
-            this.lettersList.add(new Letter(ch));
-        }
-
+    public Collections_34_BuildT9Dictionary() {
     }
 
-    public Integer getKeyNumber() {
+    public Collections_34_BuildT9Dictionary(Character character) {
+        this.keyNumber = turnCharacterToKeyNumber(character);
+        addLetterToLettersList(new Letter(character));
+    }
+
+
+    private Integer getKeyNumber() {
         return this.keyNumber;
     }
 
-    public Collections_34_BuildT9Dictionary getChildByLetter(char ch) {
+    private Collections_34_BuildT9Dictionary getChildByLetter(char ch) {
         Integer keyNumber = turnCharacterToKeyNumber(ch);
-        int indexInArray = getKeyIndex(keyNumber);
+        int indexInArray = turnKeyNumberToChildrenIndexMap(keyNumber);
         return children[indexInArray];
     }
 
-    class Letter {
-        String letter;
+    private void setChild(Collections_34_BuildT9Dictionary newKey) {
 
-        public Letter(char letter) {
-            this.letter = String.valueOf(letter);
-        }
+        children[turnKeyNumberToChildrenIndexMap(newKey.getKeyNumber())] = newKey;
     }
 
+    private void addLetterToLettersList(Letter letter) {
+        if (!this.lettersList.contains(letter)) {
+            this.lettersList.add(letter);
+        }
+    }
+    private boolean checkIfCharacterIsEndOfWord(Character character){
+
+        boolean isLetterEndOfWord = false;
+        for(Letter letterToCheck : lettersList){
+            if(letterToCheck.letter == character){
+                isLetterEndOfWord = letterToCheck.isLetterEndOfWord;
+            }
+        }
+        return isLetterEndOfWord;
+    }
+
+    public void addWordToDictionary(String s) {
+        addWordToDictionary(s, 0);
+    }
+
+    private void addWordToDictionary(String s, int index) {
+        if (s.length() == index) return;
+
+        boolean isCharacterEndOfWord = s.length() - 1 == index;
+
+        Character ch = s.charAt(index);
+        Collections_34_BuildT9Dictionary child = this.getChildByLetter(ch);
+        if (child == null) {
+            child = new Collections_34_BuildT9Dictionary(ch);
+            this.setChild(child);
+        }
+
+        child.addLetterToLettersList(new Letter(ch, isCharacterEndOfWord));
+
+        child.addWordToDictionary(s, index + 1);
+    }
+
+    public boolean isDictionaryContainsAWord(String s) {
+        return isDictionaryContainsAWord(s, 0, false);
+    }
+
+    private boolean isDictionaryContainsAWord(String s, int index, boolean isCharacterEndOfWord) {
+
+        if(s.length() == index && isCharacterEndOfWord){
+            return true;
+        }
+
+        Character ch;
+        Collections_34_BuildT9Dictionary child;
+
+        try {
+            ch = s.charAt(index);
+            child = this.getChildByLetter(ch);
+        } catch (StringIndexOutOfBoundsException e) {
+            return false;
+        }
+        if (child == null) {
+            return false;
+        } else {
+
+            return child.isDictionaryContainsAWord(s, index + 1, child.checkIfCharacterIsEndOfWord(ch));
+        }
+
+    }
+
+    private class Letter {
+        boolean isLetterEndOfWord = false;
+        Character letter;
+
+        Letter(Character letter) {
+            this.letter = letter;
+        }
+
+        Letter(Character letter, boolean isLetterEndOfWord) {
+            this.letter = letter;
+            this.isLetterEndOfWord = isLetterEndOfWord;
+        }
+    }
 
 }

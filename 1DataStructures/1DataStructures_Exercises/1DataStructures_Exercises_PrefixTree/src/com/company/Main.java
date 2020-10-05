@@ -6,9 +6,12 @@ public class Main {
 
     public static void main(String[] args) {
 //
-//        Collections_34_BuildT9Dictionary t9 = new Collections_34_BuildT9Dictionary();
-//        System.out.println(t9.turnCharacterToKeyNumber('a'));
-//
+       Collections_34_BuildT9Dictionary t9 = new Collections_34_BuildT9Dictionary();
+
+       t9.addWordToDictionary("abra");
+
+       System.out.println(t9.isDictionaryContainsAWord("abr"));
+       //
 
     }
 }
