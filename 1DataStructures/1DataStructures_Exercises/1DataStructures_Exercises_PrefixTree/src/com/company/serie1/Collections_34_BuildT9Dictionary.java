@@ -1,6 +1,7 @@
 package com.company.serie1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -184,7 +185,7 @@ public class Collections_34_BuildT9Dictionary {
 
     public Collections_34_BuildT9Dictionary(Character character) {
         this.keyNumber = turnCharacterToKeyNumber(character);
-        addLetterToLettersList(new Letter(character));
+
     }
 
 
@@ -192,10 +193,16 @@ public class Collections_34_BuildT9Dictionary {
         return this.keyNumber;
     }
 
+//    private boolean isNodeVisited
+
     private Collections_34_BuildT9Dictionary getChildByLetter(char ch) {
         Integer keyNumber = turnCharacterToKeyNumber(ch);
         int indexInArray = turnKeyNumberToChildrenIndexMap(keyNumber);
         return children[indexInArray];
+    }
+
+    private Collections_34_BuildT9Dictionary getChildByKeyNumber(int key) {
+        return children[turnKeyNumberToChildrenIndexMap(key)];
     }
 
     private void setChild(Collections_34_BuildT9Dictionary newKey) {
@@ -208,11 +215,23 @@ public class Collections_34_BuildT9Dictionary {
             this.lettersList.add(letter);
         }
     }
-    private boolean checkIfCharacterIsEndOfWord(Character character){
+
+    private Letter getLetterFromLettersListByCharacter(Character ch) {
+        Letter searchedLetter = null;
+        for (Letter letter : lettersList) {
+            if (letter.letter == ch) {
+                searchedLetter = letter;
+                break;
+            }
+        }
+        return searchedLetter;
+    }
+
+    private boolean checkIfCharacterIsEndOfWord(Character character) {
 
         boolean isLetterEndOfWord = false;
-        for(Letter letterToCheck : lettersList){
-            if(letterToCheck.letter == character){
+        for (Letter letterToCheck : lettersList) {
+            if (letterToCheck.letter == character) {
                 isLetterEndOfWord = letterToCheck.isLetterEndOfWord;
             }
         }
@@ -230,23 +249,36 @@ public class Collections_34_BuildT9Dictionary {
 
         Character ch = s.charAt(index);
         Collections_34_BuildT9Dictionary child = this.getChildByLetter(ch);
+        Letter letterToAdd = new Letter(ch, isCharacterEndOfWord);
+
+        if(isCharacterEndOfWord){
+            letterToAdd.setWholeWord(s);
+        }
+
         if (child == null) {
             child = new Collections_34_BuildT9Dictionary(ch);
             this.setChild(child);
+        } else {
+            // ten mechanizm może byc jeszcze zmieniany dla poprawy czytelności
+            Letter existingLetter = child.getLetterFromLettersListByCharacter(ch);
+            if (existingLetter != null && existingLetter.isLetterEndOfWord != isCharacterEndOfWord) {
+                child.lettersList.remove(existingLetter);
+            }
         }
+        child.addLetterToLettersList(letterToAdd);
 
-        child.addLetterToLettersList(new Letter(ch, isCharacterEndOfWord));
 
         child.addWordToDictionary(s, index + 1);
     }
 
     public boolean isDictionaryContainsAWord(String s) {
-        return isDictionaryContainsAWord(s, 0, false);
+        return isDictionaryContainsAWord(s, 0, false, null);
     }
 
-    private boolean isDictionaryContainsAWord(String s, int index, boolean isCharacterEndOfWord) {
+    private boolean isDictionaryContainsAWord(String s, int index, boolean isCharacterEndOfWord, String wholeWordAssignedToLastLetter) {
 
-        if(s.length() == index && isCharacterEndOfWord){
+        if (s.length() == index && isCharacterEndOfWord && s.equals(wholeWordAssignedToLastLetter)) {
+
             return true;
         }
 
@@ -263,13 +295,14 @@ public class Collections_34_BuildT9Dictionary {
             return false;
         } else {
 
-            return child.isDictionaryContainsAWord(s, index + 1, child.checkIfCharacterIsEndOfWord(ch));
+            return child.isDictionaryContainsAWord(s, index + 1, child.checkIfCharacterIsEndOfWord(ch), child.getLetterFromLettersListByCharacter(ch).getWholeWord());
         }
 
     }
 
     private class Letter {
         boolean isLetterEndOfWord = false;
+        String wholeWord = null;
         Character letter;
 
         Letter(Character letter) {
@@ -280,6 +313,82 @@ public class Collections_34_BuildT9Dictionary {
             this.letter = letter;
             this.isLetterEndOfWord = isLetterEndOfWord;
         }
+
+        public void setWholeWord(String wholeWord){
+            this.wholeWord = wholeWord;
+        }
+        public String getWholeWord(){
+            return this.wholeWord;
+        }
     }
 
+    public ArrayList<String> getWordsByNumericInput(String input) {
+
+        // dla 111
+        /// powinno zwrócić abc (dodane do słownika)
+
+        int index = 0;
+
+        ArrayList<String> possibleCombinations = new ArrayList<>();
+        ArrayList<String> suggestedWords = new ArrayList<>();
+
+        char ch = input.charAt(index);
+        Integer digit = Character.getNumericValue(ch);
+
+        Collections_34_BuildT9Dictionary child = null;
+
+
+        while (index < input.length()) {
+
+            ch = input.charAt(index);
+            digit = Character.getNumericValue(ch);
+
+            if (child == null) {
+                child = getChildByKeyNumber(digit);
+            } else {
+                child = child.getChildByKeyNumber(digit);
+            }
+
+            if (child == null) {
+                return new ArrayList<>();
+            }
+            if (possibleCombinations.isEmpty()) {
+                for (Letter letter : child.lettersList) {
+                    possibleCombinations.add(String.valueOf(letter.letter));
+                }
+            } else {
+                ArrayList<String> newPossibilities = new ArrayList<>();
+
+                for (String st : possibleCombinations) {
+                    StringBuilder sb;
+
+                    for (Letter letter : child.lettersList) {
+                        sb = new StringBuilder(st);
+                        sb.append(letter.letter);
+                        if (!newPossibilities.contains(sb.toString())) {
+                            newPossibilities.add(sb.toString());
+                        }
+                    }
+
+                }
+
+                possibleCombinations.addAll(newPossibilities);
+
+            }
+
+            for(String possibleCombination : possibleCombinations){
+                if(isDictionaryContainsAWord(possibleCombination)){
+                    suggestedWords.add(possibleCombination);
+                }
+            }
+            index++;
+        }
+
+
+
+        return suggestedWords;
+    }
 }
+
+
+
