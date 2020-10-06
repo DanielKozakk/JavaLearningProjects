@@ -17,8 +17,10 @@ public class Main {
 
 //       t9.getWordsByNumericInput("222");
 
-//       System.out.println(t9.getWordsByNumericInput("222").toString());
 
-        System.out.println(t9.isDictionaryContainsAWord("aba"));
+        // tutaj trzeba coś zmienic
+       System.out.println(t9.getWordsByNumericInput("222").toString());
+
+//        System.out.println(t9.isDictionaryContainsAWord("aba"));
     }
 }
