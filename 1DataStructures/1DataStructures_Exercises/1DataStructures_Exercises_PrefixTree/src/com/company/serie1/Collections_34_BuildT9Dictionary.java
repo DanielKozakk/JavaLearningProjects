@@ -1,55 +1,10 @@
 package com.company.serie1;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
 public class Collections_34_BuildT9Dictionary {
-
-    /*
-        1. Używam numerów do reprezentowania naciśnięć klawiszy w słowniku od 2 do 9.
-
-        2. Signature:
-        String -> String
-        albo
-        Integer -> String
-
-        Purpose Statement:
-
-        To imitacja słownika w starym telefonie komórkowym, każdemu przyciskowi z przypisanym jedną cyfrą odpowiada 3 lub 4 litery.
-        Wybierając 326435 otrzymam imię Daniel
-
-        Header :
-
-        input : 326435
-        output : "Daniel"
-
-        input : 87296454
-        output : trawniki
-
-        public String searchWord(String input){
-            ...
-            return output
-        }
-
-        4.
-
-        Wish list :
-
-            - Wyższa warstwa abstrakcji odpowiadająca klawiszom
-            - Niższa warstwa abstrakcji odpowiadająca literom przypisanym do klawiszy
-
-            - funkcje do dodawania wyrazów do słownika
-                - zmiana liter na cyfry
-
-            - funkcja odczytywania wyrazów ze słownika
-
-
-        5.
-        Code !
-
-     */
 
     private static final HashMap<Character, Integer> characterToKeyNumberMap = new HashMap<>();
     private static final HashMap<Integer, ArrayList<Character>> keyNumberToCharactersListMap = new HashMap<>();
@@ -185,15 +140,11 @@ public class Collections_34_BuildT9Dictionary {
 
     public Collections_34_BuildT9Dictionary(Character character) {
         this.keyNumber = turnCharacterToKeyNumber(character);
-
     }
-
 
     private Integer getKeyNumber() {
         return this.keyNumber;
     }
-
-//    private boolean isNodeVisited
 
     private Collections_34_BuildT9Dictionary getChildByLetter(char ch) {
         Integer keyNumber = turnCharacterToKeyNumber(ch);
@@ -245,28 +196,35 @@ public class Collections_34_BuildT9Dictionary {
     private void addWordToDictionary(String s, int index) {
         if (s.length() == index) return;
 
-        boolean isCharacterEndOfWord = s.length() - 1 == index;
+        boolean isNewCharacterEndOfWord = s.length() - 1 == index;
 
         Character ch = s.charAt(index);
         Collections_34_BuildT9Dictionary child = this.getChildByLetter(ch);
-        Letter letterToAdd = new Letter(ch, isCharacterEndOfWord);
-
-        if(isCharacterEndOfWord){
-            letterToAdd.setWholeWord(s);
-        }
+        Letter letterToAddOrChange;
 
         if (child == null) {
             child = new Collections_34_BuildT9Dictionary(ch);
             this.setChild(child);
+            letterToAddOrChange = new Letter(ch, isNewCharacterEndOfWord);
+
         } else {
-            // ten mechanizm może byc jeszcze zmieniany dla poprawy czytelności
             Letter existingLetter = child.getLetterFromLettersListByCharacter(ch);
-            if (existingLetter != null && existingLetter.isLetterEndOfWord != isCharacterEndOfWord) {
-                child.lettersList.remove(existingLetter);
+
+            if(existingLetter != null){
+               letterToAddOrChange = existingLetter;
+               if(isNewCharacterEndOfWord){
+                   letterToAddOrChange.setAsEndOfWord();
+               }
+            } else {
+                letterToAddOrChange = new Letter(ch, isNewCharacterEndOfWord);
             }
         }
-        child.addLetterToLettersList(letterToAdd);
 
+        if (isNewCharacterEndOfWord) {
+            letterToAddOrChange.addWholeWord(s);
+        }
+
+        child.addLetterToLettersList(letterToAddOrChange);
 
         child.addWordToDictionary(s, index + 1);
     }
@@ -275,11 +233,15 @@ public class Collections_34_BuildT9Dictionary {
         return isDictionaryContainsAWord(s, 0, false, null);
     }
 
-    private boolean isDictionaryContainsAWord(String s, int index, boolean isCharacterEndOfWord, String wholeWordAssignedToLastLetter) {
+    private boolean isDictionaryContainsAWord(String s, int index, boolean isCharacterEndOfWord, List<String> wholeWordsAssignedToLastLetter) {
 
-        if (s.length() == index && isCharacterEndOfWord && s.equals(wholeWordAssignedToLastLetter)) {
+        if (s.length() == index && isCharacterEndOfWord) {
 
-            return true;
+            for(String word :wholeWordsAssignedToLastLetter){
+                if(s.equals(word)){
+                   return true;
+                }
+            }
         }
 
         Character ch;
@@ -294,15 +256,21 @@ public class Collections_34_BuildT9Dictionary {
         if (child == null) {
             return false;
         } else {
+            boolean isChildCharacterEndOfWord = child.checkIfCharacterIsEndOfWord(ch);
+            if (isChildCharacterEndOfWord) {
+                System.out.println("tu");
+                return child.isDictionaryContainsAWord(s, index + 1, isChildCharacterEndOfWord, child.getLetterFromLettersListByCharacter(ch).getWholeWords());
+            } else {
+                return child.isDictionaryContainsAWord(s, index + 1, isChildCharacterEndOfWord, null);
 
-            return child.isDictionaryContainsAWord(s, index + 1, child.checkIfCharacterIsEndOfWord(ch), child.getLetterFromLettersListByCharacter(ch).getWholeWord());
+            }
         }
 
     }
 
     private class Letter {
         boolean isLetterEndOfWord = false;
-        String wholeWord = null;
+        ArrayList<String> wholeWords = null;
         Character letter;
 
         Letter(Character letter) {
@@ -314,18 +282,23 @@ public class Collections_34_BuildT9Dictionary {
             this.isLetterEndOfWord = isLetterEndOfWord;
         }
 
-        public void setWholeWord(String wholeWord){
-            this.wholeWord = wholeWord;
+        public void addWholeWord(String wholeWord) {
+          if(wholeWords == null){
+            this.wholeWords = new ArrayList<>();
+          }
+          this.wholeWords.add(wholeWord);
         }
-        public String getWholeWord(){
-            return this.wholeWord;
+
+        public ArrayList<String> getWholeWords() {
+            return this.wholeWords;
+        }
+
+        public void setAsEndOfWord(){
+            this.isLetterEndOfWord = true;
         }
     }
 
     public ArrayList<String> getWordsByNumericInput(String input) {
-
-        // dla 111
-        /// powinno zwrócić abc (dodane do słownika)
 
         int index = 0;
 
@@ -336,8 +309,6 @@ public class Collections_34_BuildT9Dictionary {
         Integer digit = Character.getNumericValue(ch);
 
         Collections_34_BuildT9Dictionary child = null;
-
-
         while (index < input.length()) {
 
             ch = input.charAt(index);
@@ -369,23 +340,17 @@ public class Collections_34_BuildT9Dictionary {
                             newPossibilities.add(sb.toString());
                         }
                     }
-
                 }
-
                 possibleCombinations.addAll(newPossibilities);
-
             }
 
-            for(String possibleCombination : possibleCombinations){
-                if(isDictionaryContainsAWord(possibleCombination)){
+            for (String possibleCombination : possibleCombinations) {
+                if (isDictionaryContainsAWord(possibleCombination)) {
                     suggestedWords.add(possibleCombination);
                 }
             }
             index++;
         }
-
-
-
         return suggestedWords;
     }
 }

@@ -8,19 +8,12 @@ public class Main {
 
        Collections_34_BuildT9Dictionary t9 = new Collections_34_BuildT9Dictionary();
 
-       t9.addWordToDictionary("abc");
-       t9.addWordToDictionary("cba");
-
-
-//       System.out.println(t9.isDictionaryContainsAWord("abc"));
-
-
-//       t9.getWordsByNumericInput("222");
+       t9.addWordToDictionary("seks");
+       t9.addWordToDictionary("rejs");
 
 
         // tutaj trzeba coś zmienic
-       System.out.println(t9.getWordsByNumericInput("222").toString());
+       System.out.println(t9.getWordsByNumericInput("7357").toString());
 
-//        System.out.println(t9.isDictionaryContainsAWord("aba"));
     }
 }
