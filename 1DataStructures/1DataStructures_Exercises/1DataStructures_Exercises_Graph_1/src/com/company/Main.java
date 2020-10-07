@@ -9,7 +9,7 @@ public class Main {
 
 
 
-        Collections_19_ImplementBreadthFirstSearchInAdjacencyMatrixGraph col19 = new Collections_19_ImplementBreadthFirstSearchInAdjacencyMatrixGraph(5);
+        Collections_19_ImplementBreadthFirstSearchInAdjacencyMatrixGraph col19 = new Collections_19_ImplementBreadthFirstSearchInAdjacencyMatrixGraph(7);
 
         col19.addVertex("Pierwszy");
         col19.addVertex("Drugi");
