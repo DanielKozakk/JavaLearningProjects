@@ -85,7 +85,7 @@ public class Collections_31_PrefixTreeImplementation {
     public Collections_31_PrefixTreeImplementation() {
     }
 
-    public void addChildToChildrenHashMap(char ch) {
+    private void addChildToChildrenHashMap(char ch) {
         childrenHashMap.put(ch, new Collections_31_PrefixTreeImplementation(ch));
     }
 

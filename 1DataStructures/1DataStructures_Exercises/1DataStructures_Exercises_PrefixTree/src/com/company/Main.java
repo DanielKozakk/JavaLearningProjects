@@ -3,18 +3,15 @@ package com.company;
 import com.company.serie1.Collections_34_BuildT9Dictionary;
 import com.company.serie2.Collections_31_PrefixTreeImplementation;
 import com.company.serie2.Collections_32_PrintAllWordsStoredInPrefixTree;
+import com.company.serie2.Collections_35_CountTotalWordInPrefixTree;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Collections_31_PrefixTreeImplementation col31_s2 = new Collections_31_PrefixTreeImplementation();
 
-        col31_s2.addWord("chuj");
-        col31_s2.addWord("dupa");
+        Collections_35_CountTotalWordInPrefixTree col35 = new Collections_35_CountTotalWordInPrefixTree();
 
-        System.out.println(col31_s2.contains("chuj"));
-        System.out.println(col31_s2.contains("chuja"));
-
+        System.out.println(col35.countTotalWords());
     }
 }
