@@ -7,18 +7,18 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Collections_29_FindNodesAtKDistanceFromTheRoot col28 = new Collections_29_FindNodesAtKDistanceFromTheRoot();
 
-        col28.insert(10);
-        col28.insert(15);
-        col28.insert(5);
-        col28.insert(8);
-        col28.insert(7);
-        col28.insert(4);
-        col28.insert(12);
-        col28.insert(16);
+        Collections_30_FindAncestors col28 = new Collections_30_FindAncestors();
 
-        col28.findNodesAtKDistance(3);
+        col28.insert(100);
+        col28.insert(111);
+        col28.insert(78);
+        col28.insert(90);
+        col28.insert(60);
+        col28.insert(50);
+
+
+        System.out.println(col28.findAncestorsOfGivenNode(50).toString());
 
     }
 }
