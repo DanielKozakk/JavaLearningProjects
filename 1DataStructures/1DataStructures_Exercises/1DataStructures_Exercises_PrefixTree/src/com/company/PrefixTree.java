@@ -10,7 +10,6 @@ public class PrefixTree {
     private boolean isNodeEndOfWord = false;
     public boolean isNodeVisited = false;
 
-
     public PrefixTree[] children = new PrefixTree[NUMBER_OF_LETTERS];
 
 
