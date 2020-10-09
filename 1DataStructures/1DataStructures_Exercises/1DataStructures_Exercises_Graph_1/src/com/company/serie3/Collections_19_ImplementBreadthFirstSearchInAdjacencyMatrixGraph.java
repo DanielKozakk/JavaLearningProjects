@@ -48,7 +48,6 @@ public class Collections_19_ImplementBreadthFirstSearchInAdjacencyMatrixGraph ex
                 if(adjacencyMatrix[searched.getId()][i] != 0 &&!neighbour.isVertexVisited() && !unvisitedVerticies.contains(neighbour)){
                     unvisitedVerticies.add(neighbour);
                 }
-
             }
 
             searched.setVertexAsVisited();
@@ -57,8 +56,5 @@ public class Collections_19_ImplementBreadthFirstSearchInAdjacencyMatrixGraph ex
                 searched = unvisitedVerticies.peek();
             }
         }
-
-
-
     }
 }

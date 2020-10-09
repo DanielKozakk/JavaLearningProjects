@@ -1,7 +1,7 @@
 package com.company;
 
 
-import com.company.serie3.Collections_19_ImplementBreadthFirstSearchInAdjacencyMatrixGraph;
+import com.company.serie3.*;
 
 public class Main {
 
@@ -9,31 +9,78 @@ public class Main {
 
 
 
-        Collections_19_ImplementBreadthFirstSearchInAdjacencyMatrixGraph col19 = new Collections_19_ImplementBreadthFirstSearchInAdjacencyMatrixGraph(7);
 
-        col19.addVertex("Pierwszy");
-        col19.addVertex("Drugi");
-        col19.addVertex("Trzeci");
-        col19.addVertex("Czwarty");
-        col19.addVertex("Piąty");
-        col19.addVertex("Szósty");
-        col19.addVertex("Siódmyyyy");
+        Collections_23_CheckIfGraphIsATreeOrNot col23 = new Collections_23_CheckIfGraphIsATreeOrNot(7);
+        col23.addVertex("Zerowy");
+        col23.addVertex("Pierwszy");
+        col23.addVertex("Drugi");
+        col23.addVertex("Trzeci");
+        col23.addVertex("Czwarty");
+        col23.addVertex("Piąty");
+        col23.addVertex("Szósty");
 
-        col19.addEdge(0, 1);
-        col19.addEdge(1, 0);
-        col19.addEdge(0, 2);
-        col19.addEdge(2, 0);
-        col19.addEdge(2, 3);
-        col19.addEdge(3, 2);
-        col19.addEdge(2, 4);
-        col19.addEdge(4, 2);
-        col19.addEdge(3, 5);
-        col19.addEdge(5, 3);
-        col19.addEdge(1, 6);
-        col19.addEdge(6, 1);
+        col23.addEdge(0, 1);
+        col23.addEdge(1, 0);
+
+        col23.addEdge(0, 2);
+        col23.addEdge(2, 0);
 
 
-        col19.breadthFirstSearch();
+        col23.addEdge(1,6);
+        col23.addEdge(6,1);
+
+        col23.addEdge(2,3);
+        col23.addEdge(3,2);
+
+        col23.addEdge(2,4);
+        col23.addEdge(4,2);
+
+        col23.addEdge(5,3);
+        col23.addEdge(3,5);
+
+//        System.out.println(col23.checkIfGraphIsTree());
+
+        Collections_23_CheckIfGraphIsATreeOrNot col23_2 = new Collections_23_CheckIfGraphIsATreeOrNot(8);
+        col23_2.addVertex("Zerowy");
+        col23_2.addVertex("Pierwszy");
+        col23_2.addVertex("Drugi");
+        col23_2.addVertex("Trzeci");
+        col23_2.addVertex("Czwarty");
+        col23_2.addVertex("Piąty");
+        col23_2.addVertex("Szósty");
+        col23_2.addVertex("Siódmy");
+
+
+        col23_2.addEdge(0, 1);
+        col23_2.addEdge(1, 0);
+
+        col23_2.addEdge(0, 2);
+        col23_2.addEdge(2, 0);
+
+        col23_2.addEdge(1, 2);
+        col23_2.addEdge(2, 1);
+
+        col23_2.addEdge(3, 2);
+        col23_2.addEdge(2, 3);
+
+        col23_2.addEdge(4, 2);
+        col23_2.addEdge(2, 4);
+
+        col23_2.addEdge(3, 5);
+        col23_2.addEdge(5, 3);
+
+        col23_2.addEdge(1, 7);
+        col23_2.addEdge(7, 1);
+
+        col23_2.addEdge(1, 6);
+        col23_2.addEdge(6, 1);
+
+        col23_2.addEdge(7, 6);
+        col23_2.addEdge(6, 7);
+
+        System.out.println(col23_2.checkIfGraphIsTree());
+
+
     }
 
 
