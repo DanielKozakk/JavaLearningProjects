@@ -1,22 +1,20 @@
 package com.company;
 
 import com.company.serie1.Collections_36_FindSymmetricPairsInAnArray;
+import com.company.serie1.Collections_37_FindIfAnArrayIsASubsetOfAnotherArray;
 
 public class Main {
 
     public static void main(String[] args) {
 
 
-        int[][] inputFor36 = new int [5][2];
+       int[] first = new int[]{11,1,13,21,3,7};
+       int[] second = new int[]{11,3,7,1,5};
 
-        inputFor36[0] = new int[]{11, 20};
-        inputFor36[1] = new int[]{30, 40};
-        inputFor36[2] = new int[]{5, 10};
-        inputFor36[3] = new int[]{40, 30};
-        inputFor36[4] = new int[]{10, 5};
+        Collections_37_FindIfAnArrayIsASubsetOfAnotherArray col37 = new Collections_37_FindIfAnArrayIsASubsetOfAnotherArray();
+        boolean result = col37.findIfSecondArrayIsASubsetOfFirst(first,second);
+        System.out.println(result);
 
-        Collections_36_FindSymmetricPairsInAnArray col36 = new Collections_36_FindSymmetricPairsInAnArray();
-        col36.findSymmetricPairs(inputFor36);
 
     }
 }
