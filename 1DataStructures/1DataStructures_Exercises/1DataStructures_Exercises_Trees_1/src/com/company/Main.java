@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.serie2.*;
+import com.company.serie4.Collections_26_SearchBinaryTree;
 
 public class Main {
 
@@ -8,17 +9,21 @@ public class Main {
 
 
 
-        Collections_30_FindAncestors col28 = new Collections_30_FindAncestors();
 
-        col28.insert(100);
-        col28.insert(111);
-        col28.insert(78);
-        col28.insert(90);
-        col28.insert(60);
-        col28.insert(50);
+        Collections_26_SearchBinaryTree col26 = new Collections_26_SearchBinaryTree(10);
 
+        col26.insert(15);
+        col26.insert(5);
+        col26.insert(8);
+        col26.insert(7);
+        col26.insert(4);
+        col26.insert(12);
+        col26.insert(16);
 
-        System.out.println(col28.findAncestorsOfGivenNode(50).toString());
+        col26.printInOrder();
+
+        System.out.println(col26.contains(5121));
+
 
     }
 }
