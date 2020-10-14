@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Collections_25_FindShortestPathBetweenTwoVertices col25 = new Collections_25_FindShortestPathBetweenTwoVertices(5);
+        Collections_24_CountNumberOfEdges col25 = new Collections_24_CountNumberOfEdges(5);
 
 
         col25.addVertex("A");//0
@@ -24,7 +24,7 @@ public class Main {
         col25.addEdge(2, 4, 5);
         col25.addEdge(3, 4, 1);
 
-        col25.findShortestPath(0,2);
+        col25.countNumberOfEdges();
 
     }
 
