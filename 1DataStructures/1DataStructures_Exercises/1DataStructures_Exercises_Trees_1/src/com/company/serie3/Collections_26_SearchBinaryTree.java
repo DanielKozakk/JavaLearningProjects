@@ -1,13 +1,9 @@
-package com.company.serie4;
+package com.company.serie3;
+
+import java.util.Stack;
 
 public class Collections_26_SearchBinaryTree {
 
-    /*
-            Left, Right jako prawy lewy node
-            boolean isNodevisited
-            int data
-
-     */
 
     Collections_26_SearchBinaryTree left, right;
     boolean isNodeVisited;
@@ -64,7 +60,7 @@ public class Collections_26_SearchBinaryTree {
                 return false;
             }
         }
-
     }
+
 
 }
