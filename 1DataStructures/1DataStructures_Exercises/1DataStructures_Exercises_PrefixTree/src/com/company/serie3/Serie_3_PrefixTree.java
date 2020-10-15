@@ -1,8 +1,8 @@
-package com.company;
+package com.company.serie3;
 
 import java.util.HashMap;
 
-public class PrefixTree {
+public class Serie_3_PrefixTree {
 
     private boolean isNodeEndOfWord = false;
 
@@ -10,13 +10,13 @@ public class PrefixTree {
 
     public boolean isNodeVisited = false;
 
-    public HashMap<Character, PrefixTree> children = new HashMap<>();
+    public HashMap<Character, Serie_3_PrefixTree> children = new HashMap<>();
 
 
-    public PrefixTree() {
+    public Serie_3_PrefixTree() {
     }
 
-    protected PrefixTree(boolean isItEndOfWord) {
+    protected Serie_3_PrefixTree(boolean isItEndOfWord) {
         this.isNodeEndOfWord = isItEndOfWord;
     }
 
@@ -39,11 +39,11 @@ public class PrefixTree {
     }
 
 
-    public PrefixTree getNode(char ch) {
+    public Serie_3_PrefixTree getNode(char ch) {
         return children.get(ch);
     }
 
-    public void setNode(char ch, PrefixTree node) {
+    public void setNode(char ch, Serie_3_PrefixTree node) {
 
         children.put(ch, node);
 
@@ -64,10 +64,10 @@ public class PrefixTree {
         char ch = string.charAt(index);
 
 
-        PrefixTree child = children.get(ch);
+        Serie_3_PrefixTree child = children.get(ch);
 
         if (child == null) {
-            child = new PrefixTree(isItEndOfWord);
+            child = new Serie_3_PrefixTree(isItEndOfWord);
 
             if(isItEndOfWord) child.setWholeWord(string);
 
@@ -98,7 +98,7 @@ public class PrefixTree {
 
         char currentChar = s.charAt(index);
 
-        PrefixTree child = getNode(currentChar);
+        Serie_3_PrefixTree child = getNode(currentChar);
 
         if (child == null) {
             return false;
@@ -108,5 +108,6 @@ public class PrefixTree {
         return child.contains(s, index + 1);
 
     }
+
 
 }
