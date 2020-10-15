@@ -2,9 +2,7 @@ package com.company.serie3;
 
 import com.company.SearchBinaryTree;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class SearchBinaryTree_Serie3 {
 
@@ -139,6 +137,83 @@ public class SearchBinaryTree_Serie3 {
             kthValue = firstStack.pop().data;
         }
         System.out.println(kthValue);
+    }
+
+    public void Collections_29_FindNodesAtKdistanceFromRoot(int k){
+        /*
+
+                Robię hashMapę
+                searched = this;
+                level = 0;
+                hashMap.put(searched, level)
+
+                unvisitedQueue
+
+                robię while unbisited nie puste
+                level = hashmap.get(searched)
+                level ++
+
+                if(searched.left nie puste i nie visited
+                dodaję do unvbisited
+
+                jeśli hashMapa nie zawiera
+                dodaję do hm
+
+                if(searched.right nie puste i nie visited
+                dodaję do unvbisited
+
+                jeśli hashMapa nie zawiera
+                dodaję do hm
+
+                unvisited.poll
+                ifunisited nto empty
+                searched = quque.peek
+
+
+                na końcu iteruję się przez hashMapę
+
+                    wypisuję wszystkie z konkretnym nodem
+         */
+
+        HashMap<SearchBinaryTree_Serie3, Integer> levelsHashMap = new HashMap<>();
+        SearchBinaryTree_Serie3 searched = this;
+        Integer level = 0;
+        levelsHashMap.put(searched, level);
+
+        Queue<SearchBinaryTree_Serie3> unvisitedQueue = new LinkedList<>();
+        unvisitedQueue.add(searched);
+
+        while(!unvisitedQueue.isEmpty()){
+
+            level = levelsHashMap.get(searched);
+            level ++;
+
+            if(searched.left != null) {
+                unvisitedQueue.add(searched.left);
+                levelsHashMap.put(searched.left, level);
+            }
+            if(searched.right != null) {
+                unvisitedQueue.add(searched.right);
+                levelsHashMap.put(searched.right, level);
+            }
+
+            unvisitedQueue.poll();
+            if(!unvisitedQueue.isEmpty()){
+                searched = unvisitedQueue.peek();
+            }
+
+        }
+
+        ArrayList<SearchBinaryTree_Serie3> nodesAtKthLevel = new ArrayList<>();
+        for(SearchBinaryTree_Serie3 node : levelsHashMap.keySet()){
+            Integer currentNodeLevel = levelsHashMap.get(node);
+            if(currentNodeLevel == k){
+                nodesAtKthLevel.add(node);
+                System.out.println(node.data);
+            }
+        }
+
+
 
 
     }

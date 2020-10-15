@@ -18,7 +18,7 @@ public class Main {
         serie3.insert(12);
         serie3.insert(16);
 
-        serie3.Collections_28_FindKthMaximumValue(5);
+        serie3.Collections_29_FindNodesAtKdistanceFromRoot(1);
 
     }
 }
