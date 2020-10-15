@@ -1,7 +1,7 @@
 package com.company;
 
 
-import com.company.serie2.Collections_34_BuildT9Dictionary;
+import com.company.serie3.Collections_35_CountTotalNumberOfWordsInPrefixTree;
 
 import java.util.ArrayList;
 
@@ -10,19 +10,13 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Collections_34_BuildT9Dictionary col33 = new Collections_34_BuildT9Dictionary();
-
-        col33.addWord("rejs");
-        col33.addWord("seks");
-        col33.addWord("pejs");
-
+        Collections_35_CountTotalNumberOfWordsInPrefixTree col35 = new Collections_35_CountTotalNumberOfWordsInPrefixTree();
+        col35.add("pierwszy");
+        col35.add("pierwsz");
+        col35.add("drugi");
 
 
-        ArrayList<String> words = col33.getWords("7357");
-//
-        for(String word : words){
-            System.out.println(word);
-        }
+        col35.totalCountOfWords();
 
 
     }
