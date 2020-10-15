@@ -1,30 +1,222 @@
 package com.company;
 
-public class PrefixTree {
+import java.util.HashMap;
 
-    public static int NUMBER_OF_LETTERS = 26;
-    public static int getCharIndex(char ch) {
-        return ch - 'a';
-    }
+public class //package com.company.serie2;
+//
+//import com.company.PrefixTree;
+//
+//import java.util.Stack;
+//
+//public class Collections_32_PrintAllWordsStoredInPrefixTree extends PrefixTree {
+//
+//    public static char turnIndexToChar(int index) {
+//        int asciiValue = 'a' + index;
+//        return (char) asciiValue;
+//    }
+//
+//    public void printAllWords() {
+//
+//        /*
+//
+//                Zastosujemy tutaj depth first searched z budowaniem stringów.
+//                Robię unvisited nodes Stack
+//
+//                searched ustawiam na this i dodaję do stacka
+//
+//                robię flagę isVertexVisited = true;
+//
+//                Robię string buldier
+//
+//                iteruję się przez children
+//
+//                    Zamieniam index na Node`a
+//
+//                        jeśli node nie jest exhausted
+//                            searched = node
+//                            jeśli node jest końcem słowa
+//                                wypisuje SB
+//                            isVertexVisited= false;
+//                            dodaję do string buldiera wartość
+//                            unvisitedVertexStack.add(searched)
+//                            break;
+//
+//                sprawdzam czy był wyczerpany
+//
+//                    jeśli był :
+//                        buldier = buldier.deleteCharAt(str.length() - 1)
+//                        stack.pop()
+//                        jeśli stack nie pusty
+//
+//                            searched = stack.peek()
+//
+//         */
+//
+//
+//        Stack<PrefixTree> unvisitedNodesStack = new Stack<>();
+//        PrefixTree searched = this;
+//
+//        StringBuilder sb = new StringBuilder();
+//
+//        unvisitedNodesStack.add(searched);
+//
+//        while (!unvisitedNodesStack.isEmpty()) {
+//            boolean isVertexExhausted = true;
+//            for (int i = 0; i < children.length; i++) {
+//                PrefixTree childNode = searched.getNode(turnIndexToChar(i));
+//
+//                if (childNode != null && !childNode.isNodeVisited) {
+//                    searched = childNode;
+//                    sb.append(Collections_32_PrintAllWordsStoredInPrefixTree.turnIndexToChar(i));
+//                    if (searched.isNodeEndOfWord()) {
+//                        System.out.println(sb);
+//
+//                    }
+//                    isVertexExhausted = false;
+//                    unvisitedNodesStack.add(searched);
+//                    break;
+//
+//                }
+//            }
+//            if (isVertexExhausted) {
+//                searched.setNodeAsVisited();
+//                try {
+//                    sb = sb.deleteCharAt(sb.length() - 1);
+//                } catch(StringIndexOutOfBoundsException e){
+//
+//                }
+//                unvisitedNodesStack.pop();
+//                if (!unvisitedNodesStack.isEmpty()) {
+//                    searched = unvisitedNodesStack.peek();
+//                }
+//            }
+//
+//        }
+//
+//    }
+//}
+//package com.company.serie2;
+//
+//import com.company.PrefixTree;
+//
+//import java.util.Stack;
+//
+//public class Collections_32_PrintAllWordsStoredInPrefixTree extends PrefixTree {
+//
+//    public static char turnIndexToChar(int index) {
+//        int asciiValue = 'a' + index;
+//        return (char) asciiValue;
+//    }
+//
+//    public void printAllWords() {
+//
+//        /*
+//
+//                Zastosujemy tutaj depth first searched z budowaniem stringów.
+//                Robię unvisited nodes Stack
+//
+//                searched ustawiam na this i dodaję do stacka
+//
+//                robię flagę isVertexVisited = true;
+//
+//                Robię string buldier
+//
+//                iteruję się przez children
+//
+//                    Zamieniam index na Node`a
+//
+//                        jeśli node nie jest exhausted
+//                            searched = node
+//                            jeśli node jest końcem słowa
+//                                wypisuje SB
+//                            isVertexVisited= false;
+//                            dodaję do string buldiera wartość
+//                            unvisitedVertexStack.add(searched)
+//                            break;
+//
+//                sprawdzam czy był wyczerpany
+//
+//                    jeśli był :
+//                        buldier = buldier.deleteCharAt(str.length() - 1)
+//                        stack.pop()
+//                        jeśli stack nie pusty
+//
+//                            searched = stack.peek()
+//
+//         */
+//
+//
+//        Stack<PrefixTree> unvisitedNodesStack = new Stack<>();
+//        PrefixTree searched = this;
+//
+//        StringBuilder sb = new StringBuilder();
+//
+//        unvisitedNodesStack.add(searched);
+//
+//        while (!unvisitedNodesStack.isEmpty()) {
+//            boolean isVertexExhausted = true;
+//            for (int i = 0; i < children.length; i++) {
+//                PrefixTree childNode = searched.getNode(turnIndexToChar(i));
+//
+//                if (childNode != null && !childNode.isNodeVisited) {
+//                    searched = childNode;
+//                    sb.append(Collections_32_PrintAllWordsStoredInPrefixTree.turnIndexToChar(i));
+//                    if (searched.isNodeEndOfWord()) {
+//                        System.out.println(sb);
+//
+//                    }
+//                    isVertexExhausted = false;
+//                    unvisitedNodesStack.add(searched);
+//                    break;
+//
+//                }
+//            }
+//            if (isVertexExhausted) {
+//                searched.setNodeAsVisited();
+//                try {
+//                    sb = sb.deleteCharAt(sb.length() - 1);
+//                } catch(StringIndexOutOfBoundsException e){
+//
+//                }
+//                unvisitedNodesStack.pop();
+//                if (!unvisitedNodesStack.isEmpty()) {
+//                    searched = unvisitedNodesStack.peek();
+//                }
+//            }
+//
+//        }
+//
+//    }
+//}
+PrefixTree {
 
     private boolean isNodeEndOfWord = false;
+
+    protected String wholeWord = null;
+
     public boolean isNodeVisited = false;
 
-    public PrefixTree[] children = new PrefixTree[NUMBER_OF_LETTERS];
+    public HashMap<Character, PrefixTree> children = new HashMap<>();
 
 
-    public PrefixTree(){}
-    public PrefixTree(boolean isItEndOfWord) {
+    public PrefixTree() {
+    }
+
+    protected PrefixTree(boolean isItEndOfWord) {
         this.isNodeEndOfWord = isItEndOfWord;
     }
 
-
-    
-    public void setNodeAsEndOfWord (){
+    public void setWholeWord(String wholeWord){
+        this.wholeWord = wholeWord;
+    }
+    public String getWholeWord(){
+        return this.wholeWord;
+    }
+    public void setNodeAsEndOfWord() {
         isNodeEndOfWord = true;
     }
 
-    public boolean isNodeEndOfWord(){
+    public boolean isNodeEndOfWord() {
         return this.isNodeEndOfWord;
     }
 
@@ -34,11 +226,13 @@ public class PrefixTree {
 
 
     public PrefixTree getNode(char ch) {
-        return children[getCharIndex(ch)];
+        return children.get(ch);
     }
 
     public void setNode(char ch, PrefixTree node) {
-        children[getCharIndex(ch)] = node;
+
+        children.put(ch, node);
+
     }
 
     public void add(String string) {
@@ -54,15 +248,19 @@ public class PrefixTree {
 
 
         char ch = string.charAt(index);
-        int chIndex = getCharIndex(ch);
 
-        PrefixTree child = children[chIndex];
 
-        if (children[chIndex] == null) {
+        PrefixTree child = children.get(ch);
+
+        if (child == null) {
             child = new PrefixTree(isItEndOfWord);
+
+            if(isItEndOfWord) child.setWholeWord(string);
+
             setNode(ch, child);
-        } else if (isItEndOfWord && children[chIndex] != null) {
-            children[chIndex].setNodeAsEndOfWord();
+        } else if (isItEndOfWord) {
+            child.setWholeWord(string);
+            child.setNodeAsEndOfWord();
         }
 
         child.add(string, index + 1);
@@ -96,6 +294,5 @@ public class PrefixTree {
         return child.contains(s, index + 1);
 
     }
-
 
 }
