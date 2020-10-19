@@ -1,19 +1,17 @@
 package com.company;
 
-import com.company.serie1.Collections_36_FindSymmetricPairsInAnArray;
 import com.company.serie1.Collections_37_FindIfAnArrayIsASubsetOfAnotherArray;
 import com.company.serie1.Collections_38_CheckIfGivenArrayIsDisjoint;
+import com.company.serie2.Collections_36_FindSymmetricPairsInAnArray;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        int[][] inputFor36 = {{11, 20}, {30, 40}, {5, 10}, {40, 30}, {10, 5}};
 
-       int[] first = new int[]{11,1,13,21,3,7};
-       int[] second = new int[]{7345};
 
-        Collections_38_CheckIfGivenArrayIsDisjoint col38 = new Collections_38_CheckIfGivenArrayIsDisjoint();
-        col38.checkIfArraysAreDisjoint(first,second);
-
+        Collections_36_FindSymmetricPairsInAnArray col36 = new Collections_36_FindSymmetricPairsInAnArray();
+        col36.findPairs(inputFor36);
     }
 }
