@@ -5,7 +5,7 @@ public abstract class AbstractFile implements File {
     protected String name;
     protected int size;
 
-    public AbstractFile(String name, int size) {
+    protected AbstractFile(String name, int size) {
         this.name = name;
         this.size = size;
     }
