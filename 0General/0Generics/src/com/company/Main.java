@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Main {
 
@@ -14,6 +15,8 @@ public class Main {
         int a = 0;
 
         list.add(a);
+
+
 
         String str = (String)list.get(0);
     }
