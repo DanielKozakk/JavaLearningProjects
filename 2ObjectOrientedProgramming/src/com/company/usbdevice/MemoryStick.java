@@ -25,7 +25,7 @@ public class MemoryStick implements USBDevice {
     public boolean disconnect() {
 
         if(!ejected){
-            System.out.println("Eject memory stick !");
+            System.out.println("Eject memory stick first!");
 
             return false;
         } else {

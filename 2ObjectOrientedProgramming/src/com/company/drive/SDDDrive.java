@@ -1,13 +1,13 @@
 package com.company.drive;
 
-import com.company.File;
+import com.company.file.File;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 public class SDDDrive implements Drive {
-    Map<String, File> files = new HashMap<>();
+    private Map<String, File> files = new HashMap<>();
 
     @Override
     public void addFile(File file) {

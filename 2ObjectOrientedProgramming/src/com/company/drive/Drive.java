@@ -1,6 +1,6 @@
 package com.company.drive;
 
-import com.company.File;
+import com.company.file.File;
 
 public interface Drive {
     void addFile(File file);
