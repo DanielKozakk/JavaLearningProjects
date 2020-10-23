@@ -3,6 +3,7 @@ package com.company;
 
 import com.company.serie3.Collections_32_PrintAllWordsStoredInPrefixTree;
 import com.company.serie3.Collections_35_CountTotalNumberOfWordsInPrefixTree;
+import com.company.serie4.Serie4_Col31_PrefixTree;
 
 import java.util.ArrayList;
 
@@ -11,14 +12,12 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Collections_32_PrintAllWordsStoredInPrefixTree col32 = new Collections_32_PrintAllWordsStoredInPrefixTree();
-        col32.add("pierwszy");
-        col32.add("pierwsz");
-        col32.add("drugi");
+        Serie4_Col31_PrefixTree col31 = new Serie4_Col31_PrefixTree();
+        col31.addWord("Pierwszy");
+        col31.addWord("Pierwsza");
 
+        System.out.println(col31.contains("Pierwsza"));
 
-
-        col32.printAllWords();
 
     }
 }
