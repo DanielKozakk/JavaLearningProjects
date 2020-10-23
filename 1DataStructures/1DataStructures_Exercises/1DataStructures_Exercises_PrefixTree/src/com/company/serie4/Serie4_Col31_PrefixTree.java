@@ -51,14 +51,6 @@ public class Serie4_Col31_PrefixTree {
         wholeWords.add(wordToAdd);
         isNodeEndOfWord = true;
     }
-    /*
-
-            Funkcja do dodawania dzieci :
-            sprawdza czy dana litera już istnieje
-            jeśli tak i dziecko ma być końcem słowa, to dodaję nowe wholeWords
-            jeśli nie to tworzy nowe dziecko
-
-     */
 
     private void addChildToHashMapChildren(Character ch) {
         if (!children.containsKey(ch)) {
@@ -100,19 +92,6 @@ public class Serie4_Col31_PrefixTree {
         return wholeWords;
     }
 
-    /*
-             Wish list :
-
-            Funkcja do dodawania słów :
-
-                robię function overloading
-
-                    jedna funkcja będzie iteracyjna biorąca całe słowo do dodania, index
-
-
-
-
-     */
 
     public void addWord(String s){
         addWord(s, 0);
