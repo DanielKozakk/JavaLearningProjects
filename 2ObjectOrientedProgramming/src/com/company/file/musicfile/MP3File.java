@@ -18,4 +18,8 @@ public class MP3File extends AbstractMusicFile {
         System.out.println("Playing MP3 file");
     }
 
+    @Override
+    public String getName() {
+        return "Plik nazywa się MP3 " + super.getName();
+    }
 }

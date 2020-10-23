@@ -18,7 +18,7 @@ public class Main {
 
 
         Monitor monitor = new Monitor();
-        Drive drive = new HDDDrive();
+        Drive drive = new SDDDrive();
 
         Computer computer = new Computer(monitor, drive);
 
@@ -27,17 +27,13 @@ public class Main {
 
         MP3File mp3File = new MP3File("pierwszyMP3", 4000, "Marlin Manson", "Broken Needle", 20);
 
+        System.out.println(mp3File.getName());
 
         drive.addFile(pierwszJPG);
         drive.addFile(pierwszyGif);
         drive.addFile(mp3File);
 
-//        drive.listFiles();
-        File pierwszyMP3 = drive.findFile("pierwszyMP3");
-        System.out.println(pierwszyMP3.getSize());
-
-
-        // 2:20:09
+        // 22:23:47
 
     }
 }
