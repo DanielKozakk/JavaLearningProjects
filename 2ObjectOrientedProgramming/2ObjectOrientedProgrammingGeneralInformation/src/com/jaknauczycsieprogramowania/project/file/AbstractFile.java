@@ -1,4 +1,4 @@
-package com.company.file;
+package com.jaknauczycsieprogramowania.project.file;
 
 public abstract class AbstractFile implements File {
 

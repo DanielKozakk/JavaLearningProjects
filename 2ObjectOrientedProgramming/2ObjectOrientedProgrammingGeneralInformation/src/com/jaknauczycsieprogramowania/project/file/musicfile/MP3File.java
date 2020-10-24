@@ -1,4 +1,4 @@
-package com.company.file.musicfile;
+package com.jaknauczycsieprogramowania.project.file.musicfile;
 
 public class MP3File extends AbstractMusicFile {
 

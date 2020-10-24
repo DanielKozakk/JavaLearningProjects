@@ -1,6 +1,6 @@
-package com.company.drive;
+package com.jaknauczycsieprogramowania.project.drive;
 
-import com.company.file.File;
+import com.jaknauczycsieprogramowania.project.file.File;
 
 import java.util.ArrayList;
 import java.util.List;

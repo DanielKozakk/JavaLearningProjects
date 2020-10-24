@@ -1,4 +1,4 @@
-package com.company;
+package com.jaknauczycsieprogramowania.project;
 
 public class Headphones {
     private final String name;

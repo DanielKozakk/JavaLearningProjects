@@ -1,4 +1,4 @@
-package com.company.usbdevice;
+package com.jaknauczycsieprogramowania.project.usbdevice;
 
 public class MemoryStick implements USBDevice {
 

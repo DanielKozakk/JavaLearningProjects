@@ -1,12 +1,14 @@
-package com.company;
+package com.jaknauczycsieprogramowania.project;
 
 
-import com.company.drive.*;
-import com.company.file.imagefile.GIFImageFile;
-import com.company.file.imagefile.JPGImageFile;
-import com.company.file.musicfile.MP3File;
-import com.company.file.*;
 
+import com.jaknauczycsieprogramowania.project.drive.Drive;
+import com.jaknauczycsieprogramowania.project.drive.SDDDrive;
+import com.jaknauczycsieprogramowania.project.file.imagefile.GIFImageFile;
+import com.jaknauczycsieprogramowania.project.file.imagefile.JPGImageFile;
+import com.jaknauczycsieprogramowania.project.file.musicfile.MP3File;
+
+import com.jaknauczycsieprogramowania.project.file.File;
 
 
 import java.util.ArrayList;

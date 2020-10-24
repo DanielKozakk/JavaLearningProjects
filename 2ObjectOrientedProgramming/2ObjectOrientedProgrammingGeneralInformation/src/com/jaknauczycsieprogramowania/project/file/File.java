@@ -1,4 +1,4 @@
-package com.company.file;
+package com.jaknauczycsieprogramowania.project.file;
 
 public interface File {
 

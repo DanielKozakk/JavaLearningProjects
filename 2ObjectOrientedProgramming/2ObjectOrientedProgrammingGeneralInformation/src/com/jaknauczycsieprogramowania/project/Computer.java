@@ -1,7 +1,7 @@
-package com.company;
+package com.jaknauczycsieprogramowania.project;
 
-import com.company.drive.Drive;
-import com.company.usbdevice.USBDevice;
+import com.jaknauczycsieprogramowania.project.drive.Drive;
+import com.jaknauczycsieprogramowania.project.usbdevice.USBDevice;
 
 import java.util.ArrayList;
 import java.util.List;

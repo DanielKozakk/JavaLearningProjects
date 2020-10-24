@@ -1,7 +1,7 @@
-package com.company.file.imagefile;
+package com.jaknauczycsieprogramowania.project.file.imagefile;
 
-import com.company.file.AbstractFile;
-import com.company.file.FileType;
+import com.jaknauczycsieprogramowania.project.file.AbstractFile;
+import com.jaknauczycsieprogramowania.project.file.FileType;
 
 public abstract class AbstractImageFile extends AbstractFile {
 

@@ -1,7 +1,7 @@
-package com.company.file.musicfile;
+package com.jaknauczycsieprogramowania.project.file.musicfile;
 
-import com.company.file.AbstractFile;
-import com.company.file.FileType;
+import com.jaknauczycsieprogramowania.project.file.AbstractFile;
+import com.jaknauczycsieprogramowania.project.file.FileType;
 
 public abstract class AbstractMusicFile extends AbstractFile implements MusicFile{
 

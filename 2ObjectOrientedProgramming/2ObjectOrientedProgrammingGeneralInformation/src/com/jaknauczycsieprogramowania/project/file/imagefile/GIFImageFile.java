@@ -1,4 +1,4 @@
-package com.company.file.imagefile;
+package com.jaknauczycsieprogramowania.project.file.imagefile;
 
 public class GIFImageFile extends AbstractImageFile {
 

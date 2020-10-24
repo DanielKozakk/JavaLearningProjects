@@ -1,6 +1,6 @@
-package com.company.drive;
+package com.jaknauczycsieprogramowania.project.drive;
 
-import com.company.file.File;
+import com.jaknauczycsieprogramowania.project.file.File;
 
 public interface Drive {
     void addFile(File file);
