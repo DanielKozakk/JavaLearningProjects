@@ -1,14 +1,16 @@
 package com.company;
 
-import com.company.drive.Drive;
-import com.company.drive.HDDDrive;
-import com.company.drive.SDDDrive;
-import com.company.file.File;
+
+import com.company.drive.*;
 import com.company.file.imagefile.GIFImageFile;
 import com.company.file.imagefile.JPGImageFile;
 import com.company.file.musicfile.MP3File;
-import com.company.usbdevice.MemoryStick;
-import com.company.usbdevice.Mouse;
+import com.company.file.*;
+
+
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -18,6 +20,7 @@ public class Main {
 
 
         Monitor monitor = new Monitor();
+
         Drive drive = new SDDDrive();
 
         Computer computer = new Computer(monitor, drive);
@@ -33,7 +36,15 @@ public class Main {
         drive.addFile(pierwszyGif);
         drive.addFile(mp3File);
 
-        // 22:23:47
+        List<File> listOfFiles = new ArrayList<>();
+
+        listOfFiles.add(pierwszJPG);
+        listOfFiles.add(pierwszyGif);
+
+        for(File file : listOfFiles){
+
+            System.out.println(file instanceof GIFImageFile);
+        }
 
     }
 }
