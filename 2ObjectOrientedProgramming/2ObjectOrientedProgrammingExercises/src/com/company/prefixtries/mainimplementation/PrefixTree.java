@@ -53,6 +53,8 @@ public class PrefixTree extends AbstractPrefixTree {
         } else if (isCharEndOfWord) {
             child.setNodeAsEndOfWord();
             child.addWordToListOfWholeWords(word);
+
+
         }
 
         setNode(child);
@@ -85,14 +87,6 @@ public class PrefixTree extends AbstractPrefixTree {
 
     }
 
-    @Override
-    protected boolean isNodeVisited() {
-        return super.isNodeVisited();
-    }
 
-    @Override
-    protected boolean isNodeEndOfWord() {
-        return super.isNodeEndOfWord();
-    }
 
 }

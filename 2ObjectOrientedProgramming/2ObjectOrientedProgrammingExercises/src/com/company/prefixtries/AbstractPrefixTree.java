@@ -54,19 +54,19 @@ public abstract class AbstractPrefixTree implements IPrefixTree {
         return children.get(ch);
     }
 
-    protected void setNodeAsVisited(){
+    void setNodeAsVisited(){
         isNodeVisited = true;
     }
 
-    protected void setNodeAsEndOfWord(){
+    void setNodeAsEndOfWord(){
         isNodeEndOfWord = true;
     }
 
-    protected boolean isNodeVisited() {
+    boolean isNodeVisited() {
         return isNodeVisited;
     }
 
-    protected boolean isNodeEndOfWord() {
+    boolean isNodeEndOfWord() {
         return isNodeEndOfWord;
     }
 

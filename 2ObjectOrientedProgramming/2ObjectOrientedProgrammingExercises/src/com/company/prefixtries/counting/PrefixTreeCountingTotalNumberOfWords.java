@@ -33,7 +33,7 @@ public class PrefixTreeCountingTotalNumberOfWords extends PrefixTree {
         return countWords(new ArrayList<>(), new LinkedList<>(), this);
     }
 
-    private int countWords(ArrayList<String> listOfWords, Queue<PrefixTreeCountingTotalNumberOfWords> unvisitedQueue, PrefixTree searched) {
+    private int countWords(ArrayList<String> listOfWords, Queue<PrefixTreeCountingTotalNumberOfWords> unvisitedQueue, PrefixTreeCountingTotalNumberOfWords searched) {
 
 //        if (!searched.isNodeVisited()) {
 //            unvisitedQueue.add(this);
@@ -46,18 +46,12 @@ public class PrefixTreeCountingTotalNumberOfWords extends PrefixTree {
 
         for (AbstractPrefixTree child : getChildren().values()) {
 
-            PrefixTreeCountingTotalNumberOfWords countingPrefixTree = null;
 
-            if(child instanceof PrefixTree){
-                System.out.println("chuj");
-                countingPrefixTree = (PrefixTreeCountingTotalNumberOfWords) child;
+            if (!unvisitedQueue.contains(child)) {
+                    unvisitedQueue.add(child);
             }
 
-            if (!unvisitedQueue.contains(countingPrefixTree) && countingPrefixTree != null) {
-                    unvisitedQueue.add(countingPrefixTree);
-
-
-            }
+            
         }
 
 
