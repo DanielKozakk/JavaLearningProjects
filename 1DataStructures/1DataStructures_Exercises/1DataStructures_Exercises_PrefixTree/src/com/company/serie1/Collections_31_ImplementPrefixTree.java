@@ -99,6 +99,4 @@ public class Collections_31_ImplementPrefixTree {
         return child.contains(s, index + 1);
 
     }
-
-
 }
