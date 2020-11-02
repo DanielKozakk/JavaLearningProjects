@@ -1,4 +1,6 @@
-package com.company.prefixtries;
+package com.company.prefixtries.mainimplementation;
+
+import com.company.prefixtries.IPrefixTree;
 
 import java.util.ArrayList;
 import java.util.HashMap;

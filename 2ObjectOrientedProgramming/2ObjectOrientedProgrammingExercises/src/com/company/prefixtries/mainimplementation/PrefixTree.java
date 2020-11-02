@@ -1,16 +1,8 @@
 package com.company.prefixtries.mainimplementation;
 
-import com.company.prefixtries.AbstractPrefixTree;
-
 import java.util.HashMap;
 
 public class PrefixTree extends AbstractPrefixTree {
-
-    protected int field = 2;
-
-    protected int getField(){
-        return field;
-    }
 
     protected PrefixTree(HashMap<Character, ? extends AbstractPrefixTree> children) {
         super(children, null);
@@ -86,7 +78,5 @@ public class PrefixTree extends AbstractPrefixTree {
         }
 
     }
-
-
 
 }

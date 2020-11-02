@@ -1,6 +1,6 @@
-package com.company.prefixtries.dictionary;
+package com.company.prefixtries.mainimplementation;
 
-import com.company.prefixtries.AbstractPrefixTree;
+import com.company.prefixtries.mainimplementation.AbstractPrefixTree;
 
 import java.util.HashMap;
 
