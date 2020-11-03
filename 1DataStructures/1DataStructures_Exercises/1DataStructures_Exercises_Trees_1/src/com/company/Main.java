@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        SearchBinaryTree_Serie3 serie3 = new SearchBinaryTree_Serie3(10);
+        Collections_26_SearchBinaryTree serie3 = new Collections_26_SearchBinaryTree(10);
 
         serie3.insert(15);
         serie3.insert(5);
@@ -18,7 +18,7 @@ public class Main {
         serie3.insert(12);
         serie3.insert(16);
 
-        serie3.Collections_29_FindNodesAtKdistanceFromRoot(1);
+        serie3.findKthMaximumValue(1);
 
     }
 }
