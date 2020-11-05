@@ -12,7 +12,7 @@ public abstract class AbstractFile implements File {
 
     @Override
     public String getName() {
-        return this.name;
+        return name;
     }
 
     @Override
