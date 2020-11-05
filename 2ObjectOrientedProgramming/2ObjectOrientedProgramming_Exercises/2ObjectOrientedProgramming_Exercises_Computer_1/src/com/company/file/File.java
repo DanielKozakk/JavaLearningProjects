@@ -4,4 +4,5 @@ public interface File {
 
     public String getName();
     public int getSize();
+    FileType getFileType();
 }

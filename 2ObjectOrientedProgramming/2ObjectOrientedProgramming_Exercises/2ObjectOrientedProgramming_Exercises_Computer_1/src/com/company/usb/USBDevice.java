@@ -1,4 +1,10 @@
 package com.company.usb;
 
-public abstract class USBDevice {
+public interface USBDevice {
+
+    boolean conenct();
+    boolean disconnect();
+    String getName();
+
+
 }
