@@ -9,6 +9,7 @@ public class GIFImageFile extends AbstractImageFile {
 
     public void showAnimation() {
         System.out.println("Showing funny GIF");
+
     }
 
 

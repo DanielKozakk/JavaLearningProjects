@@ -1,19 +1,7 @@
 package com.jaknauczycsieprogramowania.project;
 
 
-
-import com.jaknauczycsieprogramowania.project.drive.Drive;
-import com.jaknauczycsieprogramowania.project.drive.SDDDrive;
 import com.jaknauczycsieprogramowania.project.file.imagefile.GIFImageFile;
-import com.jaknauczycsieprogramowania.project.file.imagefile.JPGImageFile;
-import com.jaknauczycsieprogramowania.project.file.musicfile.MP3File;
-
-import com.jaknauczycsieprogramowania.project.file.File;
-import com.my.exercises.VarArgs;
-
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
@@ -49,6 +37,13 @@ public class Main {
 //            System.out.println(file instanceof GIFImageFile);
 //        }
 
-        System.out.println(VarArgs.sumVarArgsInts(2,23,5));
+//        System.out.println(VarArgs.sumVarArgsInts(2,23,5));
+
+
+        GIFImageFile gif=  new GIFImageFile("gif" , 2 );
+
+
     }
+
+
 }

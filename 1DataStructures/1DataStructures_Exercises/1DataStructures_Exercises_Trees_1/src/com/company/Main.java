@@ -16,7 +16,7 @@ public class Main {
         col26.insert(12);
         col26.insert(16);
 
-col26.insertInOrder();
+        col26.insertInOrder();
 
     }
 }

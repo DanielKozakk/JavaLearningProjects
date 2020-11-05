@@ -9,6 +9,11 @@ public abstract class AbstractImageFile extends AbstractFile {
         super(name,size);
     }
 
+    protected void utnij(){
+
+        System.out.println("tne okrutnie");
+
+    }
     @Override
     public FileType getType() {
         return FileType.IMAGE;
