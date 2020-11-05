@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Computer {
 
+    public int flag = 1;
     private Monitor monitor;
     private Drive drive;
     private List<USBDevice> usbList = new ArrayList<>();
