@@ -27,4 +27,8 @@ public class HDDDrive implements Drive {
         Optional<File> foundFile = hddFiles.stream().filter(file -> file.getName().equals(name)).findFirst();
         return foundFile.orElseThrow();
     }
+
+    public List<File> getHddFiles() {
+        return hddFiles;
+    }
 }

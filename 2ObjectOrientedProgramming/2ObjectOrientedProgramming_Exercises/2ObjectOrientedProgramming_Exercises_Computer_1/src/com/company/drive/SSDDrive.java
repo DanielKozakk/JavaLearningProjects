@@ -12,7 +12,7 @@ public class SSDDrive implements Drive {
 
     @Override
     public void addFile(File file) {
-
+        ssdFiles.put(file.getName(), file);
     }
 
     @Override
@@ -26,5 +26,9 @@ public class SSDDrive implements Drive {
     @Override
     public File findFile(String name) {
         return ssdFiles.get(name);
+    }
+
+    public Map<String, File> getSsdFiles() {
+        return ssdFiles;
     }
 }
