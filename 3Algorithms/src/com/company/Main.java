@@ -3,19 +3,25 @@ package com.company;
 import com.company.sumazrekurencja.Rekurencja;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        var input = new ArrayList<Integer>();
-        input.add(2);
-        input.add(3);
-        input.add(22);
-        input.add(22222);
-        input.add(22);
+        List<Integer> listToSorting = new ArrayList<>();
+        listToSorting.add(2);
+        listToSorting.add(25);
+        listToSorting.add(1);
+        listToSorting.add(100);
+        listToSorting.add(59);
+        listToSorting.add(6);
+        listToSorting.add(4);
+        listToSorting.add(120);
+        listToSorting.add(-1);
 
-        System.out.println(Rekurencja.highestNumber(input));
+        var lista = Rekurencja.quickSort(listToSorting);
+        System.out.println(lista);
 
     }
 }

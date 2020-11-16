@@ -59,10 +59,12 @@ public class Rekurencja {
             ArrayList<Integer> greater = new ArrayList<>();
 
             for (Integer element : list) {
-                if (element > pivot) {
-                    smallerOrEqual.add(element);
-                } else {
-                    greater.add(element);
+                if(!element.equals(pivot)) {
+                    if (element <= pivot) {
+                        smallerOrEqual.add(element);
+                    } else {
+                        greater.add(element);
+                    }
                 }
             }
 
