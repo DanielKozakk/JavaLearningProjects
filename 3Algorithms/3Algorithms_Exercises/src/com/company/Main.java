@@ -1,6 +1,6 @@
 package com.company;
 
-import com.company.serie1.Algorithms_1_BinarySearch;
+import com.company.serie2.Algorithms_1_BinarySearch;
 import com.company.serie1.Algorithms_2_SelectionSort;
 import com.company.serie1.Algorithms_3_RecursiveFactorial;
 import com.company.serie1.Algorithms_4_SumRecursive;
@@ -14,18 +14,27 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<Integer> inputList = new ArrayList<>();
-        inputList.add(1);
-        inputList.add(2);
-        inputList.add(5);
-        inputList.add(8);
-        inputList.add(10);
 
-        Algorithms_4_SumRecursive alg4 = new Algorithms_4_SumRecursive();
+        Algorithms_1_BinarySearch algo1 = new Algorithms_1_BinarySearch();
 
-        int suma = alg4.sum(inputList);
-        System.out.println(suma);
+        System.out.println(algo1.binarySearch(2));
 
+
+        /**
+         *
+         * 1. Wyznacz początkowy index w środku zbioru.
+         * 2. Ustaw minimalny index na pierwszy element, maksymalny na ostatni.
+         * 3. Sprawdź czy value indexu jest mniejsze czy większe od poszukiwanego numberu.
+         * 4. Jeśli value jest większe niż poszukiwany, to ustaw maksymalny index na value.
+         * 5. Jeśli value jest mniejsze, niż poszukiwany, to ustaw minimalny index na value.
+         * 6. Stwórz nowy index: minimalny index + (maksymalny index - minimalny index) / 2
+         * 7. Jeśli searchedNumber jest równy value indexu, zwróć true
+         * 8. Jeśli min i max index są takie same, to zwróć false.
+         *
+         *
+         *
+         *
+         */
     }
 
 

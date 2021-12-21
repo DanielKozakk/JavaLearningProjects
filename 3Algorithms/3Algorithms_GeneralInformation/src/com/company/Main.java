@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.simplesum.SimpleRecursiveSum;
 import com.company.sumazrekurencja.Rekurencja;
 
 import java.util.ArrayList;
@@ -11,30 +12,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<Integer> listToSorting = new ArrayList<>();
-        listToSorting.add(2);
-        listToSorting.add(25);
-        listToSorting.add(1);
-        listToSorting.add(100);
-        listToSorting.add(59);
-        listToSorting.add(6);
-        listToSorting.add(4);
-        listToSorting.add(120);
-        listToSorting.add(-1);
 
-        var lista = Rekurencja.quickSort(listToSorting);
-        System.out.println(lista);
+        SimpleRecursiveSum srs = new SimpleRecursiveSum();
 
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
 
-        Map<String, Integer> hm = new HashMap<>();
+        int sum = srs.recursiveSum(list);
 
-        hm.put("Radiohead", 156);
-        hm.put("Kishore Kumar", 141);
-        hm.put("The Black Keys", 35);
-        hm.put("Neutral Milk Hotel", 94);
-        hm.put("Beck", 88);
-        hm.put("The Strokes", 61);
-        hm.put("Wilko",111);
-
+        System.out.println(sum);
     }
 }
