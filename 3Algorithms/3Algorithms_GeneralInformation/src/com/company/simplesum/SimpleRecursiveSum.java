@@ -6,6 +6,9 @@ public class SimpleRecursiveSum {
 
     public int recursiveSum(List<Integer> list){
 
+        if(list.isEmpty()){
+            return 0;
+        }
         if (list.size() <= 1){
             return list.get(0);
         }
