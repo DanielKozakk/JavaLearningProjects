@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.pokryciezbioru.PokrycieZbioru;
+import com.company.quicksort.QuickSort;
 import com.company.simplesum.SimpleRecursiveSum;
 import com.company.sumazrekurencja.Rekurencja;
 
@@ -12,17 +14,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+        PokrycieZbioru pz = new PokrycieZbioru();
 
-        SimpleRecursiveSum srs = new SimpleRecursiveSum();
+        pz.checkCoverage();
 
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(4);
-
-        int sum = srs.recursiveSum(list);
-
-        System.out.println(sum);
     }
 }

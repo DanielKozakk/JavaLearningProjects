@@ -20,7 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="689c32c3-8511-40ae-b3c7-1ccfd6504b84" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../0General/0Generics/src/0Generics.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../3Algorithms/3Algorithms_GeneralInformation/src/com/company/pokryciezbioru/PokrycieZbioru.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../3Algorithms/3Algorithms_GeneralInformation/src/com/company/quicksort/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3Algorithms/3Algorithms_GeneralInformation/out/production/3Algorithms_GeneralInformation/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../3Algorithms/3Algorithms_GeneralInformation/out/production/3Algorithms_GeneralInformation/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3Algorithms/3Algorithms_GeneralInformation/out/production/3Algorithms_GeneralInformation/com/company/simplesum/SimpleRecursiveSum.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../3Algorithms/3Algorithms_GeneralInformation/out/production/3Algorithms_GeneralInformation/com/company/simplesum/SimpleRecursiveSum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3Algorithms/3Algorithms_GeneralInformation/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../3Algorithms/3Algorithms_GeneralInformation/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +34,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1aZOAomuU8C8rFCXSxovXG0qRBp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -37,6 +46,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -57,6 +68,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -80,7 +92,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587127697393">
