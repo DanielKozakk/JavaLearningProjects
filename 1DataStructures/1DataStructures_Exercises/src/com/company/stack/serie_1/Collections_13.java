@@ -53,6 +53,6 @@ public class Collections_13{
         System.out.println(queue);
     }
 }
-/*
 
-}
+
+
