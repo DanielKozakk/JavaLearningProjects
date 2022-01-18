@@ -74,7 +74,6 @@ public class LinkedList {
         return stringBuilder.toString();
     }
 
-
     public Node findLastElement(){
 
         Node searchedElement = head;
@@ -88,6 +87,7 @@ public class LinkedList {
     public Node getFirstElement(){
         return head;
     }
+
     public boolean isEmpty(){
         return head == null;
     }
@@ -114,7 +114,5 @@ public class LinkedList {
             System.out.println(searchedElement.getData());
             searchedElement = searchedElement.getNext();
         }
-
     }
-
 }

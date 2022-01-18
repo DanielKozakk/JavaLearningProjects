@@ -1,6 +1,6 @@
 package com.company.linkedList.template;
 
-public class Collections_15 {
+public class Collections_15 extends LinkedList {
 
     /*
 

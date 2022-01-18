@@ -20,13 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="689c32c3-8511-40ae-b3c7-1ccfd6504b84" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../0General/0Generics/src/0Generics.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../3Algorithms/3Algorithms_GeneralInformation/src/com/company/pokryciezbioru/PokrycieZbioru.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../3Algorithms/3Algorithms_GeneralInformation/src/com/company/quicksort/QuickSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../3Algorithms/3Algorithms_GeneralInformation/out/production/3Algorithms_GeneralInformation/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../3Algorithms/3Algorithms_GeneralInformation/out/production/3Algorithms_GeneralInformation/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../3Algorithms/3Algorithms_GeneralInformation/out/production/3Algorithms_GeneralInformation/com/company/simplesum/SimpleRecursiveSum.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../3Algorithms/3Algorithms_GeneralInformation/out/production/3Algorithms_GeneralInformation/com/company/simplesum/SimpleRecursiveSum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../3Algorithms/3Algorithms_GeneralInformation/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../3Algorithms/3Algorithms_GeneralInformation/src/com/company/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1DataStructures_Exercises/src/com/company/linkedList/serie1/Collections_16.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1DataStructures_Exercises/src/com/company/linkedList/template/Collections_16.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1DataStructures_Exercises/out/production/DataStructures_Exercises/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../1DataStructures_Exercises/out/production/DataStructures_Exercises/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1DataStructures_Exercises/out/production/DataStructures_Exercises/com/company/linkedList/template/Collections_15.class" beforeDir="false" afterPath="$PROJECT_DIR$/../1DataStructures_Exercises/out/production/DataStructures_Exercises/com/company/linkedList/template/Collections_15.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1DataStructures_Exercises/out/production/DataStructures_Exercises/com/company/linkedList/template/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/../1DataStructures_Exercises/out/production/DataStructures_Exercises/com/company/linkedList/template/LinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1DataStructures_Exercises/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../1DataStructures_Exercises/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1DataStructures_Exercises/src/com/company/linkedList/template/Collections_15.java" beforeDir="false" afterPath="$PROJECT_DIR$/../1DataStructures_Exercises/src/com/company/linkedList/template/Collections_15.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1DataStructures_Exercises/src/com/company/linkedList/template/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../1DataStructures_Exercises/src/com/company/linkedList/template/LinkedList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
