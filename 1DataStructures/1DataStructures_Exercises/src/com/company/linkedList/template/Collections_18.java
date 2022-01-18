@@ -12,9 +12,10 @@ public class Collections_18 extends LinkedList {
      input1.insertAtEnd(43);
      input1.insertAtEnd(21);
 
+     For example if the linked list is 12->11->12->21->41->43->21 then removeDuplicates() should convert the list to 12->11->21->41->43.
      */
 
-    
+
     public static void removeDuplicates(){
 
     }
