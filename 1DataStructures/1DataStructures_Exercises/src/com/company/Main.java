@@ -1,29 +1,21 @@
 package com.company;
 
 
-import com.company.graph.serie1.Collections_19;
-import com.company.graph.serie1.Collections_20;
-import com.company.graph.template.AdjacencyMatrixDirectedRawGraph;
-import com.company.linkedList.serie1.Collections_15;
-import com.company.linkedList.serie1.Collections_16;
-import com.company.linkedList.serie1.Collections_17;
-
-import com.company.linkedList.serie1.Collections_18;
-import com.company.linkedList.template.LinkedList;
-
-import java.util.*;
+import com.company.graph.serie1.Collections_22;
+import com.company.graph.template.AdjacencyListDirectedRawGraph;
+import com.company.graph.serie1.Collections_21;
 
 public class Main {
 
     public static void main(String[] args) {
-        AdjacencyMatrixDirectedRawGraph adjacencyMatrixDirectedRawGraph = new AdjacencyMatrixDirectedRawGraph(7);
-        adjacencyMatrixDirectedRawGraph.addVertex("Pierwszy");
-        adjacencyMatrixDirectedRawGraph.addVertex("Drugi");
-        adjacencyMatrixDirectedRawGraph.addVertex("Trzeci");
-        adjacencyMatrixDirectedRawGraph.addVertex("Czwarty");
-        adjacencyMatrixDirectedRawGraph.addVertex("Piąty");
-        adjacencyMatrixDirectedRawGraph.addVertex("Szósty");
-        adjacencyMatrixDirectedRawGraph.addVertex("Siódmyyyy");
+        AdjacencyListDirectedRawGraph adjacencyMatrixDirectedRawGraph = new AdjacencyListDirectedRawGraph(7);
+        adjacencyMatrixDirectedRawGraph.addVertex("ZERO");
+        adjacencyMatrixDirectedRawGraph.addVertex("JEDEN");
+        adjacencyMatrixDirectedRawGraph.addVertex("DWA");
+        adjacencyMatrixDirectedRawGraph.addVertex("TRZY");
+        adjacencyMatrixDirectedRawGraph.addVertex("CZTERY");
+        adjacencyMatrixDirectedRawGraph.addVertex("PIĘĆ");
+        adjacencyMatrixDirectedRawGraph.addVertex("SZEŚĆ");
 
 
 
@@ -46,7 +38,7 @@ public class Main {
         adjacencyMatrixDirectedRawGraph.addEdge(6, 1);
 
 
-        Collections_20.depthFirst(adjacencyMatrixDirectedRawGraph);
+        Collections_22.depthFirst(adjacencyMatrixDirectedRawGraph);
 
     }
 }
