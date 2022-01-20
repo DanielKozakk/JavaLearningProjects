@@ -1,52 +1,27 @@
 package com.company;
 
 
+import com.company.binarySearchTree.serie1.Collections_26_BinarySearchTree;
+import com.company.graph.serie1.Collections_25;
 import com.company.graph.template.AdjacencyListDirectedRawGraph;
 import com.company.graph.serie1.Collections_23;
+import com.company.graph.template.WeightedBiDirectionalGraph;
 
 public class Main {
 
     public static void main(String[] args) {
-        AdjacencyListDirectedRawGraph col23 = new AdjacencyListDirectedRawGraph(8);
-        col23.addVertex("Zerowy");
-        col23.addVertex("Pierwszy");
-        col23.addVertex("Drugi");
-        col23.addVertex("Trzeci");
-        col23.addVertex("Czwarty");
-        col23.addVertex("Piąty");
-        col23.addVertex("Szósty");
-        col23.addVertex("Siódmy");
 
+        Collections_26_BinarySearchTree col26 = new Collections_26_BinarySearchTree();
 
-        col23.addEdge(0, 1);
-        col23.addEdge(1, 0);
+        col26.insert(10);
+        col26.insert(15);
+        col26.insert(5);
+        col26.insert(8);
+        col26.insert(7);
+        col26.insert(4);
+        col26.insert(12);
+        col26.insert(16);
 
-        col23.addEdge(0, 2);
-        col23.addEdge(2, 0);
-
-        col23.addEdge(1, 2);
-        col23.addEdge(2, 1);
-
-        col23.addEdge(3, 2);
-        col23.addEdge(2, 3);
-
-        col23.addEdge(4, 2);
-        col23.addEdge(2, 4);
-
-        col23.addEdge(3, 5);
-        col23.addEdge(5, 3);
-
-        col23.addEdge(1, 7);
-        col23.addEdge(7, 1);
-
-        col23.addEdge(1, 6);
-        col23.addEdge(6, 1);
-
-        col23.addEdge(7, 6);
-        col23.addEdge(6, 7);
-
-        System.out.println(Collections_23.checkIfGraphIsTree(col23));
-
-
+        col26.printInOrder();
     }
 }
