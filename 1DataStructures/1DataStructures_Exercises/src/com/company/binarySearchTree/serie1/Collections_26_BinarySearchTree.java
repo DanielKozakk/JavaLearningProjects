@@ -68,7 +68,6 @@ public class Collections_26_BinarySearchTree {
     }
 
     public void printInOrder(){
-        System.out.println("heh");
         printInOrder(this.firstNode);
     }
 
@@ -85,10 +84,19 @@ public class Collections_26_BinarySearchTree {
         }
     }
 
-    private class Node {
+    public class Node {
         private Integer value;
         private Node leftChild = null;
         private Node rightChild = null;
+        boolean isNodeVisited = false;
+
+        public boolean isNodeVisited() {
+            return isNodeVisited;
+        }
+
+        public void setNodeAsVisited() {
+            isNodeVisited = true;
+        }
 
         public Node(Integer value) {
             this.value = value;
@@ -115,5 +123,8 @@ public class Collections_26_BinarySearchTree {
         }
     }
 
+    public Node getFirstNode() {
+        return firstNode;
+    }
 }
 

@@ -2,10 +2,8 @@ package com.company;
 
 
 import com.company.binarySearchTree.serie1.Collections_26_BinarySearchTree;
-import com.company.graph.serie1.Collections_25;
-import com.company.graph.template.AdjacencyListDirectedRawGraph;
-import com.company.graph.serie1.Collections_23;
-import com.company.graph.template.WeightedBiDirectionalGraph;
+import com.company.binarySearchTree.serie1.Collections_29;
+import com.company.binarySearchTree.serie1.Collections_30;
 
 public class Main {
 
@@ -13,15 +11,15 @@ public class Main {
 
         Collections_26_BinarySearchTree col26 = new Collections_26_BinarySearchTree();
 
-        col26.insert(10);
-        col26.insert(15);
-        col26.insert(5);
-        col26.insert(8);
-        col26.insert(7);
-        col26.insert(4);
-        col26.insert(12);
-        col26.insert(16);
+        col26.insert(100);
+        col26.insert(111);
+        col26.insert(78);
+        col26.insert(90);
+        col26.insert(60);
+        col26.insert(50);
 
-        col26.printInOrder();
+        Collections_30.findAncestorsOfANode(col26, 90);
+
+
     }
 }
