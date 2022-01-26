@@ -9,10 +9,11 @@ public class Collections_31_PrefixTree {
     private Node head = new Node("");
 
     public Node getHead() {
-        return head;
+        return this.head;
     }
 
-    class Node {
+
+    protected class Node {
 
         private boolean endOfWord = false;
         private String letter;
@@ -55,6 +56,7 @@ public class Collections_31_PrefixTree {
             return endOfWord;
         }
     }
+
     public void addWord(String word) {
         Node searchedNode = head;
         for (int i = 0; i < word.length(); i++) {
