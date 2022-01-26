@@ -1,6 +1,9 @@
 package com.company;
 
 
+import com.company.array.serie_1.Collections_36;
+import com.company.array.serie_1.Collections_37;
+import com.company.array.serie_1.Collections_38;
 import com.company.binarySearchTree.serie1.Collections_26_BinarySearchTree;
 import com.company.binarySearchTree.serie1.Collections_29;
 import com.company.binarySearchTree.serie1.Collections_30;
@@ -14,14 +17,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Collections_31_PrefixTree col31 = new Collections_31_PrefixTree();
+        int [] first = {12, 34, 11, 9, 3};
+        int [] second = {2, 1, 3, 5};
+        int [] third = {12, 34, 11, 9, 3};
 
-        col31.addWord("abc");
-        col31.addWord("sradogara");
-        col31.addWord("atwojstary");
-        col31.addWord("itakdalej");
+        int [] forth ={7, 2, 1, 5};
 
-        System.out.println(Collections_35.countWords(col31));
-
+        Collections_38.haveArraysCommonElement(third, forth);
     }
 }
