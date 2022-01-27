@@ -6,7 +6,7 @@ public class LinkedList {
 
     private Node head = null;
 
-    protected class Node{
+    public class Node{
 
         private Object dataToStore;
         private Node next;
@@ -41,7 +41,7 @@ public class LinkedList {
     public void deleteAtHead(){
         head = head.next;
     }
-    public void insertAtEnd(Object elementToInsert){
+    public Node insertAtEnd(Object elementToInsert){
 
         Node nodeToInsert = new Node(elementToInsert, null);
 
@@ -50,6 +50,8 @@ public class LinkedList {
         } else {
             findLastElement().setNext(nodeToInsert);
         }
+
+        return nodeToInsert;
     }
 
     public void insertAtHead(Object elementToInsert){
