@@ -1,9 +1,8 @@
-package com.company.stack.template;
+package com.company.queue.serie2;
 
-import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 
 public class Collections_13 {
 
@@ -38,6 +37,23 @@ public class Collections_13 {
      */
 
     public void reverseFirstKElementsInQueue(Queue<Integer> queue, int k){
+
+        /*
+            1. Dodaję pierwsze k elementów do stacka. [10, 20,30,40]
+            2. Iteruję się dopóki stack nie pusty, dodaję je do nowej kolejki ze stacka. Następnie dodaję resztę elementów ze starej kolejki.
+
+         */
+        Stack<Integer> stack = new Stack<>();
+        for(int i = 0; i < k ; i++){
+            stack.push(queue.poll());
+        }
+
+        Queue<Integer> newQueue = new LinkedList<>();
+        while(!stack.isEmpty()){
+            newQueue.add(stack.pop());
+        }
+        newQueue.addAll(queue);
+        System.out.println(newQueue);
 
     }
 }

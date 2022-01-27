@@ -3,7 +3,7 @@ package com.company.array.serie_1;
 public class Collections_38 {
 
 
-    public static void haveArraysCommonElement(int [] first, int[] second){
+    public static void haveArraysGotCommonElement(int [] first, int[] second){
 
         boolean hasCommonElement = false;
         outer: for(int i = 0; i < first.length; i++){
