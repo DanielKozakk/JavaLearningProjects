@@ -1,11 +1,9 @@
 package com.company;
 
-import com.company.serie2.Algorithms_1_BinarySearch;
-import com.company.serie1.Algorithms_2_SelectionSort;
-import com.company.serie1.Algorithms_3_RecursiveFactorial;
-import com.company.serie1.Algorithms_4_SumRecursive;
-import com.company.serie3.Algorithms_1;
-import com.company.serie3.Algorithms_2;
+
+
+import com.company.serie3.Algorithms_4;
+import com.company.serie3.Algorithms_5;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,18 +14,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Map<String, Integer> hm = new HashMap<>();
+        List<Integer> input = new ArrayList<>();
+        input.add(0);
+        input.add(2);
+        input.add(24512);
+        input.add(245112);
+        input.add(5);
+        input.add(7);
+        input.add(103);
+        input.add(123);
 
-        hm.put("Radiohead", 156);
-        hm.put("Kishore Kumar", 141);
-        hm.put("The Black Keys", 35);
-        hm.put("Neutral Milk Hotel", 94);
-        hm.put("Beck", 88);
-        hm.put("The Strokes", 61);
-        hm.put("Wilko",111);
-
-        Algorithms_2.selectionSort(hm);
+        List<Integer> newList = Algorithms_5.quickSort(input);
+        System.out.println(newList);
     }
+
 
 
 }
