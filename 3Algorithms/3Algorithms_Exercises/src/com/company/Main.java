@@ -15,9 +15,9 @@ public class Main {
     public static void main(String[] args) {
 
         List<Integer> input = new ArrayList<>();
+        input.add(24512);
         input.add(0);
         input.add(2);
-        input.add(24512);
         input.add(245112);
         input.add(5);
         input.add(7);

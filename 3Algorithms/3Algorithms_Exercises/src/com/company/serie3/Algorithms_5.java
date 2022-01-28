@@ -30,12 +30,24 @@ public class Algorithms_5 {
 
             int pivot = input.size() / 2;
 
-            List<Integer> leftSublist = quickSort(input.subList(0, pivot - 1 ));
-            List<Integer> rightSublist = quickSort(input.subList(pivot + 1, input.size()));
+            List<Integer> leftSublist = new ArrayList<>();
+            List<Integer> rightSublist = new ArrayList<>();
+
+            for (int i = 0 ; i < input.size(); i++) {
+                if(pivot == i) continue;
+                Integer element = input.get(i);
+                Integer pivotElement = input.get(pivot);
+                if(pivotElement >= element ){
+                    leftSublist.add(element);
+                } else {
+                    rightSublist.add(element);
+                }
+            }
 
             List<Integer> newList = new ArrayList<>();
-            newList.addAll(leftSublist);
-            newList.addAll(rightSublist);
+            newList.addAll(quickSort(leftSublist));
+            newList.add(input.get(pivot));
+            newList.addAll(quickSort(rightSublist));
             return newList;
         }
 
