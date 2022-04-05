@@ -7,17 +7,12 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        List list = new ArrayList();
-        list.add("A");
-        list.add(2);
-        list.add(true);
 
-        int a = 0;
 
-        list.add(a);
+        Integer overflow = Integer.MAX_VALUE * 2 ;
+        System.out.println(overflow);
 
 
 
-        String str = (String)list.get(0);
     }
 }
