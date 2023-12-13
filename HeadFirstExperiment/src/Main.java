@@ -22,8 +22,14 @@ public class Main<T> {
     public static void main(String[] args) throws IOException {
 
         Main main = new Main();
-        main.createServerChannel();
 
+
+
+    }
+
+    private void multi (){
+       Thread thread = new Thread();
+        thread.start();
     }
     private void createServerChannel() throws IOException {
 

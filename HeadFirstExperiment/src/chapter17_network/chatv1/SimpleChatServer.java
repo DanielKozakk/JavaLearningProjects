@@ -1,4 +1,4 @@
-package chapter17_network.chatClient;
+package chapter17_network.chatv1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
