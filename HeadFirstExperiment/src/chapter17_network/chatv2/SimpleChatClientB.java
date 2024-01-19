@@ -7,8 +7,10 @@ import java.io.*;
 import java.net.InetSocketAddress;
 import java.nio.channels.*;
 import java.nio.channels.*;
+import java.util.Set;
 import java.util.concurrent.*;
 
+import static java.lang.Thread.sleep;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 
@@ -38,7 +40,6 @@ public class SimpleChatClientB {
 
         ExecutorService executor = Executors.newSingleThreadExecutor();
         executor.execute(new IncomingReader());
-
 
         JFrame frame = new JFrame("Ludicrously Simple Chat Client");
         frame.getContentPane().add(BorderLayout.CENTER, mainPanel);
@@ -77,33 +78,42 @@ public class SimpleChatClientB {
         outgoing.setText("");
         outgoing.requestFocus();
     }
-
     public class IncomingReader implements Runnable {
-        @Override
         public void run() {
             String message;
+
             try {
-                System.out.println("Przed while");
-                System.out.println(Thread.currentThread().getState());
+                while ((message = readLine(reader)) != null) {
 
-                while ((message = reader.readLine()) != null) {
-                    System.out.println("w while");
-                    System.out.println(Thread.currentThread().getState());
-
-//                message = reader.readLine();
-//                if (message != null) {
                     System.out.println("read " + message);
                     incoming.append(message + "\n");
                 }
-                System.out.println("po while");
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
+            System.out.println("działa koniec funkcji");
+        }
+
+        public String readLine(BufferedReader reader) throws IOException {
+            String message = reader.readLine();
+            System.out.println("inside function: " + message);
+            return message;
         }
     }
 
-    public static void main(String[] args) {
+
+
+    public static void main(String[] args) throws InterruptedException {
         new SimpleChatClientB().go();
+
+//        while(true){
+//            Set<Thread> threads = Thread.getAllStackTraces().keySet();
+//            System.out.printf("%-15s \t %-15s \t %-15s \t %s\n", "Name", "State", "Priority", "isDaemon");
+//            for (Thread t : threads) {
+//                System.out.printf("%-15s \t %-15s \t %-15d \t %s\n", t.getName(), t.getState(), t.getPriority(), t.isDaemon());
+//            }
+//            sleep(10000);
+//        }
     }
 
 }
