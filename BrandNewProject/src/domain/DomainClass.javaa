@@ -1,0 +1,10 @@
+package domain;
+
+public class DomainClass {
+    public DomainClass() {
+    }
+
+    public void domainClassHello() {
+        System.out.println("Domain chuuuj hello!");
+    }
+}
